@@ -16,6 +16,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="" />
         <datasource-mapping>
+          <factory-entry name="products" />
           <factory-entry name="products-unit" value="6f3c1aa7-f27c-43e1-852a-b7cd5c35672f" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
@@ -31,7 +32,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="TomEE 7.0.551" level="application_server_libraries" />
     <orderEntry type="library" name="Mojarra-2.2.1" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.34-bin" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.34-bin1" level="project" />
     <orderEntry type="library" name="bval-core-0.5" level="project" />
   </component>
 </module>
