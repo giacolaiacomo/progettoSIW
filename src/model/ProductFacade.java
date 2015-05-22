@@ -61,4 +61,10 @@ public class ProductFacade {
         Product product = em.find(Product.class, id);
         deleteProduct(product);
     }
+
+    public void setProvider(Provider provider, Product product){
+        product.getProviders().add(provider);
+        em.persist(provider);
+    }
+
 }
