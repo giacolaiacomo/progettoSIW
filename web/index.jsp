@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>SIW's Project</title>
+<title>SIWProject</title>
 </head>
 <body>
 	<f:view>
