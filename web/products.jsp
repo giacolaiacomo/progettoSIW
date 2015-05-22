@@ -9,7 +9,7 @@
 </head>
 <body>
 <f:view>
-<h1>Products</h1>
+<h1>Products List</h1>
 <h:form>
 <table>
 	<tr>
