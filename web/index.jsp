@@ -7,6 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
 <title>SIWProject</title>
 </head>
 <body>

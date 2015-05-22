@@ -1,6 +1,7 @@
 <%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
 <head>
     <title>Product</title>
 </head>
