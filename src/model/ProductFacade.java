@@ -1,27 +1,18 @@
 package model;
 
+import javax.ejb.Stateless;
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+@Stateless(name = "pfacade")
 public class ProductFacade {
-    EntityManagerFactory emf;
+
+    @PersistenceContext(unitName = "products")
     EntityManager em;
 
-    public ProductFacade(EntityManager em, EntityManagerFactory emf) {
-        this.emf = emf;
-        this.em = em;
-    }
-
-    public void openEntityManager(){
-        this.emf = Persistence.createEntityManagerFactory("products-unit");
-        this.em = emf.createEntityManager();
-    }
-
-    public void closeEntityManager(){
-        this.em.close();
-        this.emf.close();
+    public ProductFacade() {
     }
 
     public List<Provider> retrieveProviders(Long idProdotto){
