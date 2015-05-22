@@ -11,7 +11,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("products-unit");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("products");
         EntityManager em = emf.createEntityManager();
 
         /*Product product = new Product();
@@ -56,7 +56,7 @@ public class Main {
         Customer c2 = cfacade.createCustomer("Gabriele", "NonTeSoppportoPiù", "gabrielentsp@aaa.it", new Long(666), new Date(), address3);
         Orders o1 = cfacade.createOrders(new Date(), c2);
 
-        ProductFacade pfacade = new ProductFacade(em, emf);
+        ProductFacade pfacade = new ProductFacade();
         Product product=pfacade.createProduct("Intel", "ahahahahah", new Float(22223), "FabioMerda");
 
         List<Product> l= new ArrayList<Product>();
