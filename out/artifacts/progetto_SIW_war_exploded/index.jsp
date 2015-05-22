@@ -7,13 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>SIW's Project</title>
+<title>SIWProject</title>
 </head>
 <body>
 	<f:view>
 		<h1>Project</h1>
 		<ul>
-			<li><a href='<c:url value="/faces/newProduct.jsp" />'>Insert
+			<li><a href='<c:url value="faces/newProduct.jsp" />'>Insert
 					a new product</a></li>
 			<li><h:form>
 					<h:commandLink action="#{productController.listProducts}"
