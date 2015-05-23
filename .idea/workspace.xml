@@ -7,7 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e87298-d782-4cbd-9320-8395fd08b21b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/newProduct.jsp" afterPath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/newProduct.jsp" />
+      <change type="MOVED" beforePath="C:\Users\Gianluca\Desktop\progettoSIW\web\bootstrap\css\formproduct.css" afterPath="$PROJECT_DIR$/web/bootstrap/css/msc.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/newProduct.jsp" afterPath="$PROJECT_DIR$/web/newProduct.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/products.jsp" afterPath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/products.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/products.jsp" afterPath="$PROJECT_DIR$/web/products.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="progetto-SIW.iws" />
@@ -35,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/web/bootstrap/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.6551723">
-              <caret line="4552" column="55" selection-start-line="4552" selection-start-column="52" selection-end-line="4552" selection-end-column="55" />
+              <caret line="5118" column="6" selection-start-line="5118" selection-start-column="1" selection-end-line="5118" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -64,8 +67,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.769231">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -74,7 +77,7 @@
       <file leaf-file-name="newProduct.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/newProduct.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.576923">
+            <state vertical-scroll-proportion="-28.26923">
               <caret line="79" column="93" selection-start-line="79" selection-start-column="93" selection-end-line="79" selection-end-column="93" />
               <folding />
             </state>
@@ -91,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formproduct.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/bootstrap/css/formproduct.css">
+      <file leaf-file-name="msc.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/bootstrap/css/msc.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.8322368">
+              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="products.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/products.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7302405">
-              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+            <state vertical-scroll-proportion="-5.018868">
+              <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -165,7 +168,6 @@
         <option value="$PROJECT_DIR$/src/model/OrderLine.java" />
         <option value="$PROJECT_DIR$/src/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/src/model/ProductFacade.java" />
-        <option value="$PROJECT_DIR$/web/products.jsp" />
         <option value="$PROJECT_DIR$/web/product.jsp" />
         <option value="$PROJECT_DIR$/web/bootstrap/css/business-frontpage.css" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
@@ -173,6 +175,8 @@
         <option value="$PROJECT_DIR$/web/signin.jsp" />
         <option value="$PROJECT_DIR$/web/bootstrap/css/formproduct.css" />
         <option value="$PROJECT_DIR$/web/newProduct.jsp" />
+        <option value="$PROJECT_DIR$/web/products.jsp" />
+        <option value="$PROJECT_DIR$/web/bootstrap/css/msc.css" />
       </list>
     </option>
   </component>
@@ -845,7 +849,7 @@
       <workItem from="1432304132475" duration="2340000" />
       <workItem from="1432307035023" duration="2205000" />
       <workItem from="1432313776795" duration="2506000" />
-      <workItem from="1432375909441" duration="10416000" />
+      <workItem from="1432375909441" duration="12132000" />
     </task>
     <task id="LOCAL-00001" summary="secondo commit">
       <created>1432202664190</created>
@@ -961,11 +965,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432396201619</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="modificata form new Product">
+      <created>1432396208050</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1432396208050</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26534000" />
+    <option name="totallyTimeSpent" value="28250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1367,34 +1377,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="63.103447">
-          <caret line="4" column="24287" selection-start-line="4" selection-start-column="24279" selection-end-line="4" selection-end-column="24287" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/product.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8461537">
           <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6551723">
-          <caret line="4552" column="55" selection-start-line="4552" selection-start-column="52" selection-end-line="4552" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1407,6 +1393,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/newProduct.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.26923">
+          <caret line="79" column="93" selection-start-line="79" selection-start-column="93" selection-end-line="79" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="63.103447">
+          <caret line="4" column="24287" selection-start-line="4" selection-start-column="24279" selection-end-line="4" selection-end-column="24287" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6551723">
+          <caret line="5118" column="6" selection-start-line="5118" selection-start-column="1" selection-end-line="5118" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/bootstrap/css/business-frontpage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1415,34 +1425,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/formproduct.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/newProduct.jsp">
+    <entry file="file://$PROJECT_DIR$/src/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.576923">
-          <caret line="79" column="93" selection-start-line="79" selection-start-column="93" selection-end-line="79" selection-end-column="93" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/products.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7302405">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        <state vertical-scroll-proportion="-5.018868">
+          <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/msc.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8322368">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding />
         </state>
       </provider>

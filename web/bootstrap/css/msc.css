@@ -1,0 +1,69 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+.form-signin {
+    max-width: 900px;
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}
+
+
+#zebra-verticale
+{
+    background: #fff;
+    border-collapse: collapse;
+    font-family: "Arial", "Verdana", Sans-Serif;
+    font-size: 14px;
+    width: 620px;
+    text-align: center;
+}
+#zebra-verticale th
+{
+    background: #c3d6e0;
+    border-left: 1px solid #572527;
+    border-right: 1px solid #57282c;
+    border-top: 4px solid #EDF6FA;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px;
+}
+#zebra-verticale td
+{
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    color: #ff877e;
+    padding: 14px;
+}
+#zebra-verticale td.zebra-dispari
+{
+    background: #EDF6FA;
+    color: #573f40;
+}
+#zebra-verticale tr:hover td
+{
+    background: #dae7ed;
+    color: #573433;
+}
