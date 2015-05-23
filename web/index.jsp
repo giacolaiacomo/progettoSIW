@@ -60,7 +60,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="tagline">Business Name or Tagline</h1>
+
 				</div>
 			</div>
 		</div>
@@ -83,15 +83,17 @@
 			<div class="col-sm-4">
 				<h2>Contact Us</h2>
 				<address>
-					<strong>Start Bootstrap</strong>
-					<br>3481 Melrose Place
-					<br>Beverly Hills, CA 90210
+					<strong>MSC</strong>
+					<br>Roma 3 University
+					<br>Via della Vasca Navale 79/81, Rome
 					<br>
 				</address>
 				<address>
-					<abbr title="Phone">P:</abbr>(123) 456-7890
+					<abbr title="Maniscalchi">M: </abbr>Alessandro Maniscalchi
 					<br>
-					<abbr title="Email">E:</abbr> <a href="mailto:#">name@example.com</a>
+					<abbr title="Sola">S: </abbr>Fabio Sola
+					<br>
+					<abbr title="Colaiacomo">C: </abbr>Gianluca Colaiacomo
 				</address>
 			</div>
 		</div>
@@ -124,7 +126,7 @@
 		<footer>
 			<div class="row">
 				<div class="col-lg-12">
-					<p>Copyright &copy; Your Website 2014</p>
+					<p>Copyright &copy; MSC Company 2015</p>
 				</div>
 			</div>
 			<!-- /.row -->
