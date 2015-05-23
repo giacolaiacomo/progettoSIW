@@ -34,7 +34,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/faces/index.jsp">Progetto SIW 2015 - MSC</a>
+				<a class="navbar-brand" href="faces/index.jsp">Progetto SIW 2015 - MSC</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -103,9 +103,12 @@
 
 		<div class="row">
 			<div class="col-sm-4">
-				<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-				<h2>Marketing Box #1</h2>
-				<p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+				<img class="img-circle img-responsive img-center" src="bootstrap/css/ListaProdotti.png" alt="">
+				<h2>Visualizza i nostri prodotti</h2>
+				<p>bla bla bla bla bla</p>
+				<h:form>
+					<h:commandLink action="#{productController.listProducts}" value="Lista prodotti" styleClass="btn btn-default btn-sm"/>
+				</h:form>
 			</div>
 			<div class="col-sm-4">
 				<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
