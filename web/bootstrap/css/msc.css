@@ -29,41 +29,87 @@ body {
     padding: 7px 9px;
 }
 
-
-#zebra-verticale
-{
-    background: #fff;
+table {
+    width: 100%;
     border-collapse: collapse;
-    font-family: "Arial", "Verdana", Sans-Serif;
-    font-size: 14px;
-    width: 620px;
-    text-align: center;
 }
-#zebra-verticale th
-{
-    background: #c3d6e0;
-    border-left: 1px solid #572527;
-    border-right: 1px solid #57282c;
-    border-top: 4px solid #EDF6FA;
-    color: #FFF;
-    font-size: 14px;
-    font-weight: normal;
-    padding: 10px;
+/* stilizzazione "zebrata" delle righe della tabella */
+tr:nth-of-type(odd) {
+    background: #eee;
 }
-#zebra-verticale td
-{
-    border-left: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    color: #ff877e;
-    padding: 14px;
+th {
+    background: #333;
+    color: white;
+    font-weight: bold;
 }
-#zebra-verticale td.zebra-dispari
-{
-    background: #EDF6FA;
-    color: #573f40;
+td, th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
 }
-#zebra-verticale tr:hover td
-{
-    background: #dae7ed;
-    color: #573433;
+
+/*
+Questa query aggiunge del CSS per tutti gli schermi con
+una risoluzione inferiore a 760px
+*/
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    /* Forza la tabella a non essere più una tabella */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Nasconde la testata della tabella (senza il dispaly non per una maggiore accessibilità) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td {
+        /* Per comportarsi come una "riga" della tabella */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        /* Per inserire una descrizione ad ogni tabella */
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+    /*
+    Dati di ogni descrizione
+    */
+    td:nth-of-type(1):before { content: "Nome"; }
+    td:nth-of-type(2):before { content: "Codice"; }
+    td:nth-of-type(3):before { content: "Prezzo"; }
+    td:nth-of-type(4):before { content: "Descrizione"; }
 }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+        width: 320px; }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        width: 495px;
+    }
+}
+

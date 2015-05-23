@@ -6,10 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81e87298-d782-4cbd-9320-8395fd08b21b" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\Gianluca\Desktop\progettoSIW\web\bootstrap\css\formproduct.css" afterPath="$PROJECT_DIR$/web/bootstrap/css/msc.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/newProduct.jsp" afterPath="$PROJECT_DIR$/web/newProduct.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/products.jsp" afterPath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/products.jsp" />
+    <list default="true" id="81e87298-d782-4cbd-9320-8395fd08b21b" name="Default" comment="modificata tabella products">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bootstrap/css/msc.css" afterPath="$PROJECT_DIR$/web/bootstrap/css/msc.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/newProduct.jsp" afterPath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/newProduct.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/products.jsp" afterPath="$PROJECT_DIR$/web/products.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -94,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="msc.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="msc.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/bootstrap/css/msc.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8322368">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -124,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="products.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/products.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.018868">
-              <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.47927928">
+              <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -175,8 +174,8 @@
         <option value="$PROJECT_DIR$/web/signin.jsp" />
         <option value="$PROJECT_DIR$/web/bootstrap/css/formproduct.css" />
         <option value="$PROJECT_DIR$/web/newProduct.jsp" />
-        <option value="$PROJECT_DIR$/web/products.jsp" />
         <option value="$PROJECT_DIR$/web/bootstrap/css/msc.css" />
+        <option value="$PROJECT_DIR$/web/products.jsp" />
       </list>
     </option>
   </component>
@@ -849,7 +848,7 @@
       <workItem from="1432304132475" duration="2340000" />
       <workItem from="1432307035023" duration="2205000" />
       <workItem from="1432313776795" duration="2506000" />
-      <workItem from="1432375909441" duration="12132000" />
+      <workItem from="1432375909441" duration="13872000" />
     </task>
     <task id="LOCAL-00001" summary="secondo commit">
       <created>1432202664190</created>
@@ -971,11 +970,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432396208050</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="modificata tabella products">
+      <created>1432398105455</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1432398105455</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28250000" />
+    <option name="totallyTimeSpent" value="29990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1042,7 +1047,8 @@
     <MESSAGE value="modifiche html" />
     <MESSAGE value="aggiunto modulo di login" />
     <MESSAGE value="modificata form new Product" />
-    <option name="LAST_COMMIT_MESSAGE" value="modificata form new Product" />
+    <MESSAGE value="modificata tabella products" />
+    <option name="LAST_COMMIT_MESSAGE" value="modificata tabella products" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1316,6 +1322,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7734375">
           <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1441,18 +1448,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/products.jsp">
+    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/msc.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.018868">
-          <caret line="51" column="48" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/bootstrap/css/msc.css">
+    <entry file="file://$PROJECT_DIR$/web/products.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8322368">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.47927928">
+          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
           <folding />
         </state>
       </provider>

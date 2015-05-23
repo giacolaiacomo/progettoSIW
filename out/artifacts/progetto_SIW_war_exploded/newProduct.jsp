@@ -10,7 +10,7 @@
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
-    <link href="/bootstrap/css/formproduct.css" rel="stylesheet">
+    <link href="/bootstrap/css/msc.css" rel="stylesheet">
 
     <title>New Product</title>
 </head>
