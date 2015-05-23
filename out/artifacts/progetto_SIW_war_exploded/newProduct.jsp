@@ -46,39 +46,43 @@
     </nav>
 
     <div class="container">
-            <fieldset>
-            <form class="form-signin">
-                <h2 class="form-signin-heading">Insert a new product</h2>
+        <div class="row">
+            <h2>Insert a new product</h2>
+        </div>
+        <fieldset>
+            <form class="form-signin text-center">
+
                 <h:form>
-                    <div>Name: <h:inputText value="#{productController.name}"
+                    <div class="form-group">Name: <h:inputText styleClass="form-control" value="#{productController.name}"
                                             required="true"
                                             requiredMessage="Name is mandatory"
-                                            id="name"/> <h:message for="name" styleClass="alert-danger"/>
+                                            id="name"/><h:message for="name" styleClass="alert-danger"/>
                     </div>
-                    <div>Code: <h:inputText value="#{productController.code}"
+                    <div class="form-group">Code: <h:inputText styleClass="form-control" value="#{productController.code}"
                                             required="true"
                                             requiredMessage="Code is mandatory"
                                             id="code"/> <h:message for="code" styleClass="alert-danger"/>
                     </div>
-                    <div>Price: <h:inputText value="#{productController.price}"
+                    <div class="form-group">Price: <h:inputText styleClass="form-control" value="#{productController.price}"
                                              required="true"
                                              requiredMessage="Price is mandatory"
                                              converterMessage="Price must be a number"
                                              id="price"/> <h:message for="price" styleClass="alert-danger"/>
                     </div>
-                    <div>Description: <h:inputTextarea value="#{productController.description}"
+                    <div class="form-group">Description: <h:inputTextarea styleClass="form-control" value="#{productController.description}"
                                                        required="false"
                                                        cols="20"
                                                        rows="5" />
 
                     </div>
-                    <div>
+                    <div class="form-group">
                         <h:commandButton value="Submit"  action="#{productController.createProduct}" styleClass="btn btn-primary"/>
                         <h:commandButton value="List all"  action="#{productController.listProducts}" styleClass="btn btn-primary"/>
                     </div>
+                </h:form>
             </form>
-            </fieldset>
-            </h:form>
+        </fieldset>
+
     </div>
 </f:view>
 </body>
