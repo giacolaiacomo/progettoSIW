@@ -7,9 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e87298-d782-4cbd-9320-8395fd08b21b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/bootstrap/css/ListaProdotti.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/index.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/signin.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/newProduct.jsp" afterPath="$PROJECT_DIR$/web/newProduct.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="progetto-SIW.iws" />
@@ -43,16 +43,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41580757">
-              <caret line="109" column="99" selection-start-line="109" selection-start-column="99" selection-end-line="109" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/bootstrap/css/bootstrap.min.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,11 +63,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="newProduct.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/newProduct.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+            <state vertical-scroll-proportion="-16.5">
+              <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signin.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/signin.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="3.0670104">
+              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -119,6 +129,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -145,11 +156,13 @@
         <option value="$PROJECT_DIR$/src/model/OrderLine.java" />
         <option value="$PROJECT_DIR$/src/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/src/model/ProductFacade.java" />
-        <option value="$PROJECT_DIR$/web/newProduct.jsp" />
         <option value="$PROJECT_DIR$/web/products.jsp" />
         <option value="$PROJECT_DIR$/web/product.jsp" />
         <option value="$PROJECT_DIR$/web/bootstrap/css/business-frontpage.css" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/newProduct.jsp" />
+        <option value="$PROJECT_DIR$/web/signin.html" />
+        <option value="$PROJECT_DIR$/web/signin.jsp" />
       </list>
     </option>
   </component>
@@ -391,11 +404,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gianluca\Desktop\progettoSIW\web" />
       <recent name="C:\Users\Gianluca\Desktop\progettoSIW\web\bootstrap\css" />
       <recent name="C:\Users\Gianluca\Desktop\progettoSIW\web\bootstrap" />
       <recent name="$PROJECT_DIR$/web" />
       <recent name="$PROJECT_DIR$/src/model" />
-      <recent name="$PROJECT_DIR$/src/controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web" />
@@ -799,7 +812,7 @@
       <workItem from="1432304132475" duration="2340000" />
       <workItem from="1432307035023" duration="2205000" />
       <workItem from="1432313776795" duration="2506000" />
-      <workItem from="1432375909441" duration="4601000" />
+      <workItem from="1432375909441" duration="6832000" />
     </task>
     <task id="LOCAL-00001" summary="secondo commit">
       <created>1432202664190</created>
@@ -891,11 +904,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432384206131</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="modifiche html">
+      <created>1432385743509</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1432385743509</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20719000" />
+    <option name="totallyTimeSpent" value="22950000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -958,7 +977,9 @@
     <MESSAGE value="modifiche" />
     <MESSAGE value="aggiustato bootstrap" />
     <MESSAGE value="immagine header index" />
-    <option name="LAST_COMMIT_MESSAGE" value="immagine header index" />
+    <MESSAGE value="cazzate html" />
+    <MESSAGE value="modifiche html" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifiche html" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -969,21 +990,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/model/CustomerFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1300,14 +1306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/newProduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/product.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1364,10 +1362,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/newProduct.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.5">
+          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41580757">
-          <caret line="109" column="99" selection-start-line="109" selection-start-column="99" selection-end-line="109" selection-end-column="99" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/signin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.0670104">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding />
         </state>
       </provider>

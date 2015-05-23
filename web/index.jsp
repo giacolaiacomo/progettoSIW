@@ -40,12 +40,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href='<c:url value="faces/newProduct.jsp"/>'>New Product</a>
-					</li>
-					<li>
-						<h:form>
-							<h:commandLink action="#{productController.listProducts}" value="List all Products" />
-						</h:form>
+						<a href='<c:url value="newProduct.jsp"/>'>New Product</a>
 					</li>
 					<li>
 						<a href="#">Contact</a>
