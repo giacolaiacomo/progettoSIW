@@ -10,6 +10,7 @@
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
+    <link href="/bootstrap/css/formproduct.css" rel="stylesheet">
 
     <title>New Product</title>
 </head>
@@ -45,9 +46,9 @@
     </nav>
 
     <div class="container">
-        <div class="row">
             <fieldset>
-            <form>
+            <form class="form-signin">
+                <h2 class="form-signin-heading">Insert a new product</h2>
                 <h:form>
                     <div>Name: <h:inputText value="#{productController.name}"
                                             required="true"
@@ -78,7 +79,6 @@
             </form>
             </fieldset>
             </h:form>
-        </div>
     </div>
 </f:view>
 </body>
