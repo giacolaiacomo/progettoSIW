@@ -44,16 +44,21 @@
 	<div class="container form-signin">
 		<h1>Products List</h1>
 		<h:form>
-			<table id="zebra-verticale">
+			<table>
 				<tr>
-					<th>Name</th><th>Price</th>
+					<th>Name</th><th>Code</th><th>Price</th><th>Description</th>
 				</tr>
 				<c:forEach var="product" items="#{productController.products}">
-					<tr><td class="zebra-dispari">
-						<h:commandLink action="#{productController.findProduct}" value="#{product.name}">
-							<f:param name="id" value="#{product.id}" />
-						</h:commandLink>
-					</td><td>${product.price}</td></tr>
+					<tr>
+						<td>
+							<h:commandLink action="#{productController.findProduct}" value="#{product.name}">
+								<f:param name="id" value="#{product.id}" />
+							</h:commandLink>
+						</td>
+						<td>${product.code}</td>
+						<td>${product.price}</td>
+						<td>${product.description}</td>
+					</tr>
 				</c:forEach>
 			</table>
 		</h:form>
