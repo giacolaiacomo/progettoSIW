@@ -34,7 +34,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/faces/index.jsp">Progetto SIW 2015 - MSC</a>
+				<a class="navbar-brand" href="faces/index.jsp">Progetto SIW 2015 - MSC</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
