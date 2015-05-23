@@ -32,7 +32,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="TomEE 7.0.551" level="application_server_libraries" />
     <orderEntry type="library" name="Mojarra-2.2.1" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.34-bin1" level="project" />
     <orderEntry type="library" name="bval-core-0.5" level="project" />
   </component>
 </module>
