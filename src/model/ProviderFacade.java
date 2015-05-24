@@ -14,7 +14,7 @@ public class ProviderFacade {
     @PersistenceContext(unitName = "products")
     EntityManager em;
 
-    public Provider createProvider (String firstname, String lastname, Date birthDate, String email, Address address, Long phonenumber, String vatin){
+    public Provider createProvider(String firstname, String lastname, Date birthDate, String email, Address address, Long phonenumber, String vatin){
         Provider provider = new Provider(firstname, lastname, birthDate, email, address, phonenumber, vatin);
         if (address != null)
             provider.setAddress(address);
