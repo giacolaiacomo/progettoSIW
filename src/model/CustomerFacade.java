@@ -1,48 +1,31 @@
 package model;
 
+import javax.ejb.Stateless;
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+@Stateless(name = "cfacade")
 public class CustomerFacade {
 
-    EntityManagerFactory emf;
+    @PersistenceContext(unitName = "customers")
     EntityManager em;
 
-    public CustomerFacade(EntityManager em, EntityManagerFactory emf) {
-        this.emf = emf;
-        this.em = em;
+    public CustomerFacade(){
+
     }
 
-    public void openEntityManager(){
-        this.emf = Persistence.createEntityManagerFactory("products-unit");
-        this.em = emf.createEntityManager();
-    }
-
-    public void closeEntityManager(){
-        this.em.close();
-        this.emf.close();
-    }
-
-    public Customer createCustomer(String firstname, String lastname, String email, Long phonenumber, Date dateofbirth, Address address){
-        Customer customer = new Customer(firstname, lastname, email, phonenumber, dateofbirth);
+    public Customer createCustomer(String firstname, String lastname, Date birthDate, String email, Address address, Long phonenumber){
+        Customer customer = new Customer(firstname, lastname, birthDate, email, address, phonenumber);
         if (address != null)
             customer.setAddress_id(address);
-        EntityTransaction tx=em.getTransaction();
-        tx.begin();
         em.persist(customer);
-        tx.commit();
         return customer;
     }
 
     public Orders createOrders(Date date, Customer c){
         Orders ord=new Orders(date, c);
-        EntityTransaction tx=em.getTransaction();
-        tx.begin();
         em.persist(ord);
-        tx.commit();
         return ord;
     }
 

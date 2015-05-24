@@ -7,7 +7,7 @@ import java.util.List;
 import static javax.persistence.TemporalType.*;
 
 @Entity
-public class Customer {
+public class Customer extends User {
     public Customer() {
     }
 
@@ -29,7 +29,7 @@ public class Customer {
     private Date dateofbirth;
 
     @Temporal(DATE)
-    private Date registrationdate=new Date();
+    private Date registrationdate;
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Address address_id;
@@ -38,22 +38,10 @@ public class Customer {
     private List<Orders> orders;
 
 
-    public Customer(String firstname, String lastname, String email, Long phonenumber, Date dateofbirth, Date registrationdate, Address address_id) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
+    public Customer(String firstname, String lastname, Date birthDate, String email, Address address, Long phonenumber) {
+        super(firstname, lastname, birthDate, email, address);
+        this.registrationdate = new Date();
         this.phonenumber = phonenumber;
-        this.dateofbirth = dateofbirth;
-        this.registrationdate = registrationdate;
-        this.address_id=address_id;
-    }
-
-    public Customer(String firstname, String lastname, String email, Long phonenumber, Date dateofbirth) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.phonenumber = phonenumber;
-        this.dateofbirth = dateofbirth;
     }
 
     public Long getId() {

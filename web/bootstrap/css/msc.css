@@ -56,12 +56,12 @@ una risoluzione inferiore a 760px
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
-    /* Forza la tabella a non essere più una tabella */
+    /* Forza la tabella a non essere piï¿½ una tabella */
     table, thead, tbody, th, td, tr {
         display: block;
     }
 
-    /* Nasconde la testata della tabella (senza il dispaly non per una maggiore accessibilità) */
+    /* Nasconde la testata della tabella (senza il dispaly non per una maggiore accessibilitï¿½) */
     thead tr {
         position: absolute;
         top: -9999px;
@@ -90,8 +90,8 @@ only screen and (max-width: 760px),
     /*
     Dati di ogni descrizione
     */
-    td:nth-of-type(1):before { content: "Nome"; }
-    td:nth-of-type(2):before { content: "Codice"; }
+    td:nth-of-type(1):before { content: "Name"; }
+    td:nth-of-type(2):before { content: "Codic"; }
     td:nth-of-type(3):before { content: "Prezzo"; }
     td:nth-of-type(4):before { content: "Descrizione"; }
 }

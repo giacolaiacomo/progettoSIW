@@ -3,10 +3,9 @@ package model;
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaQuery;
-import java.util.LinkedHashMap;
 import java.util.List;
 
-@Stateless(name = "pfacade")
+@Stateless(name = "prodfacade")
 public class ProductFacade {
 
     @PersistenceContext(unitName = "products")

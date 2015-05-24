@@ -16,7 +16,9 @@ public class Provider {
     private String name;
 
     private Long phonenumber;
+
     private String email;
+
     private String vatin;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
@@ -25,13 +27,12 @@ public class Provider {
     @ManyToMany
     private List<Product> products;
 
-    public Provider(String name, Long phonenumber, String email, String vatin, Address address_id, List<Product> products) {
+    public Provider(String name, Long phonenumber, String email, String vatin, Address address_id) {
         this.name = name;
         this.phonenumber = phonenumber;
         this.email = email;
         this.vatin = vatin;
         this.address_id=address_id;
-        this.products = products;
     }
 
 
