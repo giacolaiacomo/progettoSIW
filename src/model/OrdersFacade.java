@@ -3,7 +3,6 @@ package model;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.Date;
 
 @Stateless(name = "ofacade")
 public class OrdersFacade {

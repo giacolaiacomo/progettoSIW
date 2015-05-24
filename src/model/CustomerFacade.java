@@ -24,7 +24,7 @@ public class CustomerFacade {
     }
 
     public Orders createOrders(Customer c){
-        Orders ord=new Orders(c);
+        Orders ord = new Orders(c);
         em.persist(ord);
         return ord;
     }
@@ -36,7 +36,7 @@ public class CustomerFacade {
     }
 
     public List<Customer> getCustomerAll(){
-        Query query= em.createQuery("SELECT c FROM Customer c");
+        Query query = em.createQuery("SELECT c FROM Customer c");
         return query.getResultList();
     }
 

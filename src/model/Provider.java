@@ -1,50 +1,87 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Provider extends User {
-    public Provider() {
-    }
+public class Provider {
 
-    @Column(nullable = false)
-    private Long phonenumber;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @ManyToMany
+    private List<Product> providedProducts;
 
     @Column(nullable = false)
     private String vatin;
 
-    @ManyToMany
-    private List<Product> products;
+    private String phoneNumber;
 
-    public Provider(String firstname, String lastname, Date birthDate, String email, Address address, Long phonenumber, String vatin) {
-        super(firstname, lastname, birthDate, email, address);
-        this.phonenumber = phonenumber;
+    @Column(nullable = false)
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "address_id")
+    private Address address;
+
+    @Column(nullable = false,unique = true)
+    private String email;
+
+    public Provider(List<Product> providedProducts, String vatin, String phoneNumber, Address address, String email) {
+        this.providedProducts = providedProducts;
         this.vatin = vatin;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.email = email;
     }
 
-    public Long getPhonenumber() {
-        return phonenumber;
+    public Provider() {
     }
 
-    public void setPhonenumber(Long phonenumber) {
-        this.phonenumber = phonenumber;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Product> getProvidedProducts() {
+        return providedProducts;
+    }
+
+    public void setProvidedProducts(List<Product> providedProducts) {
+        this.providedProducts = providedProducts;
     }
 
     public String getVatin() {
         return vatin;
     }
 
-    public void setVatin(String vatin) {
-        this.vatin = vatin;
+    public void setVatin(String vatNumber) {
+        this.vatin = vatNumber;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
