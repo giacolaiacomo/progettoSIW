@@ -25,8 +25,8 @@ public class Orders {
     @OneToMany(mappedBy = "orders_id")
     private List<OrderLine> orderLines;
 
-    public Orders(Date creationtime, Customer customer_id) {
-        this.creationtime = creationtime;
+    public Orders(Customer customer_id) {
+        this.creationtime = new Date();
         this.customer_id = customer_id;
     }
 
