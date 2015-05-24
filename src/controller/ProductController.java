@@ -1,10 +1,8 @@
 package controller;
 
 import java.util.List;
-
 import model.Product;
 import model.ProductFacade;
-
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
