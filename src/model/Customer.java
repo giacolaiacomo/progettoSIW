@@ -3,7 +3,6 @@ package model;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-import static javax.persistence.TemporalType.*;
 
 @Entity
 public class Customer extends User {
@@ -12,9 +11,6 @@ public class Customer extends User {
 
     @Column(nullable = false)
     private Long phonenumber;
-
-    @Temporal(DATE)
-    private Date registrationdate;
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Address address_id;
@@ -25,10 +21,8 @@ public class Customer extends User {
 
     public Customer(String firstname, String lastname, Date birthDate, String email, Address address, Long phonenumber) {
         super(firstname, lastname, birthDate, email, address);
-        this.registrationdate = new Date();
         this.phonenumber = phonenumber;
     }
-
 
     public Long getPhonenumber() {
         return phonenumber;
@@ -36,14 +30,6 @@ public class Customer extends User {
 
     public void setPhonenumber(Long phonenumber) {
         this.phonenumber = phonenumber;
-    }
-
-    public Date getRegistrationdate() {
-        return registrationdate;
-    }
-
-    public void setRegistrationdate(Date registrationdate) {
-        this.registrationdate = registrationdate;
     }
 
     public Long getAddress_id() {
@@ -67,7 +53,6 @@ public class Customer extends User {
         return "Customer{" +
                 super.toString() +
                 "phonenumber=" + phonenumber +
-                ", registrationdate=" + registrationdate +
                 ", address_id=" + address_id +
                 ", orders=" + orders +
                 "} ";

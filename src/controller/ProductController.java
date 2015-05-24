@@ -21,7 +21,7 @@ public class ProductController {
 	private Product product;
 	private List<Product> products;
 	
-	@EJB(beanName = "pfacade")
+	@EJB(beanName = "prodfacade")
 	private ProductFacade productFacade;
 	
 	public String createProduct() {

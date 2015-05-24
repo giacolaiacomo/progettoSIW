@@ -41,15 +41,7 @@ public class User {
         this.birthDate = birthDate;
         this.email = email;
         this.address = address;
-    }
-
-    public User(String name, String lastname, Date birthDate, Date registrationDate, String email, String password) {
-        this.firstname = name;
-        this.lastname = lastname;
-        this.birthDate = birthDate;
-        this.registrationDate = registrationDate;
-        this.email = email;
-        this.password = password;
+        this.registrationDate = new Date();
     }
 
     public User() {
