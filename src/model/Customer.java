@@ -12,10 +12,7 @@ public class Customer extends User {
     @Column(nullable = false)
     private Long phonenumber;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    private Address address_id;
-
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<Orders> orders;
 
 
@@ -32,10 +29,6 @@ public class Customer extends User {
         this.phonenumber = phonenumber;
     }
 
-    public Long getAddress_id() {
-        return address_id.getId();
-    }
-
     public List<Orders> getOrders() {
         return orders;
     }
@@ -44,17 +37,22 @@ public class Customer extends User {
         this.orders = orders;
     }
 
-    public void setAddress_id(Address address_id) {
-        this.address_id = address_id;
-    }
-
     @Override
     public String toString() {
         return "Customer{" +
                 super.toString() +
                 "phonenumber=" + phonenumber +
-                ", address_id=" + address_id +
                 ", orders=" + orders +
                 "} ";
+    }
+
+    @Override //da sistemare
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override //da sistemare
+    public int hashCode() {
+        return super.hashCode();
     }
 }
