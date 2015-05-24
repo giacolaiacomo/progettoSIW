@@ -23,8 +23,8 @@ public class CustomerFacade {
         return customer;
     }
 
-    public Orders createOrders(Date date, Customer c){
-        Orders ord=new Orders(date, c);
+    public Orders createOrders(Customer c){
+        Orders ord=new Orders(c);
         em.persist(ord);
         return ord;
     }
