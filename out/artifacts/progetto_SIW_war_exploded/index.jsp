@@ -55,7 +55,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-
+					<img src="bootstrap/css/header.png" class="img-responsive"/>
 				</div>
 			</div>
 		</div>

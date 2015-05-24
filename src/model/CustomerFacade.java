@@ -40,5 +40,11 @@ public class CustomerFacade {
         return query.getResultList();
     }
 
+    public Customer getCustomer(Long customer_id){
+        Query query=em.createQuery("SELECT c FROM Customer c WHERE c.Id=:id");
+        query.setParameter("id", customer_id);
+        return (Customer) query.getResultList().get(0);
+    }
+
 }
 
