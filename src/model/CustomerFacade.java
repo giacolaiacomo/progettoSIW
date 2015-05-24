@@ -18,7 +18,7 @@ public class CustomerFacade {
     public Customer createCustomer(String firstname, String lastname, Date birthDate, String email, Address address, Long phonenumber){
         Customer customer = new Customer(firstname, lastname, birthDate, email, address, phonenumber);
         if (address != null)
-            customer.setAddress_id(address);
+            customer.setAddress(address);
         em.persist(customer);
         return customer;
     }
