@@ -3,14 +3,12 @@ package model;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-
 import static javax.persistence.TemporalType.*;
 
 @Entity
 public class Customer extends User {
     public Customer() {
     }
-
 
     @Column(nullable = false)
     private Long phonenumber;
@@ -64,5 +62,14 @@ public class Customer extends User {
         this.address_id = address_id;
     }
 
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                super.toString() +
+                "phonenumber=" + phonenumber +
+                ", registrationdate=" + registrationdate +
+                ", address_id=" + address_id +
+                ", orders=" + orders +
+                "} ";
+    }
 }
