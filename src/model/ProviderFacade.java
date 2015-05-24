@@ -3,7 +3,6 @@ package model;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
 
 /**
  * Created by Fabio on 24/05/15.
@@ -11,7 +10,7 @@ import java.util.List;
 @Stateless(name = "provfacade")
 public class ProviderFacade {
 
-    @PersistenceContext(unitName = "providers")
+    @PersistenceContext(unitName = "products")
     EntityManager em;
 
     public ProviderFacade(){

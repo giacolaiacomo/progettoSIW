@@ -8,7 +8,7 @@ import java.util.List;
 @Stateless(name = "cfacade")
 public class CustomerFacade {
 
-    @PersistenceContext(unitName = "customers")
+    @PersistenceContext(unitName = "products")
     EntityManager em;
 
     public CustomerFacade(){

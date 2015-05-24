@@ -11,7 +11,7 @@ public class User {
     private Long Id;
 
     @Column(nullable = false)
-    private String name;
+    private String firstname;
 
     @Column(nullable = false)
     private String lastname;
@@ -36,7 +36,7 @@ public class User {
     private Address address;
 
     public User(String name, String lastname, Date birthDate, String email, Address address) {
-        this.name = name;
+        this.firstname = name;
         this.lastname = lastname;
         this.birthDate = birthDate;
         this.email = email;
@@ -44,7 +44,7 @@ public class User {
     }
 
     public User(String name, String lastname, Date birthDate, Date registrationDate, String email, String password) {
-        this.name = name;
+        this.firstname = name;
         this.lastname = lastname;
         this.birthDate = birthDate;
         this.registrationDate = registrationDate;
@@ -63,12 +63,12 @@ public class User {
         Id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String name) {
+        this.firstname = name;
     }
 
     public String getLastname() {
@@ -129,7 +129,7 @@ public class User {
         if (birthDate != null ? !birthDate.equals(user.birthDate) : user.birthDate != null) return false;
         if (email != null ? !email.equals(user.email) : user.email != null) return false;
         if (lastname != null ? !lastname.equals(user.lastname) : user.lastname != null) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (firstname != null ? !firstname.equals(user.firstname) : user.firstname != null) return false;
         if (registrationDate != null ? !registrationDate.equals(user.registrationDate) : user.registrationDate != null)
             return false;
 
@@ -138,7 +138,7 @@ public class User {
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
+        int result = firstname != null ? firstname.hashCode() : 0;
         result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
         result = 31 * result + (birthDate != null ? birthDate.hashCode() : 0);
         result = 31 * result + (registrationDate != null ? registrationDate.hashCode() : 0);
@@ -149,7 +149,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
+                "name='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", birthDate=" + birthDate +
                 ", registrationDate=" + registrationDate +

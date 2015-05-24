@@ -15,10 +15,13 @@ public class Provider {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private Long phonenumber;
 
+    @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
     private String vatin;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
