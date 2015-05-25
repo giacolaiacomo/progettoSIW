@@ -20,19 +20,16 @@ public class Address{
 
     private Long zipcode;
 
-    private String country;
-
 
     @OneToMany(mappedBy = "address")
     private List<Provider> providers;
 
 
-    public Address(String street, String city, String state, Long zipcode, String country) {
+    public Address(String street, String city, String state, Long zipcode) {
         this.street = street;
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
-        this.country = country;
     }
 
     public Long getId() {
@@ -75,13 +72,6 @@ public class Address{
         this.zipcode = zipcode;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -91,7 +81,6 @@ public class Address{
         Address address = (Address) o;
 
         if (city != null ? !city.equals(address.city) : address.city != null) return false;
-        if (country != null ? !country.equals(address.country) : address.country != null) return false;
         if (id != null ? !id.equals(address.id) : address.id != null) return false;
         if (state != null ? !state.equals(address.state) : address.state != null) return false;
         if (street != null ? !street.equals(address.street) : address.street != null) return false;
@@ -107,7 +96,6 @@ public class Address{
         result = 31 * result + (city != null ? city.hashCode() : 0);
         result = 31 * result + (state != null ? state.hashCode() : 0);
         result = 31 * result + (zipcode != null ? zipcode.hashCode() : 0);
-        result = 31 * result + (country != null ? country.hashCode() : 0);
         return result;
     }
 
@@ -119,7 +107,6 @@ public class Address{
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zipcode=" + zipcode +
-                ", country='" + country + '\'' +
                 '}';
     }
 
