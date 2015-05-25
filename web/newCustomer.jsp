@@ -47,7 +47,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <a href='<c:url value="faces/newUser.jsp"/>'>New Product</a>
+            <a href='<c:url value="faces/newCustomer.jsp"/>'>New Customer</a>
           </li>
           <li>
             <a href="#">Contact</a>
@@ -61,7 +61,7 @@
 
   <div class="container">
     <div class="row">
-      <h2>Insert a new product</h2>
+      <h2>Registration new customer</h2>
     </div>
     <fieldset>
       <form class="form-signin text-center">
@@ -82,6 +82,26 @@
                                                               id="dob"
                                                               converter="javax.faces.DateTime"/>
                                                   <h:message for="dob" styleClass="alert-danger"/>
+          </div>
+          <div class="form-group">Street: <h:inputText styleClass="form-control" value="#{addressController.street}"
+                                                          required="true"
+                                                          requiredMessage="Street is mandatory"
+                                                          id="street"/><h:message for="street" styleClass="alert-danger"/>
+          </div>
+          <div class="form-group">City: <h:inputText styleClass="form-control" value="#{addressController.city}"
+                                                          required="true"
+                                                          requiredMessage="City is mandatory"
+                                                          id="city"/><h:message for="city" styleClass="alert-danger"/>
+          </div>
+          <div class="form-group">State: <h:inputText styleClass="form-control" value="#{addressController.state}"
+                                                          required="true"
+                                                          requiredMessage="State is mandatory"
+                                                          id="state"/><h:message for="state" styleClass="alert-danger"/>
+          </div>
+          <div class="form-group">ZIP code: <h:inputText styleClass="form-control" value="#{addressController.zipcode}"
+                                                          required="true"
+                                                          requiredMessage="ZIP code is mandatory"
+                                                          id="zip"/><h:message for="zip" styleClass="alert-danger"/>
           </div>
           <div class="form-group">Email: <h:inputText styleClass="form-control" value="#{customerController.email}"
                                                           required="true"
