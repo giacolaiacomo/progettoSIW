@@ -65,39 +65,40 @@
     </div>
     <fieldset>
       <form class="form-signin text-center">
-
         <h:form>
           <div class="form-group">First Name: <h:inputText styleClass="form-control" value="#{customerController.firstname}"
                                                            required="true"
                                                            requiredMessage="FirstName is mandatory"
-                                                           id="firstname"/><h:message for="name" styleClass="alert-danger"/>
+                                                           id="firstname"/><h:message for="firstname" styleClass="alert-danger"/>
           </div>
           <div class="form-group">Last Name: <h:inputText styleClass="form-control" value="#{customerController.lastname}"
                                                           required="true"
                                                           requiredMessage="LastName is mandatory"
-                                                          id="lastname"/><h:message for="name" styleClass="alert-danger"/>
+                                                          id="lastname"/><h:message for="lastname" styleClass="alert-danger"/>
           </div>
           <div class="form-group">Date of Birth: <h:inputText styleClass="form-control" value="#{customerController.dob}"
                                                               required="true"
                                                               requiredMessage="Date is mandatory"
-                                                              id="name"/>
-                                                <f:convertDateTime pattern="dd-mm-yyyy" />
-                                                <h:message for="name" styleClass="alert-danger"/>
+                                                              id="dob"
+                                                              converter="javax.faces.DateTime"/>
+                                                  <h:message for="dob" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">Description: <h:inputTextarea styleClass="form-control" value="#{productController.description}"
-                                                                required="false"
-                                                                cols="20"
-                                                                rows="5" />
-
+          <div class="form-group">Email: <h:inputText styleClass="form-control" value="#{customerController.email}"
+                                                          required="true"
+                                                          requiredMessage="Email is mandatory"
+                                                          id="email"/><h:message for="email" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">
-            <h:commandButton value="Submit"  action="#{productController.createProduct}" styleClass="btn btn-primary"/>
-            <h:commandButton value="List all"  action="#{productController.listProducts}" styleClass="btn btn-primary"/>
+          <div class="form-group">Password: <h:inputSecret styleClass="form-control" value="#{customerController.password}"
+                                                          required="true"
+                                                          requiredMessage="Password is mandatory"
+                                                          id="password"/><h:message for="password" styleClass="alert-danger"/>
+          </div>
+          <div>
+            <h:commandButton value="Submit"  action="#{CustomerController.createCustomer}" styleClass="btn btn-primary"/>
           </div>
         </h:form>
       </form>
     </fieldset>
-
   </div>
 </f:view>
 </body>
