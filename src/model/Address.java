@@ -23,9 +23,6 @@ public class Address{
     private String country;
 
 
-    @OneToOne(mappedBy = "address")
-    private Customer customers;
-
     @OneToMany(mappedBy = "address")
     private List<Provider> providers;
 
@@ -126,13 +123,6 @@ public class Address{
                 '}';
     }
 
-    public Customer getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(Customer customers) {
-        this.customers = customers;
-    }
 
     public List<Provider> getProviders() {
         return providers;

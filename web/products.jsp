@@ -46,7 +46,7 @@
 		<h:form>
 			<table>
 				<tr>
-					<th>Name</th><th>Code</th><th>Price</th><th>Description</th>
+					<th>Name</th><th>Code</th><th>Price</th><th>Quantity</th><th>Description</th>
 				</tr>
 				<c:forEach var="product" items="#{productController.products}">
 					<tr>
@@ -57,6 +57,7 @@
 						</td>
 						<td>${product.code}</td>
 						<td>${product.price}</td>
+						<td>${product.quantity}</td>
 						<td>${product.description}</td>
 					</tr>
 				</c:forEach>

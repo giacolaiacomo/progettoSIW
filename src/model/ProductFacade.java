@@ -32,7 +32,7 @@ public class ProductFacade {
     }
 
     public List<Product> getAllProducts() {
-        Query query= em.createQuery("SELECT c FROM Customer c");
+        Query query= em.createQuery("SELECT p FROM Product p");
         return query.getResultList();
     }
 
