@@ -31,7 +31,7 @@ public class User {
     private String password;
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address")
     @Column(nullable = true)
     private Address address;
 

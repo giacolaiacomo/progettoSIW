@@ -2,7 +2,6 @@ package model;
 
 import javax.ejb.Stateless;
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 @Stateless(name = "prodfacade")
@@ -21,8 +20,8 @@ public class ProductFacade {
         return p.getProviders();
     }
 
-    public Product createProduct(String name, String code, Float price, String description) {
-        Product product = new Product(name, code, price, description);
+    public Product createProduct(String name, String code, Float price, String description, int quantity) {
+        Product product = new Product(name, code, price, description, quantity);
         em.persist(product);
         return product;
     }

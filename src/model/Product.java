@@ -22,6 +22,8 @@ public class Product {
 
     private String code;
 
+    private int quantity;
+
     @OneToMany(mappedBy = "product_id")
     private List<OrderLine> orderLines;
 
@@ -31,11 +33,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String code, double price, String description) {
+    public Product(String name, String code, double price, String description, int quantity) {
         this.name = name;
         this.code = code;
         this.price = price;
         this.description = description;
+        this.quantity = quantity;
         this.providers=new ArrayList<Provider>();
     }
 
@@ -132,4 +135,11 @@ public class Product {
                 '}';
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }

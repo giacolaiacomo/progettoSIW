@@ -22,10 +22,11 @@ public class Address{
 
     private String country;
 
-    @OneToOne(mappedBy = "address_id")
+
+    @OneToOne(mappedBy = "address")
     private Customer customers;
 
-    @OneToMany(mappedBy = "address_id")
+    @OneToMany(mappedBy = "address")
     private List<Provider> providers;
 
 
@@ -123,5 +124,21 @@ public class Address{
                 ", zipcode=" + zipcode +
                 ", country='" + country + '\'' +
                 '}';
+    }
+
+    public Customer getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Customer customers) {
+        this.customers = customers;
+    }
+
+    public List<Provider> getProviders() {
+        return providers;
+    }
+
+    public void setProviders(List<Provider> providers) {
+        this.providers = providers;
     }
 }

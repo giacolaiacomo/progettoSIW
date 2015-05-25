@@ -11,7 +11,7 @@ public class Provider {
     private Long id;
 
     @ManyToMany
-    private List<Product> providedProducts;
+    private List<Product> products;
 
     @Column(nullable = false)
     private String vatin;
@@ -20,14 +20,14 @@ public class Provider {
 
     @Column(nullable = false)
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address")
     private Address address;
 
     @Column(nullable = false,unique = true)
     private String email;
 
     public Provider(List<Product> providedProducts, String vatin, String phoneNumber, Address address, String email) {
-        this.providedProducts = providedProducts;
+        this.products = providedProducts;
         this.vatin = vatin;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -45,12 +45,12 @@ public class Provider {
         this.id = id;
     }
 
-    public List<Product> getProvidedProducts() {
-        return providedProducts;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setProvidedProducts(List<Product> providedProducts) {
-        this.providedProducts = providedProducts;
+    public void setProducts(List<Product> providedProducts) {
+        this.products = providedProducts;
     }
 
     public String getVatin() {
