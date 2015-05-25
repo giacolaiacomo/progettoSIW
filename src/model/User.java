@@ -35,12 +35,13 @@ public class User {
     @Column(nullable = true)
     private Address address;
 
-    public User(String name, String lastname, Date birthDate, String email, Address address) {
+    public User(String name, String lastname, Date birthDate, Address address, String email, String password) {
         this.firstname = name;
         this.lastname = lastname;
         this.birthDate = birthDate;
-        this.email = email;
         this.address = address;
+        this.email = email;
+        this.password = password;
         this.registrationDate = new Date();
     }
 

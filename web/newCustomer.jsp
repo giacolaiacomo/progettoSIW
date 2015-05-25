@@ -1,6 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: Gianluca
+  Date: 25/05/15
+  Time: 12:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: Gianluca
   Date: 24/05/15
   Time: 13:05
   To change this template use File | Settings | File Templates.
@@ -60,21 +67,22 @@
       <form class="form-signin text-center">
 
         <h:form>
-          <div class="form-group">Name: <h:inputText styleClass="form-control" value="#{productController.name}"
-                                                     required="true"
-                                                     requiredMessage="Name is mandatory"
-                                                     id="name"/><h:message for="name" styleClass="alert-danger"/>
+          <div class="form-group">First Name: <h:inputText styleClass="form-control" value="#{customerController.firstname}"
+                                                           required="true"
+                                                           requiredMessage="FirstName is mandatory"
+                                                           id="firstname"/><h:message for="name" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">Code: <h:inputText styleClass="form-control" value="#{productController.code}"
-                                                     required="true"
-                                                     requiredMessage="Code is mandatory"
-                                                     id="code"/> <h:message for="code" styleClass="alert-danger"/>
+          <div class="form-group">Last Name: <h:inputText styleClass="form-control" value="#{customerController.lastname}"
+                                                          required="true"
+                                                          requiredMessage="LastName is mandatory"
+                                                          id="lastname"/><h:message for="name" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">Price: <h:inputText styleClass="form-control" value="#{productController.price}"
-                                                      required="true"
-                                                      requiredMessage="Price is mandatory"
-                                                      converterMessage="Price must be a number"
-                                                      id="price"/> <h:message for="price" styleClass="alert-danger"/>
+          <div class="form-group">Date of Birth: <h:inputText styleClass="form-control" value="#{customerController.dob}"
+                                                              required="true"
+                                                              requiredMessage="Date is mandatory"
+                                                              id="name"/>
+                                                <f:convertDateTime pattern="dd-mm-yyyy" />
+                                                <h:message for="name" styleClass="alert-danger"/>
           </div>
           <div class="form-group">Description: <h:inputTextarea styleClass="form-control" value="#{productController.description}"
                                                                 required="false"

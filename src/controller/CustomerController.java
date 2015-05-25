@@ -18,8 +18,9 @@ public class CustomerController {
     public String firstname;
     public String lastname;
     public Date dob;
-    public String email;
     public Address address;
+    public String email;
+    public String password;
     public Long phonenumber;
     public Customer customer;
     public List<Customer> customers;
@@ -28,7 +29,7 @@ public class CustomerController {
     public CustomerFacade customerFacade;
 
     public String createCustomer(){
-        this.customer=customerFacade.createCustomer(firstname, lastname, dob, email, address, phonenumber);
+        this.customer=customerFacade.createCustomer(firstname, lastname, dob, address, email, password, phonenumber);
         return "customer";
     }
 

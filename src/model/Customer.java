@@ -16,8 +16,8 @@ public class Customer extends User {
     private List<Orders> orders;
 
 
-    public Customer(String firstname, String lastname, Date birthDate, String email, Address address, Long phonenumber) {
-        super(firstname, lastname, birthDate, email, address);
+    public Customer(String firstname, String lastname, Date birthDate, Address address, String email, String password, Long phonenumber) {
+        super(firstname, lastname, birthDate, address, email, password);
         this.phonenumber = phonenumber;
     }
 
