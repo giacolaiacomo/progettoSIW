@@ -56,9 +56,10 @@
         <div class="row">
             <h2>Registration new customer</h2>
         </div>
+        <div class="active row">
+            <h3><h:outputLink value="newAddress.jsp">Insert a new Address</h:outputLink></h3>
+        </div>
         <fieldset>
-
-            <h:outputText  styleClass="" value="newAddress.jsp"
 
             <form class="form-signin ">
                 <h:form>
