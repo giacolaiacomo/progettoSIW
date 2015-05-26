@@ -20,7 +20,6 @@ public class Provider {
 
     @Column(nullable = false)
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "address")
     private Address address;
 
     @Column(nullable = false,unique = true)

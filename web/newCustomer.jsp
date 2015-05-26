@@ -76,26 +76,6 @@
                                                               converter="javax.faces.DateTime"/>
                                                   <h:message for="dob" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">Street: <h:inputText styleClass="form-control" value="#{addressController.street}"
-                                                          required="true"
-                                                          requiredMessage="Street is mandatory"
-                                                          id="street"/><h:message for="street" styleClass="alert-danger"/>
-          </div>
-          <div class="form-group">City: <h:inputText styleClass="form-control" value="#{addressController.city}"
-                                                          required="true"
-                                                          requiredMessage="City is mandatory"
-                                                          id="city"/><h:message for="city" styleClass="alert-danger"/>
-          </div>
-          <div class="form-group">State: <h:inputText styleClass="form-control" value="#{addressController.state}"
-                                                          required="true"
-                                                          requiredMessage="State is mandatory"
-                                                          id="state"/><h:message for="state" styleClass="alert-danger"/>
-          </div>
-          <div class="form-group">ZIP code: <h:inputText styleClass="form-control" value="#{addressController.zipcode}"
-                                                          required="true"
-                                                          requiredMessage="ZIP code is mandatory"
-                                                          id="zip"/><h:message for="zip" styleClass="alert-danger"/>
-          </div>
           <div class="form-group">Email: <h:inputText styleClass="form-control" value="#{customerController.email}"
                                                           required="true"
                                                           requiredMessage="Email is mandatory"
@@ -107,7 +87,7 @@
                                                           id="password"/><h:message for="password" styleClass="alert-danger"/>
           </div>
           <div>
-            <h:commandButton value="Submit"  action="#{CustomerController.createCustomer}" styleClass="btn btn-primary"/>
+            <h:commandButton value="Submit" action="#{customerController.createCustomer}"  styleClass="btn btn-primary"/>
           </div>
         </h:form>
       </form>

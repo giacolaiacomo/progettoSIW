@@ -46,6 +46,9 @@
 						<a href='<c:url value="newCustomer.jsp"/>'>New Customer</a>
 					</li>
 					<li>
+						<a href='<c:url value="newAddress.jsp"/>'>New Customer</a>
+					</li>
+					<li>
 						<a href="#">Contact</a>
 					</li>
 				</ul>

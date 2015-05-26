@@ -5,6 +5,7 @@ import model.AddressFacade;
 import model.Product;
 import model.Provider;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -26,6 +27,11 @@ public class AddressController {
 
     @EJB(beanName = "afacade")
     private AddressFacade addressFacade;
+
+    @PostConstruct
+    public void init() {
+        this.address= new Address();
+    }
 
     public String createAddress() {
         this.address = addressFacade.createAddress(street, city, state, zipcode);
