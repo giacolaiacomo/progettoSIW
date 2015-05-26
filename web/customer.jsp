@@ -10,7 +10,7 @@
 <html>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
 <head>
-  <title>Product</title>
+  <title>Customer</title>
 </head>
 <body>
 <f:view>
