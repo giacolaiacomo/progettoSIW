@@ -13,7 +13,6 @@
 </head>
 <body>
 <f:view>
-  <h1>${productController.product.name}</h1>
   <h2>Details</h2>
   <div>Street: ${addressController.address.street}</div>
   <div>City: ${addressController.address.city}</div>

@@ -35,19 +35,19 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="faces/index.jsp">Progetto SIW 2015 - MSC</a>
+				<a class="navbar-brand" href="index.jsp">Progetto SIW 2015 - MSC</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href='<c:url value="newProduct.jsp"/>'>New Product</a>
+						<a href="newProduct.jsp">New Product</a>
 					</li>
 					<li>
-						<a href='<c:url value="newCustomer.jsp"/>'>New Customer</a>
+						<a href="newCustomer.jsp">New Customer</a>
 					</li>
 					<li>
-						<a href='<c:url value="newAddress.jsp"/>'>New Address</a>
+						<a href="newAddress.jsp">New Address</a>
 					</li>
 					<li>
 						<a href="#">Contact</a>
@@ -62,7 +62,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<img src="bootstrap/css/header.png" class="img-responsive"/>
 				</div>
 			</div>
 		</div>
