@@ -24,7 +24,7 @@
             <h2>Insert a new product</h2>
         </div>
         <fieldset>
-            <form class="form-signin text-center">
+            <form class="form-signin">
 
                 <h:form>
                     <div class="form-group">Name: <h:inputText styleClass="form-control" value="#{productController.name}"
@@ -55,8 +55,7 @@
                                                                           rows="5" />
                     </div>
                     <div class="form-group">
-                        <h:commandButton value="Submit"  action="#{productController.createProduct}" styleClass="btn btn-primary"/>
-                        <h:commandButton value="List all"  action="#{productController.listProducts}" styleClass="btn btn-primary"/>
+                        <h:commandButton value="Submit"  action="#{productController.createProduct}" styleClass="btn btn-default"/>
                     </div>
                 </h:form>
             </form>

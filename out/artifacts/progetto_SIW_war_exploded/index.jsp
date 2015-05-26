@@ -47,7 +47,7 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
 				<p>
                 <div class="container">
-                    <a href="#" class="button">Login</a><a href="#" class="button button-blue">Sign Up</a>
+                    <a href="signin.jsp" class="button">Login</a><a href="newCustomer.jsp" class="button button-blue">Sign Up</a>
                 </div>
 				</p>
 			</div>
