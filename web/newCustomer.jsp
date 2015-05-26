@@ -1,13 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
   User: Gianluca
-  Date: 25/05/15
-  Time: 12:38
-  To change this template use File | Settings | File Templates.
---%>
-<%--
-  Created by IntelliJ IDEA.
-  User: Gianluca
   Date: 24/05/15
   Time: 13:05
   To change this template use File | Settings | File Templates.
