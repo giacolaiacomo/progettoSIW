@@ -23,44 +23,18 @@
 </head>
 <body>
 <f:view>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="faces/index.jsp">Progetto SIW 2015 - MSC</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href='<c:url value="faces/newCustomer.jsp"/>'>New Customer</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    <jsp:include page="header.jsp" />
 
     <div class="container">
         <div class="row">
             <h2>Registration new customer</h2>
         </div>
         <div class="active row">
+            <h:form>
             <h3><h:outputLink value="newAddress.jsp">Insert a new Address</h:outputLink></h3>
+            </h:form>
         </div>
         <fieldset>
-
             <form class="form-signin ">
                 <h:form>
                     <div class="form-group">First Name: <h:inputText styleClass="form-control" value="#{customerController.firstname}"
