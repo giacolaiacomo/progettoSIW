@@ -4,8 +4,9 @@ import model.Address;
 import model.Customer;
 import model.CustomerFacade;
 
-import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @ManagedBean
 public class CustomerController {
 
+    @ManagedProperty(value="#{param.id}")
     public String firstname;
     public String lastname;
     public Date dob;
@@ -113,5 +115,13 @@ public class CustomerController {
 
     public void setCustomerFacade(CustomerFacade customerFacade) {
         this.customerFacade = customerFacade;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
