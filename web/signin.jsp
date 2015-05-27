@@ -78,7 +78,7 @@
                        id="password"/><h:message for="password" styleClass="alert-danger"/>
         </div>
         <div>
-        <h:commandButton value="Submit"  action="#{productController.createProduct}" styleClass="btn btn-large btn-primary"/>
+        <h:commandButton value="Submit"  action="#" styleClass="btn btn-large btn-primary"/>
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
       </div>
       </form>

@@ -29,11 +29,6 @@
         <div class="row">
             <h2>Registration new customer</h2>
         </div>
-        <div class="active row">
-            <h:form>
-            <h3><h:outputLink value="newAddress.jsp">Insert a new Address</h:outputLink></h3>
-            </h:form>
-        </div>
         <fieldset>
             <form class="form-signin ">
                 <h:form>
@@ -47,12 +42,12 @@
                                                                     requiredMessage="LastName is mandatory"
                                                                     id="lastname"/><h:message for="lastname" styleClass="alert-danger"/>
                     </div>
-                    <div class="form-group">Date of Birth: <h:inputText styleClass="form-control" value="#{customerController.dob}"
+                    <div class="form-group">Date of Birth: <h:inputText styleClass="form-control" value="#{customerController.birthDate}"
                                                                         required="true"
                                                                         requiredMessage="Date is mandatory"
-                                                                        id="dob"
+                                                                        id="birthDate"
                                                                         converter="javax.faces.DateTime"/>
-                        <h:message for="dob" styleClass="alert-danger"/>
+                        <h:message for="birthDate" styleClass="alert-danger"/>
                     </div>
                     <div class="form-group">Email: <h:inputText styleClass="form-control" value="#{customerController.email}"
                                                                 required="true"
@@ -63,6 +58,29 @@
                                                                      required="true"
                                                                      requiredMessage="Password is mandatory"
                                                                      id="password"/><h:message for="password" styleClass="alert-danger"/>
+                    </div>
+                    <div>
+                            <h3><h:outputText value="Insert address"/></h3>
+                    </div>
+                    <div class="form-group">Street: <h:inputText styleClass="form-control" value="#{customerController.street}"
+                                                                 required="true"
+                                                                 requiredMessage="Street is mandatory"
+                                                                 id="street"/><h:message for="street" styleClass="alert-danger"/>
+                    </div>
+                    <div class="form-group">City: <h:inputText styleClass="form-control" value="#{customerController.city}"
+                                                               required="true"
+                                                               requiredMessage="City is mandatory"
+                                                               id="city"/><h:message for="city" styleClass="alert-danger"/>
+                    </div>
+                    <div class="form-group">State: <h:inputText styleClass="form-control" value="#{customerController.state}"
+                                                                required="true"
+                                                                requiredMessage="State is mandatory"
+                                                                id="state"/><h:message for="state" styleClass="alert-danger"/>
+                    </div>
+                    <div class="form-group">ZIP code: <h:inputText styleClass="form-control" value="#{customerController.zipcode}"
+                                                                   required="true"
+                                                                   requiredMessage="ZIP code is mandatory"
+                                                                   id="zip"/><h:message for="zip" styleClass="alert-danger"/>
                     </div>
                     <div>
                         <h:commandButton value="Submit" action="#{customerController.createCustomer}"  styleClass="btn btn-primary"/>

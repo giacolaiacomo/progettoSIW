@@ -32,28 +32,28 @@
     <fieldset>
       <form class="form-signin text-center">
         <h:form>
-          <div class="form-group">Street: <h:inputText styleClass="form-control" value="#{addressController.street}"
+          <div class="form-group">Street: <h:inputText styleClass="form-control" value="#{customerController.street}"
                                                        required="true"
                                                        requiredMessage="Street is mandatory"
                                                        id="street"/><h:message for="street" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">City: <h:inputText styleClass="form-control" value="#{addressController.city}"
+          <div class="form-group">City: <h:inputText styleClass="form-control" value="#{customerController.city}"
                                                      required="true"
                                                      requiredMessage="City is mandatory"
                                                      id="city"/><h:message for="city" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">State: <h:inputText styleClass="form-control" value="#{addressController.state}"
+          <div class="form-group">State: <h:inputText styleClass="form-control" value="#{customerController.state}"
                                                       required="true"
                                                       requiredMessage="State is mandatory"
                                                       id="state"/><h:message for="state" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">ZIP code: <h:inputText styleClass="form-control" value="#{addressController.zipcode}"
+          <div class="form-group">ZIP code: <h:inputText styleClass="form-control" value="#{customerController.zipcode}"
                                                          required="true"
                                                          requiredMessage="ZIP code is mandatory"
                                                          id="zip"/><h:message for="zip" styleClass="alert-danger"/>
           </div>
           <div>
-            <h:commandButton value="Submit" action="#{addressController.createAddress}"  styleClass="btn btn-primary"/>
+            <h:commandButton value="Submit" action="#{customerController.createAddress}"  styleClass="btn btn-primary"/>
           </div>
         </h:form>
       </form>

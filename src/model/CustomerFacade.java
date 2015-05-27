@@ -1,5 +1,7 @@
 package model;
 
+import org.apache.openejb.config.GeneratedClientModules;
+
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import java.util.Date;
@@ -15,10 +17,11 @@ public class CustomerFacade {
 
     }
 
-    public Customer createCustomer(String firstname, String lastname, Date birthDate, Address address, String email, String password, Long phonenumber){
+    public Customer createCustomer(String firstname, String lastname, Date birthDate, String email, String password, Long phonenumber,
+                                   String street, String city, String state, Long zipcode){
+        Address address = new Address(street, city, state, zipcode);
+        em.persist(address);
         Customer customer = new Customer(firstname, lastname, birthDate, address, email, password, phonenumber);
-        if (address != null)
-            customer.setAddress(address);
         em.persist(customer);
         return customer;
     }
@@ -37,6 +40,11 @@ public class CustomerFacade {
 
     public List<Customer> getCustomerAll(){
         Query query = em.createQuery("SELECT c FROM Customer c");
+        return query.getResultList();
+    }
+
+    public List<Address> getAddressAll(){
+        Query query = em.createQuery("SELECT a FROM Address a");
         return query.getResultList();
     }
 
