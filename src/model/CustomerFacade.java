@@ -1,7 +1,5 @@
 package model;
 
-import org.apache.openejb.config.GeneratedClientModules;
-
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import java.util.Date;

@@ -17,7 +17,7 @@ public class CustomerController {
     @ManagedProperty(value="#{param.id}")
     public String firstname;
     public String lastname;
-    public Date dob;
+    public Date birthDate;
     public String street;
     public String city;
     public String state;
@@ -32,7 +32,7 @@ public class CustomerController {
     public CustomerFacade customerFacade;
 
     public String createCustomer(){
-        this.customer=customerFacade.createCustomer(firstname, lastname, dob, email, password, phonenumber, street, city, state, zipcode);
+        this.customer=customerFacade.createCustomer(firstname, lastname, birthDate, email, password, phonenumber, street, city, state, zipcode);
         return "customer";
     }
 
@@ -62,12 +62,12 @@ public class CustomerController {
         this.lastname = lastname;
     }
 
-    public Date getDob() {
-        return dob;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setDob(Date dob) {
-        this.dob = dob;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getEmail() {
