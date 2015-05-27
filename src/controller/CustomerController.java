@@ -7,6 +7,7 @@ import model.CustomerFacade;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
 @ManagedBean
 public class CustomerController {
 
+    @ManagedProperty(value="#{param.id}")
     public String firstname;
     public String lastname;
     public Date birthDate;
