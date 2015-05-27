@@ -14,10 +14,10 @@
 <body>
 <f:view>
   <h2>Details</h2>
-  <div>Street: ${addressController.address.street}</div>
-  <div>City: ${addressController.address.city}</div>
-  <div>State: ${addressController.address.state}</div>
-  <div>Zip Code: ${addressController.address.zipcode}</div>
+  <div>Street: ${customerController.address.street}</div>
+  <div>City: ${customerController.address.city}</div>
+  <div>State: ${customerController.address.state}</div>
+  <div>Zip Code: ${customerController.address.zipcode}</div>
 </f:view>
 </body>
 </html>
