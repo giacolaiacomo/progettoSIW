@@ -52,5 +52,11 @@ public class CustomerFacade {
         return (Customer) query.getResultList().get(0);
     }
 
+    public Address getAddressById(Long id){
+        Query query = em.createQuery("SELECT a FROM Address a WHERE a.id=:id");
+        query.setParameter("id", id);
+        return (Address) query.getResultList().get(0);
+    }
+
 }
 
