@@ -49,6 +49,11 @@
                                                                         converter="javax.faces.DateTime"/>
                         <h:message for="birthDate" styleClass="alert-danger"/>
                     </div>
+                    <div class="form-group">Phone Number: <h:inputText styleClass="form-control" value="#{customerController.phonenumber}"
+                                                                       required="true"
+                                                                       requiredMessage="LastName is mandatory"
+                                                                       id="phonenumber"/><h:message for="phonenumber" styleClass="alert-danger"/>
+                    </div>
                     <div class="form-group">Email: <h:inputText styleClass="form-control" value="#{customerController.email}"
                                                                 required="true"
                                                                 requiredMessage="Email is mandatory"
