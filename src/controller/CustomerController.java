@@ -1,9 +1,7 @@
 package controller;
 
-import model.Address;
 import model.Customer;
 import model.CustomerFacade;
-
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -20,7 +18,10 @@ public class CustomerController {
     public String firstname;
     public String lastname;
     public Date dob;
-    public Address address;
+    public String street;
+    public String city;
+    public String state;
+    public Long zipcode;
     public String email;
     public String password;
     public Long phonenumber;
@@ -31,7 +32,7 @@ public class CustomerController {
     public CustomerFacade customerFacade;
 
     public String createCustomer(){
-        this.customer=customerFacade.createCustomer(firstname, lastname, dob, address, email, password, phonenumber);
+        this.customer=customerFacade.createCustomer(firstname, lastname, dob, email, password, phonenumber, street, city, state, zipcode);
         return "customer";
     }
 
@@ -77,12 +78,36 @@ public class CustomerController {
         this.email = email;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getStreet() {
+        return street;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Long getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(Long zipcode) {
+        this.zipcode = zipcode;
     }
 
     public Long getPhonenumber() {

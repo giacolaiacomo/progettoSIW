@@ -42,7 +42,7 @@
                                                                     requiredMessage="LastName is mandatory"
                                                                     id="lastname"/><h:message for="lastname" styleClass="alert-danger"/>
                     </div>
-                    <div class="form-group">Date of Birth: <h:inputText styleClass="form-control" value="#{customerController.birthDate}"
+                    <div class="form-group">Date of Birth: <h:inputText styleClass="form-control" value="#{customerController.dob}"
                                                                         required="true"
                                                                         requiredMessage="Date is mandatory"
                                                                         id="birthDate"
