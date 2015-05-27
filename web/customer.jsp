@@ -16,7 +16,7 @@
 <f:view>
   <h1>${customerController.customer.firstname} ${customerController.customer.lastname}</h1>
   <h2>Details</h2>
-  <div>DoB: ${customerController.customer.dob}</div>
+  <div>DoB: ${customerController.customer.birthDate}</div>
   <div>Email: ${customerController.customer.email}</div>
   <div>Address: ${customerController.customer.address.toString()}</div>
   <div>Phone Number: ${customerController.customer.phonenumber}</div>
