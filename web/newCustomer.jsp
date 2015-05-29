@@ -12,7 +12,7 @@
     <link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
     <link href="/bootstrap/css/msc.css" rel="stylesheet">
 
-    <title>Register a new user</title>
+    <title>Register a new customer</title>
 </head>
 <body>
 <f:view>

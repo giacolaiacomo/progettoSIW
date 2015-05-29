@@ -24,7 +24,7 @@ public class CustomerFacade {
         return customer;
     }
 
-    public Customer retrieveCustomer(String email) {
+    public Customer getCustomerByEmail(String email) {
         Customer c;
         Query q = em.createQuery("SELECT c FROM Customer c WHERE c.email=:email");
         q.setParameter("email", email);
@@ -35,7 +35,6 @@ public class CustomerFacade {
             return c;
         }
     }
-
 
 
     public Orders createOrders(Customer c){

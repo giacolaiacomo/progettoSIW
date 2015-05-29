@@ -3,7 +3,6 @@ package controller;
 import model.Address;
 import model.Customer;
 import model.CustomerFacade;
-import org.apache.openejb.config.GeneratedClientModules;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -39,7 +38,7 @@ public class CustomerController {
     }
 
     public String login(){
-        Customer c = customerFacade.retrieveCustomer(email);
+        Customer c = customerFacade.getCustomerByEmail(email);
         if(c != null)
             if(this.password.equals(c.getPassword()))
                 return "access";

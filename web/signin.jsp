@@ -24,7 +24,7 @@
                 <h2>Login utente</h2>
             </div>
             <div class="form-group">
-                <label for="email" class="col-sm-1 control-label col-lg-offset-4">Email</label>
+                <%--@declare id="email"--%><label for="email" class="col-sm-1 control-label col-lg-offset-4">Email</label>
                 <div class="col-sm-2">
                     <h:inputText value="#{customerController.email}" required="true"
                                  requiredMessage="Email is mandatory!" id="email"
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="password" class="col-sm-1 control-label col-lg-offset-4">Password</label>
+                <%--@declare id="password"--%><label for="password" class="col-sm-1 control-label col-lg-offset-4">Password</label>
                 <div class="col-sm-2">
                     <h:inputSecret value="#{customerController.password}"
                                    required="true" requiredMessage="Password is mandatory!"

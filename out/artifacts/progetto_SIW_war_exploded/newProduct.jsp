@@ -55,7 +55,7 @@
                                                                           rows="5" />
                     </div>
                     <div class="form-group">
-                        <h:commandButton value="Submit"  action="#{productController.createProduct}" styleClass="btn btn-default"/>
+                        <h:commandButton value="Submit"  action="#{productController.createProduct}" styleClass="btn btn-primary"/>
                     </div>
                 </h:form>
             </form>
