@@ -24,6 +24,20 @@ public class CustomerFacade {
         return customer;
     }
 
+    public Customer retrieveCustomer(String email) {
+        Customer c;
+        Query q = em.createQuery("SELECT c FROM Customer c WHERE c.email=:email");
+        q.setParameter("email", email);
+        if (q.getResultList().isEmpty())
+            return null;
+        else {
+            c = (Customer) q.getSingleResult();
+            return c;
+        }
+    }
+
+
+
     public Orders createOrders(Customer c){
         Orders ord = new Orders(c);
         em.persist(ord);

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Gianluca
-  Date: 26/05/15
-  Time: 12:34
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -35,9 +28,6 @@
         </li>
         <li>
           <a href="newCustomer.jsp">New Customer</a>
-        </li>
-        <li>
-          <a href="newAddress.jsp">New Address</a>
         </li>
         <li>
           <a href="#">Contact</a>

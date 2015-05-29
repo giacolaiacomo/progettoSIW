@@ -1,7 +1,9 @@
 package model;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 @MappedSuperclass //da provare e vedere effetti
 public class User {
@@ -22,7 +24,7 @@ public class User {
 
     @Column(nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date registrationDate;
+    private Calendar registrationDate;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -42,7 +44,7 @@ public class User {
         this.address = address;
         this.email = email;
         this.password = password;
-        this.registrationDate = new Date();
+        this.registrationDate = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
     }
 
     public User() {
@@ -80,11 +82,11 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public Date getRegistrationDate() {
+    public Calendar getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(Date registrationDate) {
+    public void setRegistrationDate(Calendar registrationDate) {
         this.registrationDate = registrationDate;
     }
 

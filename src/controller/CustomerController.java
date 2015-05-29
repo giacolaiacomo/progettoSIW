@@ -5,12 +5,10 @@ import model.CustomerFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Gianluca on 24/05/15.
- */
 @ManagedBean
 public class CustomerController {
 
@@ -34,6 +32,19 @@ public class CustomerController {
     public String createCustomer(){
         this.customer=customerFacade.createCustomer(firstname, lastname, birthDate, email, password, phonenumber, street, city, state, zipcode);
         return "customer";
+    }
+
+    public String login(){
+        Customer c = customerFacade.retrieveCustomer(email);
+        if(c != null)
+            if(this.password.equals(c.getPassword()))
+                return "access";
+        return "errorLogin";
+    }
+
+    public String logoutCustomer() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "index";
     }
 
     public String listCustomers(){
