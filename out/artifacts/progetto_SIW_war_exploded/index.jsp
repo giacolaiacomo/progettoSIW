@@ -83,8 +83,10 @@
 			</div>
 			<div class="col-sm-4">
 				<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-				<h2>Marketing Box #2</h2>
-				<p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+				<h2>Customers list</h2>
+				<h:form>
+					<h:commandLink action="#{customerController.listCustomers}" value="Lista Clienti" styleClass="btn btn-default btn-sm"/>
+				</h:form>
 			</div>
 			<div class="col-sm-4">
 				<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">

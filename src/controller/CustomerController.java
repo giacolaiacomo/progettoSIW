@@ -1,7 +1,10 @@
 package controller;
 
+import model.Address;
 import model.Customer;
 import model.CustomerFacade;
+import org.apache.openejb.config.GeneratedClientModules;
+
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -25,6 +28,7 @@ public class CustomerController {
     public Long phonenumber;
     public Customer customer;
     public List<Customer> customers;
+    public Address address;
 
     @EJB(beanName = "cfacade")
     public CustomerFacade customerFacade;
@@ -50,6 +54,11 @@ public class CustomerController {
     public String listCustomers(){
         this.customers=customerFacade.getCustomerAll();
         return "customers";
+    }
+
+    public String getAddress(){
+        this.address=customerFacade.getAddressById(customer.getAddress().getId());
+        return "address";
     }
 
     public String findCustomer(Long id){
@@ -160,4 +169,5 @@ public class CustomerController {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
