@@ -27,9 +27,14 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <c:if test="${customerController.customer != null}">
-                <li>
-                    <a href='<c:url value="customer.jsp"/>'>Customer's Page</a>
-                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${customerController.customer.firstname} ${customerController.customer.lastname}</a>
+                    <ul class="dropdown-menu">
+                        <li><a href='<c:url value="customer.jsp"/>'>Profile</a>
+                        </li>
+                        <li><h:commandLink
+                                action="#{customerController.logoutCustomer}"
+                                value="Logout" /></li>
+                    </ul></li>
             </c:if>
             <c:if test="${customerController.customer == null}">
                 <li>
