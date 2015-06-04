@@ -21,6 +21,10 @@ public class Customer extends User {
         this.phonenumber = phonenumber;
     }
 
+    public boolean checkPassword(String password) {
+        return this.password.equals(password);
+    }
+
     public Long getPhonenumber() {
         return phonenumber;
     }

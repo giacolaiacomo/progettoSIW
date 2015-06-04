@@ -25,11 +25,23 @@
   <jsp:include page="header.jsp" />
   <div align="center">
     <h1>${customerController.customer.firstname} ${customerController.customer.lastname}</h1>
-    <h2>Details</h2>
+    <h2>Customer's Info</h2>
     <div>Date of birth: ${customerController.customer.birthDate}</div>
     <div>Email: ${customerController.customer.email}</div>
-    <div>Address: ${customerController.customer.address.toString()}</div>
     <div>Phone Number: ${customerController.customer.phonenumber}</div>
+    <h3>Address:</h3>
+    <div>Street: ${customerController.customer.address.street}</div>
+    <div>City: ${customerController.customer.address.city}</div>
+    <div>State: ${customerController.customer.address.state}</div>
+    <div>ZipCode: ${customerController.customer.address.zipcode}</div>
+  </div>
+  <div align="right">
+    Registration Date:
+    <h:outputText
+            value="#{customerController.customer.registrationDate.time}">
+      <f:convertDateTime dateStyle="medium" locale="it_IT" type="both"
+                         timeZone="Europe/Rome" />
+    </h:outputText>
   </div>
 </f:view>
 </body>

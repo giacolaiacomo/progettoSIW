@@ -28,7 +28,7 @@
             <td>${customer.phonenumber}</td>
             <td>${customer.email}</td>
             <td>
-              <h:outputText value="#{customer.registrationDate}">
+              <h:outputText value="#{customer.registrationDate.time}">
               <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
               </h:outputText>
             </td>

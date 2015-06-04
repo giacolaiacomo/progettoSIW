@@ -5,6 +5,7 @@ import model.Customer;
 import model.CustomerFacade;
 
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
@@ -38,11 +39,24 @@ public class CustomerController {
     }
 
     public String login(){
-        Customer c = customerFacade.getCustomerByEmail(email);
-        if(c != null)
-            if(this.password.equals(c.getPassword()))
-                return "access";
-        return "errorLogin";
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("administratorController");
+        try{
+            Customer customer = customerFacade.getCustomerByEmail(email);
+            if (customer.checkPassword(this.password)) {
+                setCustomer(customer);
+                return "customer";
+            }
+            else{
+                // Password Errata
+                FacesContext.getCurrentInstance().addMessage("loginCustomer:accedi", new FacesMessage("Login Errato! Email o password non inseriti correttamente!"));
+                return "signin";
+            }
+        }
+        catch (Exception e) {
+            // Cliente non trovato
+            FacesContext.getCurrentInstance().addMessage("loginCustomer:accedi", new FacesMessage("Login Errato! Email o password non inseriti correttamente!"));
+            return "signin";
+        }
     }
 
     public String logoutCustomer() {
