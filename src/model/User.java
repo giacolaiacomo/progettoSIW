@@ -23,7 +23,7 @@ public class User {
     private Date birthDate;
 
     @Column(nullable = false)
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar registrationDate;
 
     @Column(nullable = false, unique = true)

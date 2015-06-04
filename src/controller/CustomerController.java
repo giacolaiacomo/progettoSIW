@@ -8,14 +8,15 @@ import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.util.Date;
 import java.util.List;
 
 @ManagedBean
+@SessionScoped
 public class CustomerController {
 
-    @ManagedProperty(value="#{param.id}")
     public String firstname;
     public String lastname;
     public Date birthDate;
@@ -28,7 +29,6 @@ public class CustomerController {
     public Long phonenumber;
     public Customer customer;
     public List<Customer> customers;
-    public Address address;
 
     @EJB(beanName = "cfacade")
     public CustomerFacade customerFacade;
@@ -67,11 +67,6 @@ public class CustomerController {
     public String listCustomers(){
         this.customers=customerFacade.getCustomerAll();
         return "customers";
-    }
-
-    public String getAddress(){
-        this.address=customerFacade.getAddressById(customer.getAddress().getId());
-        return "address";
     }
 
     public String findCustomer(Long id){
