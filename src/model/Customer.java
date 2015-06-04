@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,10 +20,15 @@ public class Customer extends User {
     public Customer(String firstname, String lastname, Date birthDate, Address address, String email, String password, Long phonenumber) {
         super(firstname, lastname, birthDate, address, email, password);
         this.phonenumber = phonenumber;
+        this.orders = new ArrayList<Orders>();
     }
 
     public boolean checkPassword(String password) {
         return this.password.equals(password);
+    }
+
+    public void addOrder(Orders order) {
+        this.orders.add(order);
     }
 
     public Long getPhonenumber() {

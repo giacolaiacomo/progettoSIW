@@ -30,7 +30,7 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    /*private */ String password;  //da sistemare
+    protected String password;  //da sistemare
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "address")

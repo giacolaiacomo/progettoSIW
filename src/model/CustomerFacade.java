@@ -24,6 +24,20 @@ public class CustomerFacade {
         return customer;
     }
 
+    private void deleteCustomer(Customer customer) {
+        em.remove(customer);
+    }
+
+    public void deleteCustomer(Long id) {
+        Customer customer = em.find(Customer.class, id);
+        deleteCustomer(customer);
+    }
+
+    public void deleteCustomerByEmail(String email) {
+        Customer customer = this.getCustomerByEmail(email);
+        deleteCustomer(customer);
+    }
+
     public Customer getCustomerByEmail(String email) {
         Customer c;
         Query q = em.createQuery("SELECT c FROM Customer c WHERE c.email=:email");
@@ -36,26 +50,8 @@ public class CustomerFacade {
         }
     }
 
-
-    public Orders createOrders(Customer c){
-        Orders ord = new Orders(c);
-        em.persist(ord);
-        return ord;
-    }
-
-    public List<Orders> getOrdersCustomer(Long customer_id){
-        Query query = em.createQuery("SELECT o FROM Orders o  WHERE o.customer_id.id=:id");
-        query.setParameter("id", customer_id);
-        return query.getResultList();
-    }
-
     public List<Customer> getCustomerAll(){
         Query query = em.createQuery("SELECT c FROM Customer c");
-        return query.getResultList();
-    }
-
-    public List<Address> getAddressAll(){
-        Query query = em.createQuery("SELECT a FROM Address a");
         return query.getResultList();
     }
 
@@ -64,12 +60,5 @@ public class CustomerFacade {
         query.setParameter("id", customer_id);
         return (Customer) query.getResultList().get(0);
     }
-
-    public Address getAddressById(Long id){
-        Query query = em.createQuery("SELECT a FROM Address a WHERE a.id=:id");
-        query.setParameter("id", id);
-        return (Address) query.getResultList().get(0);
-    }
-
 }
 

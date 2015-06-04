@@ -1,8 +1,7 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static javax.persistence.TemporalType.DATE;
 
@@ -17,7 +16,7 @@ public class Orders {
     private Long id;
 
     @Temporal(DATE)
-    private Date creationtime;
+    private Calendar creationtime;
 
     @ManyToOne
     private Customer customer_id;
@@ -26,8 +25,17 @@ public class Orders {
     private List<OrderLine> orderLines;
 
     public Orders(Customer customer_id) {
-        this.creationtime = new Date();
+        this.creationtime = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
         this.customer_id = customer_id;
+        this.orderLines = new ArrayList<OrderLine>();
+    }
+
+    public void addOrderLine(OrderLine orderLine) {
+        this.orderLines.add(orderLine);
+    }
+
+    public void removeOrderLine(OrderLine orderLine) {
+        this.orderLines.remove(orderLine);
     }
 
     public Long getId() {
@@ -38,11 +46,11 @@ public class Orders {
         this.id = id;
     }
 
-    public Date getCreationtime() {
+    public Calendar getCreationtime() {
         return creationtime;
     }
 
-    public void setCreationtime(Date creationtime) {
+    public void setCreationtime(Calendar creationtime) {
         this.creationtime = creationtime;
     }
 
