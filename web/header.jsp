@@ -29,16 +29,27 @@
             <c:if test="${customerController.customer != null}">
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${customerController.customer.firstname} ${customerController.customer.lastname}</a>
                     <ul class="dropdown-menu">
-                        <li><a href='<c:url value="customer.jsp"/>'>Profile</a>
-                        </li>
+                        <li><a href='<c:url value="customer.jsp"/>'>Profile</a></li>
                         <li><h:commandLink
                                 action="#{customerController.logoutCustomer}"
                                 value="Logout" /></li>
-                    </ul></li>
+                    </ul>
+                </li>
             </c:if>
-            <c:if test="${customerController.customer == null}">
+            <c:if test="${administratorController.administrator != null}">
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">${administratorController.administrator.email}</a>
+                    <ul class="dropdown-menu">
+                        <li><a href='<c:url value="admin.jsp"/>'>Admin page</a></li>
+                        <li><a href='<c:url value="newProduct.jsp"/>'>Insert new Product</a></li>
+                        <li><h:commandLink
+                                action="#{administratorController.logout}"
+                                value="Logout" /></li>
+                    </ul>
+                </li>
+            </c:if>
+            <c:if test="${customerController.customer == null && administratorController.administrator == null}">
                 <li>
-                    <a href='<c:url value="signin.jsp"/>'>Login</a>
+                    <a href='<c:url value="loginCustomer.jsp"/>'>Login</a>
                 </li>
                 <li>
                     <a href='<c:url value="newCustomer.jsp"/>'>Sign up</a>

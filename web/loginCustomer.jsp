@@ -21,7 +21,7 @@
         <h:form id="loginCustomer" styleClass="form-horizontal">
             <h:message for="accedi" styleClass="error alert alert-danger" />
             <div>
-                <h2>Login utente</h2>
+                <h2>Login Customer</h2>
             </div>
             <div class="form-group">
                 <%--@declare id="email"--%><label for="email" class="col-sm-1 control-label col-lg-offset-4">Email</label>
@@ -45,6 +45,9 @@
                 <div class="container">
                     <h:commandButton styleClass="button" id="accedi" value="Log in" action="#{customerController.login}"/><a href="newCustomer.jsp" class="button button-blue">Sign Up</a>
                 </div>
+            </div>
+            <div>
+                <a href="loginAdmin.jsp">Click here for loginAdmin</a>
             </div>
         </h:form>
     </div>

@@ -1,13 +1,10 @@
 package controller;
 
-import model.Address;
 import model.Customer;
 import model.CustomerFacade;
-
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.util.Date;

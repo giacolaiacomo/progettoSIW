@@ -26,7 +26,7 @@
     <div align="center">
         <h2>Email o password errate!</h2>
         <div class="container">
-            <a href="signin.jsp" class="button">Try Again</a><a href="newCustomer.jsp" class="button button-blue">Sign Up</a>
+            <a href="loginCustomer.jsp" class="button">Try Again</a><a href="newCustomer.jsp" class="button button-blue">Sign Up</a>
         </div>
     </div>
 </f:view>

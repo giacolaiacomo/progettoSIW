@@ -42,13 +42,11 @@
 
 		<div class="row">
 			<div class="col-sm-8">
-				<h2><a href="faces/newProduct.jsp">New Product</a></h2>
-				<h3><a href="faces/newCustomer.jsp">New Customer</a></h3>
 				<p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
 				<p>
                 <div class="container">
-                    <a href="signin.jsp" class="button">Login</a><a href="newCustomer.jsp" class="button button-blue">Sign Up</a>
+                    <a href="loginCustomer.jsp" class="button">Login</a><a href="newCustomer.jsp" class="button button-blue">Sign Up</a>
                 </div>
 				</p>
 			</div>
