@@ -6,6 +6,7 @@ import model.ProductFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
 
 @ManagedBean
 public class ProductController {
@@ -34,6 +35,11 @@ public class ProductController {
 		return "products"; 
 	}
 
+	public String findProduct() {
+		this.product = productFacade.getProduct(id);
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProduct", this.product);
+		return "product";
+	}
 	
 	public String findProduct(Long id) {
 		this.product = productFacade.getProduct(id);
