@@ -13,7 +13,7 @@ public class Customer extends User {
     @Column(nullable = false)
     private Long phonenumber;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy="customer_id", fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
     private List<Orders> orders;
 
 

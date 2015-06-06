@@ -18,14 +18,14 @@ public class OrderLine {
     @ManyToOne
     private Orders orders_id;
 
-    @ManyToOne
-    private Product product_id;
+    @OneToOne
+    private Product product;
 
-    public OrderLine(Long unitprice, Long quantity, Orders orders_id, Product product_id) {
+    public OrderLine(Long unitprice, Long quantity, Orders orders_id, Product product) {
         this.unitprice = unitprice;
         this.quantity = quantity;
         this.orders_id = orders_id;
-        this.product_id = product_id;
+        this.product = product;
     }
 
     public Long getId() {
@@ -60,11 +60,11 @@ public class OrderLine {
         this.orders_id = orders_id;
     }
 
-    public Product getProduct_id() {
-        return product_id;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setProduct_id(Product product_id) {
-        this.product_id = product_id;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

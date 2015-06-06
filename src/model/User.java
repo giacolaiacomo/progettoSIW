@@ -32,8 +32,7 @@ public class User {
     @Column(nullable = false)
     protected String password;  //da sistemare
 
-    @ManyToOne(cascade = {CascadeType.PERSIST})
-    @JoinColumn(name = "address")
+    @OneToOne(cascade = {CascadeType.PERSIST})
     @Column(nullable = true)
     private Address address;
 

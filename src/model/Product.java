@@ -24,8 +24,6 @@ public class Product {
 
     private int quantity;
 
-    @OneToMany(mappedBy = "product_id")
-    private List<OrderLine> orderLines;
 
     @ManyToMany(mappedBy = "products")
     private List<Provider> providers;
@@ -90,13 +88,6 @@ public class Product {
         this.providers = providers;
     }
 
-    public List<OrderLine> getOrderLines() {
-        return orderLines;
-    }
-
-    public void setOrderLines(List<OrderLine> orderLines) {
-        this.orderLines = orderLines;
-    }
 
     @Override
     public boolean equals(Object o) {

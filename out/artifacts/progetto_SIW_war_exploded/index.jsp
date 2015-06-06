@@ -18,6 +18,7 @@
 	<!-- Custom CSS -->
 	<link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
 	<link href="/bootstrap/css/msc.css" rel="stylesheet">
+	<link href="css/full-width-pics.css" rel="stylesheet">
 
 	<title>SIWProject</title>
 
@@ -26,89 +27,35 @@
 <f:view>
 	<jsp:include page="header.jsp" />
 
-	<header class="business-header">
+	<aside class="image-bg-fixed-height"></aside>
+
+	<!-- Content Section -->
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
+					<h1 class="section-heading">Section Heading</h1>
+					<p class="lead section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					<p class="section-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
 				</div>
 			</div>
 		</div>
-	</header>
+	</section>
 
-	<!-- Page Content -->
-	<div class="container">
 
-		<hr>
 
-		<div class="row">
-			<div class="col-sm-8">
-				<p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
-				<p>
-                <div class="container">
-                    <a href="loginCustomer.jsp" class="button">Login</a><a href="newCustomer.jsp" class="button button-blue">Sign Up</a>
-                </div>
-				</p>
-			</div>
-			<div class="col-sm-4">
-				<h2>Contact Us</h2>
-				<address>
-					<strong>MSC</strong>
-					<br>Roma 3 University
-					<br>Via della Vasca Navale 79/81, Rome
-					<br>
-				</address>
-				<address>
-					<abbr title="Maniscalchi">M: </abbr>Alessandro Maniscalchi
-					<br>
-					<abbr title="Sola">S: </abbr>Fabio Sola
-					<br>
-					<abbr title="Colaiacomo">C: </abbr>Gianluca Colaiacomo
-				</address>
-			</div>
-		</div>
-		<!-- /.row -->
-
-		<hr>
-
-		<div class="row">
-			<div class="col-sm-4">
-				<img class="img-circle img-responsive img-center" src="bootstrap/css/ListaProdotti.png" alt="">
-				<h2>Visualizza i nostri prodotti</h2>
-				<p>bla bla bla bla bla</p>
-				<h:form>
-					<h:commandLink action="#{productController.listProducts}" value="Lista prodotti" styleClass="btn btn-default btn-sm"/>
-				</h:form>
-			</div>
-			<div class="col-sm-4">
-				<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-				<h2>Customers list</h2>
-				<h:form>
-					<h:commandLink action="#{customerController.listCustomers}" value="Lista Clienti" styleClass="btn btn-default btn-sm"/>
-				</h:form>
-			</div>
-			<div class="col-sm-4">
-				<img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-				<h2>Marketing Box #3</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-			</div>
-		</div>
-		<!-- /.row -->
-
-		<hr>
-
-		<!-- Footer -->
-		<footer>
+	<!-- Footer -->
+	<footer>
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<p>Copyright &copy; MSC Company 2015</p>
+					<p>Copyright &copy; MSC 2015</p>
 				</div>
 			</div>
 			<!-- /.row -->
-		</footer>
-
-	</div>
-	<!-- /.container -->
+		</div>
+		<!-- /.container -->
+	</footer>
 
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
@@ -118,5 +65,6 @@
 
 </f:view>
 </body>
+
 </html>
 
