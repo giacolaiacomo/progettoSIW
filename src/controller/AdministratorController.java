@@ -2,6 +2,7 @@ package controller;
 
 import model.Administrator;
 import model.AdministratorFacade;
+import model.Product;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -58,6 +59,16 @@ public class AdministratorController {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "index";
     }
+
+    public String newProduct(){
+        return "newProduct";
+    }
+
+    public String newCustomer(){
+        return "newCustomer";
+    }
+
+
 
     public Administrator getAdministrator() {
         return administrator;
