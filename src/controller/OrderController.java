@@ -5,8 +5,7 @@ import model.*;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.context.FacesContext;
-import javax.persistence.criteria.Order;
+
 
 @ManagedBean
 public class OrderController {
@@ -26,6 +25,8 @@ public class OrderController {
     private CustomerFacade customerFacade;
     @EJB(beanName = "ordlfacade")
     private OrderLineFacade orderLineFacade;
+    @EJB(beanName = "pfacade")
+    private ProductFacade productFacade;
 
 
 
@@ -60,6 +61,126 @@ public class OrderController {
         return "order";
     }
 
+    public String closeOrder(){
+        if(this.order.getOrderLines().size()!=0){
+            this.order.setClosed();
+            this.ordersFacade.updateOrder(this.order);
+            this.customerFacade.updateCustomer(this.customer);
+            return "order";
+        }
+        else
+            return "Impossible to close an order without order lines";
 
+    }
 
+    public String processedOrder(){
+        if(this.order.isClosed()) {
+            if (this.checkMaga()) {
+                this.reduceQuantity();
+                this.order.setProcessed();
+                this.ordersFacade.updateOrder(this.order);
+                this.customerFacade.updateCustomer(this.customer);
+                return "orderProcessed";
+            }
+            else
+                return "Error, check quantity!";
+        }
+        return "Error, order must be closed";
+
+    }
+
+    public boolean checkMaga(){
+        for(OrderLine ordl: this.order.getOrderLines()){
+            if(ordl.getQuantity()>ordl.getProduct().getQuantity())
+                return false;
+        }
+        return true;
+    }
+
+    public void reduceQuantity(){
+        for(OrderLine ordl: this.order.getOrderLines()){
+            ordl.getProduct().setQuantity(ordl.getProduct().getQuantity()- ordl.getQuantity());
+            this.productFacade.updateProduct(ordl.getProduct());
+        }
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Orders getOrder() {
+        return order;
+    }
+
+    public void setOrder(Orders order) {
+        this.order = order;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public Long getOrdlId() {
+        return ordlId;
+    }
+
+    public void setOrdlId(Long ordlId) {
+        this.ordlId = ordlId;
+    }
+
+    public OrdersFacade getOrdersFacade() {
+        return ordersFacade;
+    }
+
+    public void setOrdersFacade(OrdersFacade ordersFacade) {
+        this.ordersFacade = ordersFacade;
+    }
+
+    public CustomerFacade getCustomerFacade() {
+        return customerFacade;
+    }
+
+    public void setCustomerFacade(CustomerFacade customerFacade) {
+        this.customerFacade = customerFacade;
+    }
+
+    public OrderLineFacade getOrderLineFacade() {
+        return orderLineFacade;
+    }
+
+    public void setOrderLineFacade(OrderLineFacade orderLineFacade) {
+        this.orderLineFacade = orderLineFacade;
+    }
+
+    public ProductFacade getProductFacade() {
+        return productFacade;
+    }
+
+    public void setProductFacade(ProductFacade productFacade) {
+        this.productFacade = productFacade;
+    }
 }

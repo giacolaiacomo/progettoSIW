@@ -8,6 +8,10 @@ import static javax.persistence.TemporalType.DATE;
 @Entity
 
 public class Orders {
+
+    boolean closed =false;
+    boolean processed =false;
+
     public Orders() {
     }
 
@@ -38,7 +42,28 @@ public class Orders {
         return null;
     }
 
+    public List<OrderLine> getOrderLines() {
+        return orderLines;
+    }
 
+    public void setOrderLines(List<OrderLine> orderLines) {
+        this.orderLines = orderLines;
+    }
+
+    public boolean isClosed(){
+        if(this.closed ==true)
+            return true;
+        else
+            return false;
+    }
+
+    public void setClosed(){
+        this.closed =true;
+    }
+
+    public void setProcessed(){
+        this.processed =true;
+    }
 
     public void addOrderLine(OrderLine orderLine) {
         this.orderLines.add(orderLine);

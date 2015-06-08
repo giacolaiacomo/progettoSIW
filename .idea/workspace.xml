@@ -7,14 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e87298-d782-4cbd-9320-8395fd08b21b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/WEB-INF/classes/model/Customer.class" afterPath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/WEB-INF/classes/model/Customer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/WEB-INF/classes/model/OrderLine.class" afterPath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/WEB-INF/classes/model/OrderLine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/WEB-INF/classes/model/Product.class" afterPath="$PROJECT_DIR$/out/artifacts/progetto_SIW_war_exploded/WEB-INF/classes/model/Product.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/CustomerFacade.java" afterPath="$PROJECT_DIR$/src/model/CustomerFacade.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/OrderController.java" afterPath="$PROJECT_DIR$/src/controller/OrderController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/OrderLine.java" afterPath="$PROJECT_DIR$/src/model/OrderLine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/OrderLineFacade.java" afterPath="$PROJECT_DIR$/src/model/OrderLineFacade.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Orders.java" afterPath="$PROJECT_DIR$/src/model/Orders.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/OrdersFacade.java" afterPath="$PROJECT_DIR$/src/model/OrdersFacade.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="progetto-SIW.iws" />
@@ -38,31 +33,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OrderController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/OrderController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3178#3179#0" expanded="true" />
+                <element signature="e#3203#3204#0" expanded="true" />
+                <element signature="e#3237#3238#0" expanded="true" />
+                <element signature="e#3265#3266#0" expanded="true" />
+                <element signature="e#3302#3303#0" expanded="true" />
+                <element signature="e#3333#3334#0" expanded="true" />
+                <element signature="e#3383#3384#0" expanded="true" />
+                <element signature="e#3423#3424#0" expanded="true" />
+                <element signature="e#3455#3456#0" expanded="true" />
+                <element signature="e#3483#3484#0" expanded="true" />
+                <element signature="e#3525#3526#0" expanded="true" />
+                <element signature="e#3559#3560#0" expanded="true" />
+                <element signature="e#3594#3595#0" expanded="true" />
+                <element signature="e#3624#3625#0" expanded="true" />
+                <element signature="e#3671#3672#0" expanded="true" />
+                <element signature="e#3709#3710#0" expanded="true" />
+                <element signature="e#3741#3742#0" expanded="true" />
+                <element signature="e#3772#3773#0" expanded="true" />
+                <element signature="e#3817#3818#0" expanded="true" />
+                <element signature="e#3857#3858#0" expanded="true" />
+                <element signature="e#3888#3889#0" expanded="true" />
+                <element signature="e#3917#3918#0" expanded="true" />
+                <element signature="e#3959#3960#0" expanded="true" />
+                <element signature="e#3995#3996#0" expanded="true" />
+                <element signature="e#4040#4041#0" expanded="true" />
+                <element signature="e#4075#4076#0" expanded="true" />
+                <element signature="e#4137#4138#0" expanded="true" />
+                <element signature="e#4185#4186#0" expanded="true" />
+                <element signature="e#4234#4235#0" expanded="true" />
+                <element signature="e#4271#4272#0" expanded="true" />
+                <element signature="e#4339#4340#0" expanded="true" />
+                <element signature="e#4391#4392#0" expanded="true" />
+                <element signature="e#4442#4443#0" expanded="true" />
+                <element signature="e#4480#4481#0" expanded="true" />
+                <element signature="e#4551#4552#0" expanded="true" />
+                <element signature="e#4605#4606#0" expanded="true" />
+                <element signature="e#4652#4653#0" expanded="true" />
+                <element signature="e#4688#4689#0" expanded="true" />
+                <element signature="e#4753#4754#0" expanded="true" />
+                <element signature="e#4803#4804#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderLine.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrderLine.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/OrderLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
-              <folding>
-                <element signature="e#804#805#0" expanded="true" />
-                <element signature="e#846#847#0" expanded="true" />
-                <element signature="e#1030#1031#0" expanded="true" />
-                <element signature="e#1062#1063#0" expanded="true" />
-                <element signature="e#1112#1113#0" expanded="true" />
-                <element signature="e#1154#1155#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.2">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,10 +99,13 @@
         <entry file="file://$PROJECT_DIR$/src/model/CustomerFacade.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#837#838#0" expanded="true" />
                 <element signature="e#872#873#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#958#959#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +115,10 @@
         <entry file="file://$PROJECT_DIR$/src/controller/CustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-              <folding />
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,8 +127,17 @@
         <entry file="file://$PROJECT_DIR$/src/model/Orders.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
+              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+              <folding>
+                <element signature="e#1012#1013#0" expanded="true" />
+                <element signature="e#1045#1046#0" expanded="true" />
+                <element signature="e#1106#1107#0" expanded="true" />
+                <element signature="e#1150#1151#0" expanded="true" />
+                <element signature="e#1313#1314#0" expanded="true" />
+                <element signature="e#1346#1347#0" expanded="true" />
+                <element signature="e#1379#1380#0" expanded="true" />
+                <element signature="e#1415#1416#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -195,7 +237,6 @@
         <option value="$PROJECT_DIR$/web/signin.jsp" />
         <option value="$PROJECT_DIR$/web/customer.jsp" />
         <option value="$PROJECT_DIR$/web/customers.jsp" />
-        <option value="$PROJECT_DIR$/src/model/CustomerFacade.java" />
         <option value="$PROJECT_DIR$/src/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/model/Administrator.java" />
         <option value="$PROJECT_DIR$/src/model/AdministratorFacade.java" />
@@ -215,10 +256,11 @@
         <option value="$PROJECT_DIR$/src/model/User.java" />
         <option value="$PROJECT_DIR$/src/model/Product.java" />
         <option value="$PROJECT_DIR$/src/model/OrdersFacade.java" />
-        <option value="$PROJECT_DIR$/src/model/Orders.java" />
         <option value="$PROJECT_DIR$/src/model/OrderLine.java" />
         <option value="$PROJECT_DIR$/src/model/OrderLineFacade.java" />
+        <option value="$PROJECT_DIR$/src/model/CustomerFacade.java" />
         <option value="$PROJECT_DIR$/src/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/model/Orders.java" />
       </list>
     </option>
   </component>
@@ -292,8 +334,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -426,7 +467,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -898,7 +940,9 @@
       <workItem from="1433594387519" duration="1464000" />
       <workItem from="1433758116571" duration="102000" />
       <workItem from="1433758780932" duration="2577000" />
-      <workItem from="1433771448904" duration="7000" />
+      <workItem from="1433771448904" duration="36000" />
+      <workItem from="1433776137221" duration="1575000" />
+      <workItem from="1433785127254" duration="123000" />
     </task>
     <task id="LOCAL-00001" summary="secondo commit">
       <created>1432202664190</created>
@@ -1164,11 +1208,17 @@
       <option name="project" value="LOCAL" />
       <updated>1433598744216</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="order controller">
+      <created>1433771469693</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1433771469693</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83179000" />
+    <option name="totallyTimeSpent" value="84906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1220,7 +1270,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="aggiunto main e setProvider" />
     <MESSAGE value="modificato persistence" />
     <MESSAGE value="varie modifiche jsp" />
     <MESSAGE value="aggiunti user e administrator" />
@@ -1245,7 +1294,8 @@
     <MESSAGE value="inserito Admin" />
     <MESSAGE value="cambio index" />
     <MESSAGE value="modifiche generali" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifiche generali" />
+    <MESSAGE value="order controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="order controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1576,33 +1626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/CustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/CustomerFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Orders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/OrdersFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1622,17 +1645,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/OrderLine.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/CustomerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding>
-            <element signature="e#804#805#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1154#1155#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Orders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding>
+            <element signature="e#1012#1013#0" expanded="true" />
+            <element signature="e#1045#1046#0" expanded="true" />
+            <element signature="e#1106#1107#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1313#1314#0" expanded="true" />
+            <element signature="e#1346#1347#0" expanded="true" />
+            <element signature="e#1379#1380#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1640,10 +1675,72 @@
     <entry file="file://$PROJECT_DIR$/src/controller/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3178#3179#0" expanded="true" />
+            <element signature="e#3203#3204#0" expanded="true" />
+            <element signature="e#3237#3238#0" expanded="true" />
+            <element signature="e#3265#3266#0" expanded="true" />
+            <element signature="e#3302#3303#0" expanded="true" />
+            <element signature="e#3333#3334#0" expanded="true" />
+            <element signature="e#3383#3384#0" expanded="true" />
+            <element signature="e#3423#3424#0" expanded="true" />
+            <element signature="e#3455#3456#0" expanded="true" />
+            <element signature="e#3483#3484#0" expanded="true" />
+            <element signature="e#3525#3526#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#3594#3595#0" expanded="true" />
+            <element signature="e#3624#3625#0" expanded="true" />
+            <element signature="e#3671#3672#0" expanded="true" />
+            <element signature="e#3709#3710#0" expanded="true" />
+            <element signature="e#3741#3742#0" expanded="true" />
+            <element signature="e#3772#3773#0" expanded="true" />
+            <element signature="e#3817#3818#0" expanded="true" />
+            <element signature="e#3857#3858#0" expanded="true" />
+            <element signature="e#3888#3889#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
+            <element signature="e#3959#3960#0" expanded="true" />
+            <element signature="e#3995#3996#0" expanded="true" />
+            <element signature="e#4040#4041#0" expanded="true" />
+            <element signature="e#4075#4076#0" expanded="true" />
+            <element signature="e#4137#4138#0" expanded="true" />
+            <element signature="e#4185#4186#0" expanded="true" />
+            <element signature="e#4234#4235#0" expanded="true" />
+            <element signature="e#4271#4272#0" expanded="true" />
+            <element signature="e#4339#4340#0" expanded="true" />
+            <element signature="e#4391#4392#0" expanded="true" />
+            <element signature="e#4442#4443#0" expanded="true" />
+            <element signature="e#4480#4481#0" expanded="true" />
+            <element signature="e#4551#4552#0" expanded="true" />
+            <element signature="e#4605#4606#0" expanded="true" />
+            <element signature="e#4652#4653#0" expanded="true" />
+            <element signature="e#4688#4689#0" expanded="true" />
+            <element signature="e#4753#4754#0" expanded="true" />
+            <element signature="e#4803#4804#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/CustomerFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/OrderLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

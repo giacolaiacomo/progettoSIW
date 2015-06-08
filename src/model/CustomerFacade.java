@@ -28,6 +28,10 @@ public class CustomerFacade {
         em.remove(customer);
     }
 
+    public void updateCustomer(Customer customer){
+        em.merge(customer);
+    }
+
     public void deleteCustomer(Long id) {
         Customer customer = em.find(Customer.class, id);
         deleteCustomer(customer);
