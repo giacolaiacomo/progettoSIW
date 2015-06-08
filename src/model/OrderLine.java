@@ -11,9 +11,9 @@ public class OrderLine {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Long unitprice;
+    private Double unitprice;
 
-    private Long quantity;
+    private int quantity;
 
     @ManyToOne
     private Orders orders_id;
@@ -21,7 +21,7 @@ public class OrderLine {
     @OneToOne
     private Product product;
 
-    public OrderLine(Long unitprice, Long quantity, Orders orders_id, Product product) {
+    public OrderLine(Double unitprice, int quantity, Orders orders_id, Product product) {
         this.unitprice = unitprice;
         this.quantity = quantity;
         this.orders_id = orders_id;
@@ -36,19 +36,19 @@ public class OrderLine {
         this.id = id;
     }
 
-    public Long getUnitprice() {
+    public Double getUnitprice() {
         return unitprice;
     }
 
-    public void setUnitprice(Long unitprice) {
+    public void setUnitprice(Double unitprice) {
         this.unitprice = unitprice;
     }
 
-    public Long getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Long quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 

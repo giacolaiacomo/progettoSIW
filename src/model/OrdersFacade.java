@@ -22,6 +22,10 @@ public class OrdersFacade {
         return order;
     }
 
+    public void updateOrder(Orders order) {
+        em.merge(order);
+    }
+
     public Orders getOrder(Long id) {
         Orders order = em.find(Orders.class, id);
         return order;

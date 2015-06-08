@@ -14,7 +14,7 @@ public class OrderLineFacade {
 
     }
 
-    public OrderLine createOrderLine(Long unitprice, Long quantity, Orders orders_id, Product product_id){
+    public OrderLine createOrderLine(Double unitprice, int quantity, Orders orders_id, Product product_id){
         OrderLine orderLine = new OrderLine(unitprice, quantity, orders_id, product_id);
         em.persist(orderLine);
         return orderLine;

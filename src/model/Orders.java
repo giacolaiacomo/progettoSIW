@@ -30,6 +30,16 @@ public class Orders {
         this.orderLines = new ArrayList<OrderLine>();
     }
 
+    public OrderLine checkOrderLine(Product product) {
+        for(OrderLine line : this.orderLines){
+            if(line.getProduct().getId().equals(product.getId()))
+                return line;
+        }
+        return null;
+    }
+
+
+
     public void addOrderLine(OrderLine orderLine) {
         this.orderLines.add(orderLine);
     }
