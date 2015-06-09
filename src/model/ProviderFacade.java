@@ -3,6 +3,7 @@ package model;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 /**
@@ -14,12 +15,54 @@ public class ProviderFacade {
     @PersistenceContext(unitName = "products")
     EntityManager em;
 
-    public Provider createProvider(List<Product> providedProducts, String vatin, String phoneNumber, Address address, String email){
-        Provider provider = new Provider(providedProducts, vatin, phoneNumber, address, email);
-        if (address != null)
-            provider.setAddress(address);
+    public ProviderFacade(){
+
+    }
+
+    public Provider createProvider(String name, String email, Long phonenumber,
+                                   String street, String city, String state, Long zipcode, String vatin){
+        Address address = new Address(street, city, state, zipcode);
+        em.persist(address);
+        Provider provider = new Provider(name, email, phonenumber, address, vatin);
         em.persist(provider);
         return provider;
+    }
+
+    private void deleteProvider(Provider provider) {
+        em.remove(provider);
+    }
+
+    public void deleteProvider(Long id) {
+        Provider provider = em.find(Provider.class, id);
+        deleteProvider(provider);
+    }
+
+    public void deleteProviderByEmail(String email) {
+        Provider provider = this.getProviderByEmail(email);
+        deleteProvider(provider);
+    }
+
+    public Provider getProviderByEmail(String email) {
+        Provider p;
+        Query q = em.createQuery("SELECT p FROM Provider p WHERE p.email=:email");
+        q.setParameter("email", email);
+        if (q.getResultList().isEmpty())
+            return null;
+        else {
+            p = (Provider) q.getSingleResult();
+            return p;
+        }
+    }
+
+    public List<Product> getProductAll(){
+        Query query = em.createQuery("SELECT p FROM Product p");
+        return query.getResultList();
+    }
+
+    public Provider getProvider(Long provider_id){
+        Query query=em.createQuery("SELECT p FROM Provider p WHERE p.Id=:id");
+        query.setParameter("id", provider_id);
+        return (Provider) query.getResultList().get(0);
     }
 
 }

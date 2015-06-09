@@ -68,6 +68,10 @@ public class AdministratorController {
         return "newCustomer";
     }
 
+    public String newProvider(){
+        return "newProvider";
+    }
+
 
 
     public Administrator getAdministrator() {

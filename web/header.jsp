@@ -59,6 +59,9 @@
                                 <li><h:commandLink
                                         action="#{administratorController.newCustomer}"
                                         value="New Customer" /></li>
+                                <li><h:commandLink
+                                        action="#{administratorController.newProvider}"
+                                        value="New Provider" /></li>
 
                             </ul>
                         </li>

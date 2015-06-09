@@ -1,39 +1,54 @@
 package model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Provider {
 
+    public Provider() {
+
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToMany
-    private List<Product> products;
+    @Column(nullable = false)
+    private String name;
 
     @Column(nullable = false)
     private String vatin;
 
-    private String phoneNumber;
+    @Column(nullable = false)
+    private Long phonenumber;
 
     @Column(nullable = false)
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Address address;
 
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
 
-    public Provider(List<Product> providedProducts, String vatin, String phoneNumber, Address address, String email) {
-        this.products = providedProducts;
-        this.vatin = vatin;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
+    @ManyToMany(mappedBy = "providers", fetch = FetchType.EAGER)
+    private List<Product> products;
+
+    public Provider(String name, String email, Long phonenumber, Address address, String vatin) {
+        this.name = name;
         this.email = email;
+        this.phonenumber = phonenumber;
+        this.address = address;
+        this.vatin = vatin;
+        this.products = new ArrayList<Product>();
     }
 
-    public Provider() {
+    public void addProduct(Product product) {
+        this.products.add(product);
+    }
+
+    public void removeProduct(Product product) {
+        this.products.remove(product);
     }
 
     public Long getId() {
@@ -60,12 +75,20 @@ public class Provider {
         this.vatin = vatNumber;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getName() {
+        return name;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(Long phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     public Address getAddress() {
@@ -83,4 +106,17 @@ public class Provider {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Provider{" +
+                ", name='" + name + '\'' +
+                ", vatin='" + vatin + '\'' +
+                ", phonenumber=" + phonenumber +
+                ", address=" + address +
+                ", email='" + email + '\'' +
+                ", products=" + products +
+                '}';
+    }
+
 }
