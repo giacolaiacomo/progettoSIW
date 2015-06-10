@@ -12,51 +12,30 @@
 </head>
 <body>
 <f:view>
-  <jsp:include page="header.jsp"/>
-
-  <div class="container form-signin">
-    <h1>Provider List</h1>
-    <h:form>
+  <h:form>
+    <jsp:include page="header.jsp"/>
+    <div class="container form-signin">
+      <h1>All Providers</h1>
       <table>
         <tr>
-          <th>Name</th><th>Email</th><th>PhoneNumber</th><th>Vatin</th><th>Products</th>
+          <th>Name</th><th>eMail</th><th>Vatin</th><th>ID</th><th>PhoneNumber</th>
         </tr>
-        <c:forEach var="provider" items="#{providerController.listProviders}">
-          <tr>
+        <tr>
+          <c:forEach var="provider" items="#{administratorController.providers}">
             <td>
-              <h:commandLink action="#{providerController.findProvider}" value="#{provider.name}"/>
+              <h:commandLink action="#{providerController.findProvider}" value="#{provider.name}">
+                <f:param name="name" value="#{provider.name}"/>
+              </h:commandLink>
             </td>
             <td>${provider.email}</td>
-            <td>${provider.phoneNumber}</td>
             <td>${provider.vatin}</td>
-          </tr>
-          <div class="container form-signin">
-            <h1>Products List</h1>
-            <h:form>
-              <table>
-                <tr>
-                  <th>Name</th><th>Code</th><th>Price</th><th>Quantity</th><th>Description</th>
-                </tr>
-                <c:forEach var="product" items="#{providerController.listProducts}">
-                  <tr>
-                    <td>
-                      <h:commandLink action="#{productController.findProduct}" value="#{product.name}">
-                        <f:param name="id" value="#{product.id}" />
-                      </h:commandLink>
-                    </td>
-                    <td>${product.code}</td>
-                    <td>${product.price}</td>
-                    <td>${product.quantity}</td>
-                    <td>${product.description}</td>
-                  </tr>
-                </c:forEach>
-              </table>
-            </h:form>
-          </div>
-        </c:forEach>
+            <td>${provider.id}</td>
+            <td>${provider.phoneNumber}</td>
+          </c:forEach>
+        </tr>
       </table>
-    </h:form>
-  </div>
+    </div>
+  </h:form>
 </f:view>
 </body>
 </html>

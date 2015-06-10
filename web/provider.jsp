@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
 <%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,29 @@
     <div>City: ${providerController.provider.address.city}</div>
     <div>State: ${providerController.provider.address.state}</div>
     <div>ZipCode: ${providerController.provider.address.zipcode}</div>
+  </div>
+  <div class="container form-signin">
+    <h1>Products List</h1>
+    <h:form>
+      <table>
+        <tr>
+          <th>Name</th><th>Code</th><th>Price</th><th>Quantity</th><th>Description</th>
+        </tr>
+        <c:forEach var="product" items="#{providerController.listProducts}">
+          <tr>
+            <td>
+              <h:commandLink action="#{productController.findProduct}" value="#{product.name}">
+                <f:param name="id" value="#{product.id}" />
+              </h:commandLink>
+            </td>
+            <td>${product.code}</td>
+            <td>${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>${product.description}</td>
+          </tr>
+        </c:forEach>
+      </table>
+    </h:form>
   </div>
 </f:view>
 </body>

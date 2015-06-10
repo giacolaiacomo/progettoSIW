@@ -8,6 +8,7 @@ import model.ProviderFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
 import java.util.List;
 
 /**
@@ -44,7 +45,7 @@ public class ProviderController {
     }
 
     public String listProducts() {
-        this.products = provider.getProduct_id();
+        this.products = this.provider.getProduct_id();
         return "products";
     }
 
@@ -140,5 +141,21 @@ public class ProviderController {
 
     public void setProducts(List<Product> products) {
         this.products = products;
+    }
+
+    public List<Provider> getProviders() {
+        return providers;
+    }
+
+    public void setProviders(List<Provider> providers) {
+        this.providers = providers;
+    }
+
+    public ProviderFacade getProviderFacade() {
+        return providerFacade;
+    }
+
+    public void setProviderFacade(ProviderFacade providerFacade) {
+        this.providerFacade = providerFacade;
     }
 }

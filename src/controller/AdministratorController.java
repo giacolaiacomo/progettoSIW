@@ -72,8 +72,9 @@ public class AdministratorController {
         return "index";
     }
 
+
     public String allProviders(){
-        this.providers = providerFacade.getAllProvider();
+        this.providers = this.providerFacade.getAllProvider();
         return "providers";
     }
 
@@ -165,5 +166,69 @@ public class AdministratorController {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Provider> getProviders() {
+        return providers;
+    }
+
+    public void setProviders(List<Provider> providers) {
+        this.providers = providers;
+    }
+
+    public AdministratorFacade getAdministratorFacade() {
+        return administratorFacade;
+    }
+
+    public void setAdministratorFacade(AdministratorFacade administratorFacade) {
+        this.administratorFacade = administratorFacade;
+    }
+
+    public ProductFacade getProductFacade() {
+        return productFacade;
+    }
+
+    public void setProductFacade(ProductFacade productFacade) {
+        this.productFacade = productFacade;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public CustomerFacade getCustomerFacade() {
+        return customerFacade;
+    }
+
+    public void setCustomerFacade(CustomerFacade customerFacade) {
+        this.customerFacade = customerFacade;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public ProviderFacade getProviderFacade() {
+        return providerFacade;
+    }
+
+    public void setProviderFacade(ProviderFacade providerFacade) {
+        this.providerFacade = providerFacade;
+    }
+
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public void setProvider(Provider provider) {
+        this.provider = provider;
     }
 }

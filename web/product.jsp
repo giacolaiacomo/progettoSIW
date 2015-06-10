@@ -29,7 +29,6 @@
         <c:if test="${customerController.customer!=null}">
             <div align="center">
                 <h:commandButton styleClass="btn btn-default" value="Add to basket" action="#{orderController.addOrderLine}"/>
-                <f:setPropertyActionListener value="#{productController.product}" target="#{orderController.product}"/>
             </div>
         </c:if>
     </h:form>
