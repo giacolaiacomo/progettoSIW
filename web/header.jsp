@@ -78,19 +78,21 @@
                         </li>
                     </c:if>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="navbar-form navbar-right" role="search">
-                        <div class="input-group">
-                            <h:inputText styleClass="form-control" value="#{productController.name}"
-                                         required="true"
-                                         requiredMessage="Product name is mandatory"
-                                         id="name"/> <h:message for="name" styleClass="alert-danger"/>
+                <c:if test="${customerController.customer!=null}">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-form navbar-right" role="search">
+                            <div class="input-group">
+                                <h:inputText styleClass="form-control" value="#{productController.name}"
+                                             required="true"
+                                             requiredMessage="Product name is mandatory"
+                                             id="name"/> <h:message for="name" styleClass="alert-danger"/>
                             <span class="input-group-btn">
                             <h:commandButton styleClass="btn btn-default" value="Search Product!" action="#{productController.findProductByName}"/>
                             </span>
-                        </div>
-                    </li>
-                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </c:if>
             </div>  <!-- /.navbar-collapse -->
             <!-- /.container -->
         </div>
