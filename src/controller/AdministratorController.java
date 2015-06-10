@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.util.Date;
+import java.util.List;
 
 @ManagedBean
 @SessionScoped
@@ -22,6 +23,7 @@ public class AdministratorController {
     public Long zipcode;
     public String email;
     public String password;
+    public List<Provider> providers;
 
     @EJB(beanName="adminfacade")
     private AdministratorFacade administratorFacade;
@@ -71,6 +73,7 @@ public class AdministratorController {
     }
 
     public String allProviders(){
+        this.providers = providerFacade.getAllProvider();
         return "providers";
     }
 
