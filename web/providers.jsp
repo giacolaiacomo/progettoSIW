@@ -29,10 +29,30 @@
             <td>${provider.email}</td>
             <td>${provider.phoneNumber}</td>
             <td>${provider.vatin}</td>
-            <td>
-              <h:commandLink action="#{providerController.listProducts}" value="#{product.name} Products"/>
-            </td>
           </tr>
+          <div class="container form-signin">
+            <h1>Products List</h1>
+            <h:form>
+              <table>
+                <tr>
+                  <th>Name</th><th>Code</th><th>Price</th><th>Quantity</th><th>Description</th>
+                </tr>
+                <c:forEach var="product" items="#{providerController.listProducts}">
+                  <tr>
+                    <td>
+                      <h:commandLink action="#{productController.findProduct}" value="#{product.name}">
+                        <f:param name="id" value="#{product.id}" />
+                      </h:commandLink>
+                    </td>
+                    <td>${product.code}</td>
+                    <td>${product.price}</td>
+                    <td>${product.quantity}</td>
+                    <td>${product.description}</td>
+                  </tr>
+                </c:forEach>
+              </table>
+            </h:form>
+          </div>
         </c:forEach>
       </table>
     </h:form>

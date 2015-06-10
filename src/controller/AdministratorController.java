@@ -80,8 +80,6 @@ public class AdministratorController {
         return "newProvider";
     }
 
-
-
     public Administrator getAdministrator() {
         return administrator;
     }
