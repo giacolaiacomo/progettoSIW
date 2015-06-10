@@ -8,6 +8,7 @@ import model.ProviderFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import java.util.List;
 
 /**
@@ -35,11 +36,6 @@ public class ProviderController {
     public String createProvider(){
         this.provider=providerFacade.createProvider(name, email, phonenumber, street, city, state, zipcode, vatin);
         return "provider";
-    }
-
-    public String listProduct(){
-        this.products=providerFacade.getProductAll();
-        return "products";
     }
 
     public String findProvider(Long id){

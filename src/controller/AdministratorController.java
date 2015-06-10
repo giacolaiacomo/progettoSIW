@@ -1,8 +1,6 @@
 package controller;
 
-import model.Administrator;
-import model.AdministratorFacade;
-import model.Product;
+import model.*;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -15,7 +13,6 @@ import java.util.Date;
 @SessionScoped
 public class AdministratorController {
 
-    public Administrator administrator;
     public String firstname;
     public String lastname;
     public Date birthDate;
@@ -28,6 +25,19 @@ public class AdministratorController {
 
     @EJB(beanName="adminfacade")
     private AdministratorFacade administratorFacade;
+    public Administrator administrator;
+
+    @EJB(beanName = "pfacade")
+    private ProductFacade productFacade;
+    public Product product;
+
+    @EJB(beanName = "cfacade")
+    private CustomerFacade customerFacade;
+    public Customer customer;
+
+    @EJB(beanName = "provfacade")
+    private ProviderFacade providerFacade;
+    public Provider provider;
 
     public String createAdministrator() {
         this.administrator = administratorFacade.createAdministrator(firstname, lastname, birthDate, email, password, street, city, state, zipcode);
@@ -60,9 +70,7 @@ public class AdministratorController {
         return "index";
     }
 
-    public String newProduct(){
-        return "newProduct";
-    }
+    public String newProduct(){ return "newProduct"; }
 
     public String newCustomer(){
         return "newCustomer";

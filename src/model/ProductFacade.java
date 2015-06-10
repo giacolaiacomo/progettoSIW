@@ -31,6 +31,18 @@ public class ProductFacade {
         return product;
     }
 
+    public Product getProductByName(String name) {
+        Product p;
+        Query q = em.createQuery("SELECT p FROM Product p WHERE p.name=:name");
+        q.setParameter("name", name);
+        if (q.getResultList().isEmpty())
+            return null;
+        else {
+            p = (Product) q.getSingleResult();
+            return p;
+        }
+    }
+
     public List<Product> getAllProducts() {
         Query query= em.createQuery("SELECT p FROM Product p");
         return query.getResultList();

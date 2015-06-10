@@ -54,15 +54,16 @@ public class ProviderFacade {
         }
     }
 
-    public List<Product> getProductAll(){
-        Query query = em.createQuery("SELECT p FROM Product p");
-        return query.getResultList();
+    public Provider getProvider(Long id) {
+        Provider provider = em.find(Provider.class, id);
+        return provider;
     }
 
-    public Provider getProvider(Long provider_id){
-        Query query=em.createQuery("SELECT p FROM Provider p WHERE p.Id=:id");
-        query.setParameter("id", provider_id);
-        return (Provider) query.getResultList().get(0);
+    public Provider getProvider(String name) {
+        Query q = em.createQuery("SELECT p FROM Provider p WHERE p.name = :name");
+        q.setParameter("name", name);
+        Provider provider = (Provider) q.getSingleResult();
+        return provider;
     }
 
 }

@@ -40,6 +40,12 @@ public class ProductController {
 		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProduct", this.product);
 		return "product";
 	}
+
+	public String findProductByName(){
+		this.product = productFacade.getProductByName(name);
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProduct", this.product);
+		return "product";
+	}
 	
 	public String findProduct(Long id) {
 		this.product = productFacade.getProduct(id);
