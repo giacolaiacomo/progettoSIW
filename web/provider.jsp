@@ -21,7 +21,7 @@
     <h1>${providerController.provider.name}</h1>
     <h2>Provider's Info</h2>
     <div>Email: ${providerController.provider.email}</div>
-    <div>Phone Number: ${providerController.provider.phonenumber}</div>
+    <div>Phone Number: ${providerController.provider.phoneNumber}</div>
     <div>Vatin: ${providerController.provider.vatin}</div>
     <h3>Address:</h3>
     <div>Street: ${providerController.provider.address.street}</div>

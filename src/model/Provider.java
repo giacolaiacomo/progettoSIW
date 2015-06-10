@@ -22,7 +22,7 @@ public class Provider {
     private String vatin;
 
     @Column(nullable = false)
-    private Long phonenumber;
+    private Long phoneNumber;
 
     @Column(nullable = false)
     @ManyToOne(cascade = CascadeType.PERSIST)
@@ -32,23 +32,23 @@ public class Provider {
     private String email;
 
     @ManyToMany(mappedBy = "providers", fetch = FetchType.EAGER)
-    private List<Product> products;
+    private List<Product> product_id;
 
     public Provider(String name, String email, Long phonenumber, Address address, String vatin) {
         this.name = name;
         this.email = email;
-        this.phonenumber = phonenumber;
+        this.phoneNumber = phonenumber;
         this.address = address;
         this.vatin = vatin;
-        this.products = new ArrayList<Product>();
+        this.product_id = new ArrayList<Product>();
     }
 
     public void addProduct(Product product) {
-        this.products.add(product);
+        this.product_id.add(product);
     }
 
     public void removeProduct(Product product) {
-        this.products.remove(product);
+        this.product_id.remove(product);
     }
 
     public Long getId() {
@@ -59,12 +59,12 @@ public class Provider {
         this.id = id;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<Product> getProduct_id() {
+        return product_id;
     }
 
-    public void setProducts(List<Product> providedProducts) {
-        this.products = providedProducts;
+    public void setProduct_id(List<Product> providedProducts) {
+        this.product_id = providedProducts;
     }
 
     public String getVatin() {
@@ -83,12 +83,12 @@ public class Provider {
         this.name = name;
     }
 
-    public Long getPhonenumber() {
-        return phonenumber;
+    public Long getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhonenumber(Long phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhoneNumber(Long phonenumber) {
+        this.phoneNumber = phonenumber;
     }
 
     public Address getAddress() {
@@ -112,10 +112,10 @@ public class Provider {
         return "Provider{" +
                 ", name='" + name + '\'' +
                 ", vatin='" + vatin + '\'' +
-                ", phonenumber=" + phonenumber +
+                ", phonenumber=" + phoneNumber +
                 ", address=" + address +
                 ", email='" + email + '\'' +
-                ", products=" + products +
+                ", products=" + product_id +
                 '}';
     }
 

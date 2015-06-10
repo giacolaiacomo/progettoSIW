@@ -25,7 +25,7 @@ public class Product {
     private int quantity;
 
 
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Provider> providers;
 
     public Product() {
