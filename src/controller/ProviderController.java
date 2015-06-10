@@ -8,7 +8,6 @@ import model.ProviderFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
 import java.util.List;
 
 /**
@@ -28,7 +27,8 @@ public class ProviderController {
     public String city;
     public String state;
     public Long zipcode;
-    private List<Product> products;
+    public List<Product> products;
+    public List<Provider> providers;
 
     @EJB(beanName = "provfacade")
     public ProviderFacade providerFacade;
@@ -38,10 +38,21 @@ public class ProviderController {
         return "provider";
     }
 
-    public String findProvider(Long id){
-        this.provider=providerFacade.getProvider(id);
+    public String findProvider(){
+        this.provider=providerFacade.getProviderByName(name);
         return "provider";
     }
+
+    public String listProducts() {
+        this.products = provider.getProduct_id();
+        return "products";
+    }
+
+    public String listProviders(){
+        this.providers=providerFacade.getAllProvider();
+        return "providers";
+    }
+
 
     public Provider getProvider() {
         return provider;

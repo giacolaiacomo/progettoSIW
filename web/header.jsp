@@ -82,10 +82,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-form navbar-right" role="search">
                             <div class="input-group">
-                                <h:inputText styleClass="form-control" value="#{productController.name}"
-                                             required="true"
-                                             requiredMessage="Product name is mandatory"
-                                             id="name"/> <h:message for="name" styleClass="alert-danger"/>
+                                <h:inputText styleClass="form-control" value="#{productController.name}" id="name"/>
                             <span class="input-group-btn">
                             <h:commandButton styleClass="btn btn-default" value="Search Product!" action="#{productController.findProductByName}"/>
                             </span>
