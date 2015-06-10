@@ -66,6 +66,10 @@ public class OrderController {
         return "order";
     }
 
+    public String myBasket(){
+        return "order";
+    }
+
     public Long getId() {
         return id;
     }

@@ -47,6 +47,11 @@
                                         value="Logout" /></li>
                             </ul>
                         </li>
+                        <li>
+                            <h:commandLink
+                                    action="#{orderController.myBasket}"
+                                    value="My Basket" />
+                        </li>
                     </c:if>
 
                     <c:if test="${administratorController.administrator != null}">
