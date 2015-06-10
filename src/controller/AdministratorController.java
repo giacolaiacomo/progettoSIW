@@ -70,6 +70,10 @@ public class AdministratorController {
         return "index";
     }
 
+    public String allProviders(){
+        return "providers";
+    }
+
     public String newProduct(){ return "newProduct"; }
 
     public String newCustomer(){

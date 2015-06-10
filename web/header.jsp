@@ -66,6 +66,9 @@
                             </ul>
                         </li>
                         <li><h:commandLink
+                                action="#{administratorController.allProviders}"
+                                value="All Providers" /></li>
+                        <li><h:commandLink
                                 action="#{administratorController.logout}"
                                 value="Logout" /></li>
                     </c:if>
@@ -98,7 +101,7 @@
 
 <!-- include javascript, jQuery FIRST -->
 <script
-        src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        src="bootstrap/js/jquery.js"></script>
 <script
-        src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        src="bootstrap/js/bootstrap.min.js"></script>
 </html>

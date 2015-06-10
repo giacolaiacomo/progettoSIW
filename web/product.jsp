@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
 <%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,13 +18,21 @@
 <body>
 <f:view>
     <jsp:include page="header.jsp" />
-    <div align="center">
-        <h1>${productController.product.name}</h1>
-        <div>Code: ${productController.product.code}</div>
-        <div>Price: ${productController.product.price}</div>
-        <div>Quantity: ${productController.product.quantity}</div>
-        <div>Description: ${productController.product.description}</div>
-    </div>
+    <h:form>
+        <div align="center">
+            <h1>${productController.product.name}</h1>
+            <div>Code: ${productController.product.code}</div>
+            <div>Price: ${productController.product.price}</div>
+            <div>Quantity: ${productController.product.quantity}</div>
+            <div>Description: ${productController.product.description}</div>
+        </div>
+        <c:if test="${customerController.customer!=null}">
+            <div align="center">
+                <h:commandButton styleClass="btn btn-default" value="Add to basket" action="#{orderController.addOrderLine}"/>
+                <f:setPropertyActionListener value="#{productController.product}" target="#{orderController.product}"/>
+            </div>
+        </c:if>
+    </h:form>
 </f:view>
 </body>
 </html>
