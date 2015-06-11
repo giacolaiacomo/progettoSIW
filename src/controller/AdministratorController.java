@@ -75,7 +75,7 @@ public class AdministratorController {
 
     public String allProviders(){
         this.providers = this.providerFacade.getAllProvider();
-        return "providers";
+        return "providers1";
     }
 
     public String newProduct(){ return "newProduct"; }

@@ -6,7 +6,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
-  <link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
+  <link href="bootstrap/css/business-frontpage.css" rel="stylesheet">
   <link rel="stylesheet" href="bootstrap/css/msc.css"/>
   <title>Providers</title>
 </head>
@@ -18,7 +18,7 @@
       <h1>All Providers</h1>
       <table>
         <tr>
-          <th>Name</th><th>eMail</th><th>Vatin</th><th>ID</th><th>PhoneNumber</th>
+          <th>Name</th><th>Email</th><th>Vatin</th><th>ID</th><th>PhoneNumber</th>
         </tr>
         <tr>
           <c:forEach var="provider" items="#{administratorController.providers}">

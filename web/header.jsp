@@ -5,10 +5,10 @@
 <html>
 <head>
     <!-- Bootstrap Core CSS -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
-    <link href="/bootstrap/css/msc.css" rel="stylesheet">
+    <link href="bootstrap/css/business-frontpage.css" rel="stylesheet">
+    <link href="bootstrap/css/msc.css" rel="stylesheet">
 </head>
 <h:form>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -22,13 +22,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <c:if test="${customerController.customer != null}">
-                    <a class="navbar-brand" href="/faces/indexUser.jsp">Progetto SIW 2015 - MSC</a>
+                    <a class="navbar-brand" href="faces/indexUser.jsp">Progetto SIW 2015 &middot; SC</a>
                 </c:if>
                 <c:if test="${administratorController.administrator != null}">
-                    <a class="navbar-brand" href="/faces/indexAdmin.jsp">Progetto SIW 2015 - MSC</a>
+                    <a class="navbar-brand" href="faces/indexAdmin.jsp">Progetto SIW 2015 &middot; SC</a>
                 </c:if>
                 <c:if test="${customerController.customer == null && administratorController.administrator == null}">
-                    <a class="navbar-brand" href="/faces/index.jsp">Progetto SIW 2015 - MSC</a>
+                    <a class="navbar-brand" href="faces/index.jsp">Progetto SIW 2015 &middot; SC</a>
                 </c:if>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->

@@ -60,14 +60,12 @@
       <div class="col-sm-4">
         <h2>Contact Us</h2>
         <address>
-          <strong>MSC</strong>
+          <strong>SC</strong>
           <br>Roma 3 University
           <br>Via della Vasca Navale 79/81, Rome
           <br>
         </address>
         <address>
-          <abbr title="Maniscalchi">M: </abbr>Alessandro Maniscalchi
-          <br>
           <abbr title="Sola">S: </abbr>Fabio Sola
           <br>
           <abbr title="Colaiacomo">C: </abbr>Gianluca Colaiacomo
@@ -108,7 +106,7 @@
     <footer>
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright &copy; MSC Company 2015</p>
+          <p>Copyright &copy; SC Company 2015</p>
         </div>
       </div>
       <!-- /.row -->

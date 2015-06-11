@@ -8,10 +8,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
   <!-- Bootstrap Core CSS -->
-  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
-  <link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
-  <link href="/bootstrap/css/msc.css" rel="stylesheet">
+  <link href="bootstrap/css/business-frontpage.css" rel="stylesheet">
+  <link href="bootstrap/css/msc.css" rel="stylesheet">
 
   <title>Provider</title>
 </head>

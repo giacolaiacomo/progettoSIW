@@ -44,9 +44,7 @@
 
   <!-- Page Content -->
   <div class="container">
-
     <hr>
-
     <div class="row">
       <div class="col-sm-8">
         <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
@@ -60,13 +58,12 @@
       <div class="col-sm-4">
         <h2>Contact Us</h2>
         <address>
-          <strong>MSC</strong>
+          <strong>SC</strong>
           <br>Roma 3 University
           <br>Via della Vasca Navale 79/81, Rome
           <br>
         </address>
         <address>
-          <abbr title="Maniscalchi">M: </abbr>Alessandro Maniscalchi
           <br>
           <abbr title="Sola">S: </abbr>Fabio Sola
           <br>
@@ -108,7 +105,7 @@
     <footer>
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright &copy; MSC Company 2015</p>
+          <p>Copyright &copy; SC Company 2015</p>
         </div>
       </div>
       <!-- /.row -->

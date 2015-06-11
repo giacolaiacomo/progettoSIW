@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sign in Admin &middot; MSC Company</title>
+  <title>Sign in Admin &middot; SC Company</title>
   <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
   <!-- Bootstrap Core CSS -->

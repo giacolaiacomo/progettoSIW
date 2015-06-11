@@ -6,7 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
-	<link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
+	<link href="bootstrap/css/business-frontpage.css" rel="stylesheet">
 	<link rel="stylesheet" href="bootstrap/css/msc.css"/>
 	<title>Products</title>
 </head>
