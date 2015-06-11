@@ -5,6 +5,7 @@ import model.*;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.util.Date;
@@ -23,13 +24,15 @@ public class AdministratorController {
     public Long zipcode;
     public String email;
     public String password;
+
+    @ManagedProperty(value="#{providers}")
     public List<Provider> providers;
 
     @EJB(beanName="adminfacade")
     private AdministratorFacade administratorFacade;
     public Administrator administrator;
 
-    @EJB(beanName = "pfacade")
+    @EJB(beanName = "prodfacade")
     private ProductFacade productFacade;
     public Product product;
 
@@ -75,7 +78,7 @@ public class AdministratorController {
 
     public String allProviders(){
         this.providers = this.providerFacade.getAllProvider();
-        return "providers1";
+        return "providers";
     }
 
     public String newProduct(){ return "newProduct"; }

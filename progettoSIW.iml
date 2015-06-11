@@ -32,7 +32,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="TomEE 7.0.551" level="application_server_libraries" />
     <orderEntry type="library" name="Mojarra-2.2.1" level="project" />
-    <orderEntry type="library" name="bval-core-0.5" level="project" />
     <orderEntry type="library" name="openejb-api-4.7.1" level="project" />
+    <orderEntry type="library" name="bval-core-0.51" level="project" />
   </component>
 </module>

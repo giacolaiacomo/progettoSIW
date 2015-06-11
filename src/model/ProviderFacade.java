@@ -66,10 +66,15 @@ public class ProviderFacade {
     }
 
     public Provider getProviderByName(String name) {
-        Query q = em.createQuery("SELECT p FROM Provider p WHERE p.name = :name");
+        Provider p;
+        Query q = em.createQuery("SELECT p FROM Provider p WHERE p.name=:name");
         q.setParameter("name", name);
-        Provider provider = (Provider) q.getSingleResult();
-        return provider;
+        if (q.getResultList().isEmpty())
+            return null;
+        else {
+            p = (Provider) q.getSingleResult();
+            return p;
+        }
     }
 
 }

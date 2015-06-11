@@ -8,6 +8,7 @@ import model.ProviderFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ import java.util.List;
 @ManagedBean
 public class ProviderController {
 
-    @ManagedProperty(value="#{param.id}")
+    public Long id;
     public Provider provider;
     public String name;
     public String email;
@@ -38,8 +39,20 @@ public class ProviderController {
         return "provider";
     }
 
-    public String findProvider(){
-        this.provider=providerFacade.getProviderByName(this.name);
+    public String findProvider() {
+        this.provider = providerFacade.getProvider(id);
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProvider", this.provider);
+        return "provider";
+    }
+
+    public String findProdiverByName(){
+        this.provider = providerFacade.getProviderByName(name);
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProvider", this.provider);
+        return "provider";
+    }
+
+    public String findProvider(Long id) {
+        this.provider = providerFacade.getProvider(id);
         return "provider";
     }
 

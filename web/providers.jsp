@@ -20,11 +20,11 @@
         <tr>
           <th>Name</th><th>Email</th><th>Vatin</th><th>ID</th><th>PhoneNumber</th>
         </tr>
-        <tr>
           <c:forEach var="provider" items="#{administratorController.providers}">
+            <tr>
             <td>
               <h:commandLink action="#{providerController.findProvider}" value="#{provider.name}">
-                <f:param name="name" value="#{provider.name}"/>
+                <f:param name="id" value="#{provider.id}"/>
               </h:commandLink>
             </td>
             <td>${provider.email}</td>
