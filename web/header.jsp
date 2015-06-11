@@ -58,9 +58,9 @@
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Control Panel</a>
                             <ul class="dropdown-menu">
                                 <li><a href='<c:url value="admin.jsp"/>'>Admin page</a></li>
-                                <li><a href='<c:url value="newProduct.jsp"/>'>New Product</a></li>
-                                <li><a href='<c:url value="newCustomer.jsp"/>'>New Customer</a></li>
-                                <li><a href='<c:url value="newProvider.jsp"/>'>New Provider</a></li>
+                                <li><h:commandLink action="#{administratorController.newProvider}" value="New Provider"/> </li>
+                                <li><h:commandLink action="#{administratorController.newProduct}" value="New Product"/> </li>
+                                <li><h:commandLink action="#{administratorController.newCustomer}" value="New Customer"/> </li>
 
                             </ul>
                         </li>

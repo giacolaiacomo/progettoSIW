@@ -40,7 +40,7 @@ public class ProviderController {
     }
 
     public String findProvider(){
-        this.provider=providerFacade.getProviderByName(name);
+        this.provider=providerFacade.getProviderByName(this.name);
         return "provider";
     }
 
