@@ -17,7 +17,7 @@ import java.util.List;
 @ManagedBean
 public class ProviderController {
 
-    @ManagedProperty(value="#{param.id}")
+
     public Long id;
     public Provider provider;
     public String name;
@@ -67,6 +67,13 @@ public class ProviderController {
         return "providers";
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Provider getProvider() {
         return provider;

@@ -15,6 +15,7 @@ import java.util.List;
 @SessionScoped
 public class AdministratorController {
 
+    public Long id;
     public String firstname;
     public String lastname;
     public Date birthDate;
