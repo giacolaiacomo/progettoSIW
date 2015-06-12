@@ -6,12 +6,14 @@ import model.ProductFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 @ManagedBean
+@SessionScoped
 public class ProductController {
 	
-	@ManagedProperty(value="#{param.id}")
+
 	private Long id;
 	private String name;
 	private Float price;
@@ -37,11 +39,10 @@ public class ProductController {
 
 	public String findProduct() {
 		this.product = productFacade.getProduct(id);
-		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProduct", this.product);
 		return "product";
 	}
 
-	public String findProductByName(){
+	public String findProductByName(String name){
 		this.product = productFacade.getProductByName(name);
 		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProduct", this.product);
 		return "product";

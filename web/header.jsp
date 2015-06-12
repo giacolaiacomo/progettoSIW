@@ -50,8 +50,9 @@
                         <li>
                             <h:commandLink
                                     action="#{orderController.createOrder}"
-                                    value="New Order" />
-                            <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
+                                    value="New Order">
+                                <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
+                            </h:commandLink>
                         </li>
                     </c:if>
 
