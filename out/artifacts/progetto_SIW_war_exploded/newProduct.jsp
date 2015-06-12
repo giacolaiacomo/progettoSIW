@@ -17,15 +17,12 @@
 <body>
 <f:view>
     <jsp:include page="header.jsp" />
-
-
     <div class="container">
         <div class="row">
             <h2>Insert a new product</h2>
         </div>
         <fieldset>
             <form class="form-signin">
-
                 <h:form>
                     <div class="form-group">Name: <h:inputText styleClass="form-control" value="#{productController.name}"
                                                                required="true"
@@ -60,7 +57,6 @@
                 </h:form>
             </form>
         </fieldset>
-
     </div>
 </f:view>
 </body>

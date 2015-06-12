@@ -234,4 +234,12 @@ public class AdministratorController {
     public void setProvider(Provider provider) {
         this.provider = provider;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

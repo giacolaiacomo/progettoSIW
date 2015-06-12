@@ -49,8 +49,9 @@
                         </li>
                         <li>
                             <h:commandLink
-                                    action="#{orderController.myBasket}"
-                                    value="My Basket" />
+                                    action="#{orderController.createOrder}"
+                                    value="New Order" />
+                            <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
                         </li>
                     </c:if>
 

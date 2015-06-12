@@ -8,6 +8,7 @@ import model.ProviderFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * Created by Fabio on 09/06/15.
  */
 @ManagedBean
+@SessionScoped
 public class ProviderController {
 
 
