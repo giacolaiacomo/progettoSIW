@@ -20,8 +20,10 @@ public class Product {
     @Column(length = 2000)
     private String description;
 
+    @Column(nullable = false)
     private String code;
 
+    @Column(nullable = false)
     private int quantity;
 
 

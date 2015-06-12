@@ -17,6 +17,7 @@ import java.util.List;
 @ManagedBean
 public class ProviderController {
 
+    @ManagedProperty(value="#{param.id}")
     public Long id;
     public Provider provider;
     public String name;

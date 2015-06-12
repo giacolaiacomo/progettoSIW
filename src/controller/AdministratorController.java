@@ -25,7 +25,6 @@ public class AdministratorController {
     public String email;
     public String password;
 
-    @ManagedProperty(value="#{providers}")
     public List<Provider> providers;
 
     @EJB(beanName="adminfacade")

@@ -26,10 +26,15 @@ public class AdministratorFacade {
     }
 
     public Administrator getAdministratorByEmail(String email) {
-        Query q = em.createQuery("SELECT a FROM Administrator a WHERE a.email = :email");
+        Administrator a;
+        Query q = em.createQuery("SELECT a FROM Administrator a WHERE a.email=:email");
         q.setParameter("email", email);
-        Administrator administrator = (Administrator) q.getSingleResult();
-        return administrator;
+        if (q.getResultList().isEmpty())
+            return null;
+        else {
+            a = (Administrator) q.getSingleResult();
+            return a;
+        }
     }
 
     private void deleteAdministrator(Administrator administrator) {
