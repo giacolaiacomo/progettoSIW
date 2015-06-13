@@ -5,7 +5,6 @@ import model.Product;
 import model.ProductFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
@@ -21,6 +20,7 @@ public class ProductController {
 	private String code;
 	private int quantity;
 	private Product product;
+	private String providername;
 
 	private List<Product> products;
 	
@@ -28,8 +28,11 @@ public class ProductController {
 	private ProductFacade productFacade;
 	
 	public String createProduct() {
-		this.product = productFacade.createProduct(name, code, price, description, quantity);
-		return "product";
+		this.product = productFacade.createProduct(name, code, price, description, quantity, providername);
+        if (product != null)
+		    return "product";
+        else
+            return "errorProduct";
 	}
 	
 	public String listProducts() {
@@ -44,7 +47,6 @@ public class ProductController {
 
 	public String findProductByName(String name){
 		this.product = productFacade.getProductByName(name);
-		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProduct", this.product);
 		return "product";
 	}
 	
@@ -52,6 +54,8 @@ public class ProductController {
 		this.product = productFacade.getProduct(id);
 		return "product";
 	}
+
+	/* Getter & Setter */
 
 	public Long getId() {
 		return id;
@@ -115,6 +119,22 @@ public class ProductController {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	public String getProvidername() {
+		return providername;
+	}
+
+	public void setProvidername(String providername) {
+		this.providername = providername;
+	}
+
+	public ProductFacade getProductFacade() {
+		return productFacade;
+	}
+
+	public void setProductFacade(ProductFacade productFacade) {
+		this.productFacade = productFacade;
 	}
 }
 

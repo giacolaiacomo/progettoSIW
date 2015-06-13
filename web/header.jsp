@@ -36,42 +36,35 @@
                 <ul class="nav navbar-nav">
 
                     <c:if test="${customerController.customer != null}">
-                        <li class ="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Control Panel</a>
+                        <li class ="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Control Panel &middot; Hi ${customerController.customer.firstname}!</a>
                             <ul class="dropdown-menu">
                                 <li><a href='<c:url value="customer.jsp"/>'>Profile</a></li>
-                                <li><h:commandLink
-                                        action="#{productController.listProducts}"
-                                        value="All Products" /></li>
+                                <li>
+                                    <h:commandLink
+                                            action="#{orderController.createOrder}"
+                                            value="New Order">
+                                        <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
+                                    </h:commandLink>
+                                </li>
                                 <li><h:commandLink
                                         action="#{customerController.logoutCustomer}"
                                         value="Logout" /></li>
                             </ul>
                         </li>
-                        <li>
-                            <h:commandLink
-                                    action="#{orderController.createOrder}"
-                                    value="New Order">
-                                <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
-                            </h:commandLink>
-                        </li>
                     </c:if>
 
                     <c:if test="${administratorController.administrator != null}">
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Control Panel</a>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Control Panel &middot; Admin</a>
                             <ul class="dropdown-menu">
                                 <li><a href='<c:url value="admin.jsp"/>'>Admin page</a></li>
-                                <li><h:commandLink action="#{administratorController.newProvider}" value="New Provider"/> </li>
-                                <li><h:commandLink action="#{administratorController.newProduct}" value="New Product"/> </li>
-                                <li><h:commandLink action="#{administratorController.newCustomer}" value="New Customer"/> </li>
-
+                                <li><a href='<c:url value="newProduct.jsp"/>'>New Product</a> </li>
+                                <li><a href='<c:url value="newProvider.jsp"/>'>New Provider</a> </li>
+                                <li><a href='<c:url value="newCustomer.jsp"/>'>New Customer</a> </li>
+                                <li><h:commandLink
+                                    action="#{administratorController.logout}"
+                                    value="Logout" /></li>
                             </ul>
                         </li>
-                        <li><h:commandLink
-                                action="#{administratorController.allProviders}"
-                                value="All Providers" /></li>
-                        <li><h:commandLink
-                                action="#{administratorController.logout}"
-                                value="Logout" /></li>
                     </c:if>
                     <c:if test="${customerController.customer == null && administratorController.administrator == null}">
                         <li>

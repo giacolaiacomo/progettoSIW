@@ -51,6 +51,11 @@
                                                                           cols="20"
                                                                           rows="5" />
                     </div>
+                    <div class="form-group">Provider: <h:inputText styleClass="form-control" value="#{productController.providername}"
+                                                                   required="true"
+                                                                   requiredMessage="Provider is mandatory"
+                                                                   id="providername"/> <h:message for="providername" styleClass="alert-danger"/>
+                    </div>
                     <div class="form-group">
                         <h:commandButton value="Submit"  action="#{productController.createProduct}" styleClass="btn btn-primary"/>
                     </div>

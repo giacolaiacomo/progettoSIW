@@ -6,11 +6,7 @@ import java.util.*;
 import static javax.persistence.TemporalType.DATE;
 
 @Entity
-
 public class Orders {
-
-    boolean closed =false;
-    boolean processed =false;
 
     public Orders() {
     }
@@ -21,6 +17,10 @@ public class Orders {
 
     @Temporal(DATE)
     private Calendar creationtime;
+
+    boolean closed;
+
+    boolean processed;
 
     @ManyToOne
     private Customer customer_id;
@@ -42,27 +42,22 @@ public class Orders {
         return null;
     }
 
-    public List<OrderLine> getOrderLines() {
-        return orderLines;
-    }
 
-    public void setOrderLines(List<OrderLine> orderLines) {
-        this.orderLines = orderLines;
-    }
-
+    /* Getter & Setter */
     public boolean isClosed(){
-        if(this.closed ==true)
-            return true;
-        else
-            return false;
+        return closed;
     }
 
-    public void setClosed(){
-        this.closed =true;
+    public boolean isProcessed() {
+        return processed;
     }
 
-    public void setProcessed(){
-        this.processed =true;
+    public void setProcessed(boolean processed) {
+        this.processed = processed;
+    }
+
+    public void setClosed(boolean closed) {
+        this.closed = closed;
     }
 
     public void addOrderLine(OrderLine orderLine) {
@@ -97,35 +92,11 @@ public class Orders {
         this.customer_id = customer_id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Orders orders = (Orders) o;
-
-        if (creationtime != null ? !creationtime.equals(orders.creationtime) : orders.creationtime != null)
-            return false;
-        if (customer_id != null ? !customer_id.equals(orders.customer_id) : orders.customer_id != null) return false;
-        if (id != null ? !id.equals(orders.id) : orders.id != null) return false;
-
-        return true;
+    public List<OrderLine> getOrderLines() {
+        return orderLines;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (creationtime != null ? creationtime.hashCode() : 0);
-        result = 31 * result + (customer_id != null ? customer_id.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Orders{" +
-                "id=" + id +
-                ", creationtime=" + creationtime +
-                ", customer_id=" + customer_id +
-                '}';
+    public void setOrderLines(List<OrderLine> orderLines) {
+        this.orderLines = orderLines;
     }
 }

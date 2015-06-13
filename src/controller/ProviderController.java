@@ -8,18 +8,15 @@ import model.ProviderFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 import java.util.List;
 
 /**
  * Created by Fabio on 09/06/15.
  */
 @ManagedBean
-@SessionScoped
 public class ProviderController {
 
-
+    @ManagedProperty(value="#{param.id}")
     public Long id;
     public Provider provider;
     public String name;
@@ -44,13 +41,6 @@ public class ProviderController {
 
     public String findProvider() {
         this.provider = providerFacade.getProvider(id);
-        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProvider", this.provider);
-        return "provider";
-    }
-
-    public String findProdiverByName(){
-        this.provider = providerFacade.getProviderByName(name);
-        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("currentProvider", this.provider);
         return "provider";
     }
 
@@ -68,6 +58,8 @@ public class ProviderController {
         this.providers=providerFacade.getAllProvider();
         return "providers";
     }
+
+    /* Getter & Setter */
 
     public Long getId() {
         return id;

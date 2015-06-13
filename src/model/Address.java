@@ -32,6 +32,8 @@ public class Address{
         this.zipcode = zipcode;
     }
 
+    /* Getter & Setter */
+
     public Long getId() {
         return id;
     }

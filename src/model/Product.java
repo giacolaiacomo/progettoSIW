@@ -42,6 +42,10 @@ public class Product {
         this.providers=new ArrayList<Provider>();
     }
 
+    public void addProvider(Provider p) {
+        this.providers.add(p);
+    }
+
     public String getCode() {
         return code;
     }

@@ -64,5 +64,6 @@ public class CustomerFacade {
         query.setParameter("id", customer_id);
         return (Customer) query.getResultList().get(0);
     }
+
 }
 

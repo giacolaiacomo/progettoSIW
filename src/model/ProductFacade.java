@@ -20,10 +20,29 @@ public class ProductFacade {
         return p.getProviders();
     }
 
-    public Product createProduct(String name, String code, Float price, String description, int quantity) {
+    public Product createProduct(String name, String code, Float price, String description, int quantity, String providername) {
         Product product = new Product(name, code, price, description, quantity);
-        em.persist(product);
-        return product;
+        Provider provider = getProvider(providername);
+        if(provider != null){
+            product.addProvider(provider);
+            provider.addProduct(product);
+            em.persist(product);
+            return product;
+        }else {
+            return null;
+        }
+    }
+
+    private Provider getProvider(String providername) {
+        Provider p;
+        Query q = em.createQuery("SELECT p FROM Provider p WHERE p.name=:providername");
+        q.setParameter("providername", providername);
+        if(q.getResultList().isEmpty())
+            return null;
+        else{
+            p = (Provider) q.getSingleResult();
+            return p;
+        }
     }
 
     public Product getProduct(Long id) {

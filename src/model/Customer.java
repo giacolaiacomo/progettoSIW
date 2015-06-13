@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 public class Customer extends User {
+
     public Customer() {
     }
 
@@ -31,6 +32,8 @@ public class Customer extends User {
         this.orders.add(order);
     }
 
+    /* Getter & Setter */
+
     public Long getPhonenumber() {
         return phonenumber;
     }
@@ -47,22 +50,4 @@ public class Customer extends User {
         this.orders = orders;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                super.toString() +
-                "phonenumber=" + phonenumber +
-                ", orders=" + orders +
-                "} ";
-    }
-
-    @Override //da sistemare
-    public boolean equals(Object o) {
-        return super.equals(o);
-    }
-
-    @Override //da sistemare
-    public int hashCode() {
-        return super.hashCode();
-    }
 }
