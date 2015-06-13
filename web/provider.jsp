@@ -18,41 +18,20 @@
 <body>
 <f:view>
   <jsp:include page="header.jsp" />
-  <div align="center">
-    <h1>${providerController.provider.name}</h1>
-    <h2>Provider's Info</h2>
-    <div>Email: ${providerController.provider.email}</div>
-    <div>Phone Number: ${providerController.provider.phoneNumber}</div>
-    <div>Vatin: ${providerController.provider.vatin}</div>
-    <h3>Address:</h3>
-    <div>Street: ${providerController.provider.address.street}</div>
-    <div>City: ${providerController.provider.address.city}</div>
-    <div>State: ${providerController.provider.address.state}</div>
-    <div>ZipCode: ${providerController.provider.address.zipcode}</div>
-  </div>
-  <div class="container form-signin">
-    <h1>Products List</h1>
-    <h:form>
-      <table>
-        <tr>
-          <th>Name</th><th>Code</th><th>Price</th><th>Quantity</th><th>Description</th>
-        </tr>
-        <c:forEach var="product" items="#{providerController.listProducts}">
-          <tr>
-            <td>
-              <h:commandLink action="#{productController.findProduct}" value="#{product.name}">
-                <f:param name="id" value="#{product.id}" />
-              </h:commandLink>
-            </td>
-            <td>${product.code}</td>
-            <td>${product.price}</td>
-            <td>${product.quantity}</td>
-            <td>${product.description}</td>
-          </tr>
-        </c:forEach>
-      </table>
-    </h:form>
-  </div>
+  <h:form>
+    <div align="center">
+      <h1>${providerController.provider.name}</h1>
+      <h2>Provider's info</h2>
+      <div>Email: ${providerController.provider.email}</div>
+      <div>Vatin: ${providerController.provider.vatin}</div>
+      <div>PhoneNumber: ${providerController.provider.phoneNumber}</div>
+      <h2>Address: </h2>
+      <div>Street: ${providerController.provider.address.street}</div>
+      <div>City: ${providerController.provider.address.city}</div>
+      <div>State: ${providerController.provider.address.state}</div>
+      <div>ZipCode: ${providerController.provider.address.zipcode}</div>
+    </div>
+  </h:form>
 </f:view>
 </body>
 </html>

@@ -17,9 +17,11 @@
 </head>
 <body>
 <f:view>
-<jsp:include page="header.jsp" />
-    <h1>Error! Provider not found</h1>
-    <a href="newProduct.jsp">Torna indietro</a>
-    </f:view>
+    <jsp:include page="header.jsp" />
+        <div align="center">
+            <h1>Error! Provider not found</h1>
+            <a href="newProduct.jsp">Go back</a> or <a href="newProvider.jsp">Create new Provider</a>
+        </div>
+</f:view>
 </body>
 </html>

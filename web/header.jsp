@@ -60,9 +60,8 @@
                                 <li><a href='<c:url value="newProduct.jsp"/>'>New Product</a> </li>
                                 <li><a href='<c:url value="newProvider.jsp"/>'>New Provider</a> </li>
                                 <li><a href='<c:url value="newCustomer.jsp"/>'>New Customer</a> </li>
-                                <li><h:commandLink
-                                    action="#{administratorController.logout}"
-                                    value="Logout" /></li>
+                                <li><h:commandLink action="#{providerController.listProviders}" value="Providers List" /></li>
+                                <li><h:commandLink action="#{administratorController.logout}" value="Logout" /></li>
                             </ul>
                         </li>
                     </c:if>
@@ -81,7 +80,7 @@
                             <div class="input-group">
                                 <h:inputText styleClass="form-control" value="#{productController.name}" id="name"/>
                             <span class="input-group-btn">
-                            <h:commandButton styleClass="btn btn-default" value="Search Product!" action="#{productController.findProductByName}"/>
+                            <h:commandButton styleClass="btn btn-default" value="Search Product!" action="#{productController.findProductByName}" />
                             </span>
                             </div>
                         </li>

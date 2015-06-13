@@ -8,15 +8,16 @@ import model.ProviderFacade;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
 import java.util.List;
 
 /**
  * Created by Fabio on 09/06/15.
  */
 @ManagedBean
+@SessionScoped
 public class ProviderController {
 
-    @ManagedProperty(value="#{param.id}")
     public Long id;
     public Provider provider;
     public String name;

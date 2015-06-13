@@ -12,30 +12,29 @@
 </head>
 <body>
 <f:view>
-  <h:form>
-    <jsp:include page="header.jsp"/>
-    <div class="container form-signin">
-      <h1>All Providers</h1>
+  <jsp:include page="header.jsp"/>
+
+  <div class="container form-signin">
+    <h1>Providers List</h1>
+    <h:form>
       <table>
         <tr>
-          <th>Name</th><th>Email</th><th>Vatin</th><th>ID</th><th>PhoneNumber</th>
+          <th>Name</th><th>Email</th><th>Vatin</th><th>Phonenumber</th>
         </tr>
-          <c:forEach var="provider" items="#{administratorController.providers}">
-            <tr>
+        <c:forEach var="provider" items="#{providerController.providers}">
+          <tr>
             <td>
-              <h:commandLink action="#{providerController.findProvider}" value="#{provider.name}">
-                <f:param name="id" value="#{provider.id}"/>
+              <h:commandLink action="#{providerController.findProvider(provider.id)}" value="#{provider.name}">
               </h:commandLink>
             </td>
             <td>${provider.email}</td>
             <td>${provider.vatin}</td>
-            <td>${provider.id}</td>
             <td>${provider.phoneNumber}</td>
-          </c:forEach>
-        </tr>
+          </tr>
+        </c:forEach>
       </table>
-    </div>
-  </h:form>
+    </h:form>
+  </div>
 </f:view>
 </body>
 </html>

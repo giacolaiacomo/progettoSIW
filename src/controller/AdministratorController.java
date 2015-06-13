@@ -75,21 +75,7 @@ public class AdministratorController {
         return "index";
     }
 
-
-    public String allProviders(){
-        this.providers = this.providerFacade.getAllProvider();
-        return "providers";
-    }
-
-    public String newProduct(){ return "newProduct"; }
-
-    public String newCustomer(){
-        return "newCustomer";
-    }
-
-    public String newProvider(){
-        return "newProvider";
-    }
+    /* Getter & Setter */
 
     public Administrator getAdministrator() {
         return administrator;

@@ -40,7 +40,7 @@ public class Provider {
         this.phoneNumber = phonenumber;
         this.address = address;
         this.vatin = vatin;
-        this.product_id = new ArrayList<Product>();
+        this.product_id = new ArrayList<>();
     }
 
     public void addProduct(Product product) {
