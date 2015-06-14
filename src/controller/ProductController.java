@@ -46,7 +46,10 @@ public class ProductController {
 
 	public String findProductByName(String name){
 		this.product = productFacade.getProductByName(name);
-		return "product";
+		if (product != null)
+			return "product";
+		else
+			return "indexUser";
 	}
 	
 	public String findProduct(Long id) {
