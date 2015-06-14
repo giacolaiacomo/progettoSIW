@@ -25,7 +25,7 @@ public class Orders {
     @ManyToOne
     private Customer customer_id;
 
-    @OneToMany(mappedBy = "orders_id")
+    @OneToMany(mappedBy = "orders_id", fetch=FetchType.EAGER, cascade=CascadeType.MERGE)
     private List<OrderLine> orderLines;
 
     public Orders(Customer customer_id) {
