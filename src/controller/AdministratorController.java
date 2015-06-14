@@ -75,6 +75,11 @@ public class AdministratorController {
         return "index";
     }
 
+    public String allProviders(){
+        this.providers=providerFacade.getAllProvider();
+        return "providers";
+    }
+
     /* Getter & Setter */
 
     public Administrator getAdministrator() {
