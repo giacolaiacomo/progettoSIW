@@ -13,11 +13,12 @@ import javax.persistence.criteria.Order;
 @SessionScoped
 public class OrderController {
 
-    @ManagedProperty(value="#{param.id}")
     public Long id;
 
     public Customer customer;
+
     public Orders order;
+
     public Product product;
     public int quantity=1;
     public Long ordlId;
@@ -36,12 +37,10 @@ public class OrderController {
     public String createOrder(){
         this.order=this.ordersFacade.createOrder(customer);
         this.customer.addOrder(order);
-        return "order";
+        return "newOrder";
     }
 
     public String addOrderLine(){
-        if(this.order==null)
-            this.createOrder();
         if(this.quantity<=0)
             return "Error! Quantity must be >0";
         else {

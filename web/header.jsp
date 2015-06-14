@@ -22,13 +22,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <c:if test="${customerController.customer != null}">
-                    <a class="navbar-brand" href="/faces/indexUser.jsp">Progetto SIW 2015 &middot; SC</a>
+                    <a class="navbar-brand" href="/faces/indexUser.jsp"><strong>Progetto SIW 2015 &middot; SC</strong></a>
                 </c:if>
                 <c:if test="${administratorController.administrator != null}">
-                    <a class="navbar-brand" href="/faces/indexAdmin.jsp">Progetto SIW 2015 &middot; SC</a>
+                    <a class="navbar-brand" href="/faces/indexAdmin.jsp"><strong>Progetto SIW 2015 &middot; SC</strong></a>
                 </c:if>
                 <c:if test="${customerController.customer == null && administratorController.administrator == null}">
-                    <a class="navbar-brand" href="/faces/index.jsp">Progetto SIW 2015 &middot; SC</a>
+                    <a class="navbar-brand" href="/faces/index.jsp"><strong>Progetto SIW 2015 &middot; SC</strong></a>
                 </c:if>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,17 +39,27 @@
                         <li class ="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Control Panel &middot; Hi ${customerController.customer.firstname}!</a>
                             <ul class="dropdown-menu">
                                 <li><a href='<c:url value="customer.jsp"/>'>Profile</a></li>
-                                <li>
+                                <li><h:commandLink
+                                        action="#{customerController.logoutCustomer}"
+                                        value="Logout" /></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <c:choose>
+                                <c:when test="${orderController.order==null}">
                                     <h:commandLink
                                             action="#{orderController.createOrder}"
                                             value="New Order">
                                         <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
                                     </h:commandLink>
-                                </li>
-                                <li><h:commandLink
-                                        action="#{customerController.logoutCustomer}"
-                                        value="Logout" /></li>
-                            </ul>
+                                </c:when>
+                                <c:when test="${orderController.order!=null}">
+                                    <h:commandLink
+                                            action="#{orderController.myBasket}"
+                                            value="My Basket">
+                                    </h:commandLink>
+                                </c:when>
+                            </c:choose>
                         </li>
                     </c:if>
 
@@ -80,9 +90,7 @@
                             <div class="input-group">
                                 <h:inputText styleClass="form-control" value="#{productController.name}" id="name"/>
                             <span class="input-group-btn">
-                            <h:commandButton styleClass="btn btn-default" value="Search Product!" action="#{productController.findProductByName(productController.name)}" >
-
-                            </h:commandButton>
+                            <h:commandButton styleClass="btn btn-default" value="Search Product!" action="#{productController.findProductByName(productController.name)}"/>
                             </span>
                             </div>
                         </li>
