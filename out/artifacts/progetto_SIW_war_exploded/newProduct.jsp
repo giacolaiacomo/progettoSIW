@@ -20,7 +20,7 @@
     <jsp:include page="header.jsp" />
     <div class="container">
         <div class="row">
-            <h2>Insert a new currentProduct</h2>
+            <h2>Insert a new product</h2>
         </div>
         <fieldset>
             <form class="form-signin">

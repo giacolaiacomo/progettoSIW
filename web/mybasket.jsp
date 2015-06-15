@@ -20,7 +20,10 @@
     <div align="center">
       <h1>My Basket</h1>
       <h3>Current order: </h3>${orderController.order.id}
-      <div>Creation time: ${orderController.order.creationtime}</div>
+      <div>Creation time: <h:outputText value="#{orderController.order.creationtime.time}">
+                          <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
+                        </h:outputText>
+      </div>
     </div>
     <table>
       <tr>
