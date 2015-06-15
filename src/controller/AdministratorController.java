@@ -15,34 +15,34 @@ import java.util.List;
 @SessionScoped
 public class AdministratorController {
 
-    public Long id;
-    public String firstname;
-    public String lastname;
-    public Date birthDate;
-    public String street;
-    public String city;
-    public String state;
-    public Long zipcode;
-    public String email;
-    public String password;
+    private Long id;
+    private String firstname;
+    private String lastname;
+    private Date birthDate;
+    private String street;
+    private String city;
+    private String state;
+    private Long zipcode;
+    private String email;
+    private String password;
 
-    public List<Provider> providers;
+    private List<Provider> providers;
 
     @EJB(beanName="adminfacade")
     private AdministratorFacade administratorFacade;
-    public Administrator administrator;
+    private Administrator administrator;
 
     @EJB(beanName = "prodfacade")
     private ProductFacade productFacade;
-    public Product product;
+    private Product product;
 
     @EJB(beanName = "cfacade")
     private CustomerFacade customerFacade;
-    public Customer customer;
+    private Customer customer;
 
     @EJB(beanName = "provfacade")
     private ProviderFacade providerFacade;
-    public Provider provider;
+    private Provider provider;
 
     public String createAdministrator() {
         this.administrator = administratorFacade.createAdministrator(firstname, lastname, birthDate, email, password, street, city, state, zipcode);

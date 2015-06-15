@@ -14,22 +14,22 @@ import java.util.List;
 @SessionScoped
 public class CustomerController {
 
-    public Long id;
-    public String firstname;
-    public String lastname;
-    public Date birthDate;
-    public String street;
-    public String city;
-    public String state;
-    public Long zipcode;
-    public String email;
-    public String password;
-    public Long phonenumber;
-    public Customer customer;
-    public List<Customer> customers;
+    private Long id;
+    private String firstname;
+    private String lastname;
+    private Date birthDate;
+    private String street;
+    private String city;
+    private String state;
+    private Long zipcode;
+    private String email;
+    private String password;
+    private Long phonenumber;
+    private Customer customer;
+    private List<Customer> customers;
 
     @EJB(beanName = "cfacade")
-    public CustomerFacade customerFacade;
+    private CustomerFacade customerFacade;
 
     public String createCustomer(){
         this.customer=customerFacade.createCustomer(firstname, lastname, birthDate, email, password, phonenumber, street, city, state, zipcode);

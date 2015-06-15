@@ -13,15 +13,15 @@ import javax.persistence.criteria.Order;
 @SessionScoped
 public class OrderController {
 
-    public Long id;
+    private Long id;
 
-    public Customer customer;
+    private Customer customer;
 
-    public Orders order;
+    private Orders order;
 
-    public Product product;
-    public int quantity=1;
-    public Long ordlId;
+    private Product product;
+    private int quantity=1;
+    private Long ordlId;
 
 
 
