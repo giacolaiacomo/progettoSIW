@@ -53,7 +53,7 @@ public class OrderController {
                 this.order.addOrderLine(ordl);
                 this.ordersFacade.updateOrder(this.order);
             }
-            return "order";
+            return "mybasket";
         }
     }
 
@@ -62,11 +62,11 @@ public class OrderController {
         this.order.removeOrderLine(ordl);
         this.orderLineFacade.deleteOrderLine(this.ordlId);
         this.ordersFacade.updateOrder(this.order);
-        return "order";
+        return "mybasket";
     }
 
     public String myBasket(){
-        return "order";
+        return "mybasket";
     }
 
     public Long getId() {

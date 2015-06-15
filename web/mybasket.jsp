@@ -29,7 +29,7 @@
       <c:forEach var="ordl" items="#{orderController.order.orderLines}">
         <tr>
           <td>
-            <h:commandLink action="#{productController.findProductByName(ordl.product.name)}" value="#{product.name}">
+            <h:commandLink action="#{productController.findProductByName(ordl.product.name)}" value="#{ordl.product.name}">
               <f:param name="id" value="#{ordl.product.id}" />
             </h:commandLink>
           </td>
@@ -37,6 +37,11 @@
           <td>${ordl.product.price}</td>
           <td>${ordl.product.quantity}</td>
           <td>${ordl.product.description}</td>
+          <td>
+            <h:commandButton styleClass="btn btn-default" value="Remove" action="#{orderController.deleteOrderLine}">
+              <f:setPropertyActionListener value="#{ordl.id}" target="#{orderController.ordlId}"/>
+            </h:commandButton>
+          </td>
         </tr>
       </c:forEach>
     </table>
