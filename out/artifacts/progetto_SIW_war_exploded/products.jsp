@@ -21,16 +21,16 @@
 				<tr>
 					<th>Name</th><th>Code</th><th>Price</th><th>Quantity</th><th>Description</th>
 				</tr>
-				<c:forEach var="product" items="#{productController.products}">
+				<c:forEach var="currentProduct" items="#{productController.products}">
 					<tr>
 						<td>
-							<h:commandLink action="#{productController.findProduct(product.id)}" value="#{product.name}">
+							<h:commandLink action="#{productController.findProduct(currentProduct.id)}" value="#{currentProduct.name}">
 							</h:commandLink>
 						</td>
-						<td>${product.code}</td>
-						<td>${product.price}</td>
-						<td>${product.quantity}</td>
-						<td>${product.description}</td>
+						<td>${currentProduct.code}</td>
+						<td>${currentProduct.price}</td>
+						<td>${currentProduct.quantity}</td>
+						<td>${currentProduct.description}</td>
 					</tr>
 				</c:forEach>
 			</table>

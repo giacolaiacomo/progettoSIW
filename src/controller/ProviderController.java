@@ -18,22 +18,22 @@ import java.util.List;
 @SessionScoped
 public class ProviderController {
 
-    public Long id;
-    public Provider provider;
-    public String name;
-    public String email;
-    public String vatin;
-    public Long phonenumber;
-    public Address address;
-    public String street;
-    public String city;
-    public String state;
-    public Long zipcode;
-    public List<Product> products;
-    public List<Provider> providers;
+    private Long id;
+    private Provider provider;
+    private String name;
+    private String email;
+    private String vatin;
+    private Long phonenumber;
+    private Address address;
+    private String street;
+    private String city;
+    private String state;
+    private Long zipcode;
+    private List<Product> products;
+    private List<Provider> providers;
 
     @EJB(beanName = "provfacade")
-    public ProviderFacade providerFacade;
+    private ProviderFacade providerFacade;
 
     public String createProvider(){
         this.provider=providerFacade.createProvider(name, email, phonenumber, street, city, state, zipcode, vatin);
