@@ -75,23 +75,26 @@
                             </ul>
                         </li>
                     </c:if>
-                    <c:if test="${customerController.customer == null && administratorController.administrator == null}">
-                        <li>
-                            <a href='<c:url value="loginCustomer.jsp"/>'>Login</a>
-                        </li>
-                        <li>
-                            <a href='<c:url value="newCustomer.jsp"/>'>Sign up</a>
-                        </li>
-                    </c:if>
                 </ul>
                 <c:if test="${customerController.customer!=null}">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-form navbar-right" role="search">
                             <div class="input-group">
-                                <h:inputText styleClass="form-control navbar-inverse" value="#{productController.name}" id="name"/>
+                                <h:inputText styleClass="form-control" value="#{productController.name}" id="name"/>
                             <span class="input-group-btn">
                             <h:commandButton styleClass="btn btn-default " value="Search Product!" action="#{productController.findProductByName(productController.name)}"/>
                             </span>
+                            </div>
+                        </li>
+                    </ul>
+                </c:if>
+                <c:if test="${customerController.customer==null && administratorController.administrator == null}">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-form navbar-right" role="search">
+                            <div class="row">
+                                <div class="col-lg-5"> <h:inputText styleClass="form-control " value="#{customerController.email}" id="email"/></div>
+                                <div class="col-lg-5"> <h:inputSecret styleClass="form-control " value="#{customerController.password}" id="password"/></div>
+                                <div class="col-lg-2"> <h:commandButton styleClass="btn btn-default " value="Login" action="#{customerController.login}"/></div>
                             </div>
                         </li>
                     </ul>
