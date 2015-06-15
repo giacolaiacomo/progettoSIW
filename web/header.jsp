@@ -36,7 +36,7 @@
                 <ul class="nav navbar-nav">
 
                     <c:if test="${customerController.customer != null}">
-                        <li class ="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Control Panel &middot; Hi ${customerController.customer.firstname}!</a>
+                        <li class ="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" >Control Panel &middot; Hi ${customerController.customer.firstname}!</a>
                             <ul class="dropdown-menu">
                                 <li><a href='<c:url value="customer.jsp"/>'>Profile</a></li>
                                 <li><h:commandLink action="#{customerController.logoutCustomer}" value="Logout" >

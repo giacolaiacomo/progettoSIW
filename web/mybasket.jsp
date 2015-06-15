@@ -51,7 +51,7 @@
                 <td>${ordl.quantity}</td>
                 <td>${ordl.product.description}</td>
                 <td>
-                  <h:commandButton styleClass="btn btn-default" value="Remove" action="#{orderController.deleteOrderLine}">
+                  <h:commandButton styleClass="btn btn-danger" value="Remove" action="#{orderController.deleteOrderLine}">
                     <f:setPropertyActionListener value="#{ordl.id}" target="#{orderController.ordlId}"/>
                   </h:commandButton>
                 </td>

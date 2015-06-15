@@ -2,6 +2,8 @@ package controller;
 
 import model.Customer;
 import model.CustomerFacade;
+import model.OrdersFacade;
+
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -31,6 +33,9 @@ public class CustomerController {
     @EJB(beanName = "cfacade")
     private CustomerFacade customerFacade;
 
+    @EJB(beanName = "ordfacade")
+    private OrdersFacade ordersFacade;
+
     public String createCustomer(){
         this.customer=customerFacade.createCustomer(firstname, lastname, birthDate, email, password, phonenumber, street, city, state, zipcode);
         return "customer";
@@ -42,7 +47,7 @@ public class CustomerController {
             Customer customer = customerFacade.getCustomerByEmail(email);
             if (customer.checkPassword(this.password)) {
                 setCustomer(customer);
-                return "customer";
+                return "indexUser";
             }
             else{
                 // Password Errata
@@ -58,6 +63,7 @@ public class CustomerController {
     }
 
     public String logoutCustomer() {
+
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "index";
     }
