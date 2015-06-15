@@ -80,6 +80,10 @@ public class AdministratorController {
         return "providers";
     }
 
+    public String modifyProduct(){
+        return "modifyProduct";
+    }
+
     /* Getter & Setter */
 
     public Administrator getAdministrator() {

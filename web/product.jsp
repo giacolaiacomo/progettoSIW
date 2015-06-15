@@ -40,6 +40,13 @@
                 </h:commandButton>
             </div>
         </c:if>
+        <c:if test="${administratorController.administrator!=null}">
+            <div align="center">
+                <h:commandButton styleClass="btn btn-default" value="Modify Product" action="#{administratorController.modifyProduct}">
+                    <f:setPropertyActionListener value="#{productController.product}" target="#{administratorController.product}"/>
+                </h:commandButton>
+            </div>
+        </c:if>
     </h:form>
 </f:view>
 </body>

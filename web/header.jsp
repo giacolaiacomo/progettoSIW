@@ -88,9 +88,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-form navbar-right" role="search">
                             <div class="input-group">
-                                <h:inputText styleClass="form-control" value="#{productController.name}" id="name"/>
+                                <h:inputText styleClass="form-control navbar-inverse" value="#{productController.name}" id="name"/>
                             <span class="input-group-btn">
-                            <h:commandButton styleClass="btn btn-default" value="Search Product!" action="#{productController.findProductByName(productController.name)}"/>
+                            <h:commandButton styleClass="btn btn-default " value="Search Product!" action="#{productController.findProductByName(productController.name)}"/>
                             </span>
                             </div>
                         </li>

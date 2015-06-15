@@ -26,43 +26,78 @@
 <body>
 <f:view>
 	<jsp:include page="header.jsp" />
+	<h:form>
 
-	<aside class="image-bg-fixed-height"></aside>
 
-	<!-- Content Section -->
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h1 class="section-heading">Section Heading</h1>
-					<p class="lead section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-					<p class="section-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+		<!-- Content Section -->
+		<section>
+			<div class="container">
+
+				<div class="row">
+
 				</div>
-			</div>
-		</div>
-	</section>
 
+				<hr>
 
-
-	<!-- Footer -->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<p>Copyright &copy; MSC 2015</p>
+				<! --- Second row -->
+				<div class="row">
+					<div class="col-sm-6 col-md-4" align="center">
+						<div class="thumbnail">
+							<img src="..." alt="...">
+							<div class="caption">
+								<h3>Enjoy our community!</h3>
+								<p>Registered or logged in to be able to buy the best products on the market!</p>
+								<a href="newCustomer.jsp" class="btn btn-primary" role="button">Sign Up</a> <a href="loginCustomer.jsp" class="btn btn-default" role="button">LogIn</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4" align="center">
+						<div class="thumbnail">
+							<img src="..." alt="...">
+							<div class="caption">
+								<h3>Please see our product catalog</h3>
+								<p>Click the button below to access the list of our products available for you!</p>
+								<p><h:commandButton styleClass="btn-primary btn" value="Products List" action="#{productController.listProducts}"/> </p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4" align="center">
+						<div class="thumbnail">
+							<img src="..." alt="...">
+							<div class="caption">
+								<h3>Our Providers</h3>
+								<p>We offer only the best providers available in the market!</p>
+								<p><h:commandButton styleClass="btn btn-primary" value="Providers List" action="#{providerController.listProviders}"/> </p>
+							</div>
+						</div>
+					</div>
 				</div>
+
 			</div>
-			<!-- /.row -->
-		</div>
-		<!-- /.container -->
-	</footer>
 
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+		</section>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
 
+
+		<!-- Footer -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p>Copyright &copy; SC 2015</p>
+					</div>
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</footer>
+
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="js/bootstrap.min.js"></script>
+	</h:form>
 </f:view>
 </body>
 

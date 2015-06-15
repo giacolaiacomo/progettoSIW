@@ -34,6 +34,11 @@ public class ProductController {
         else
             return "errorProduct";
 	}
+
+	public String updateProduct() {
+		productFacade.updateProduct(this.product);
+		return "product";
+	}
 	
 	public String listProducts() {
 		this.products = productFacade.getAllProducts();
