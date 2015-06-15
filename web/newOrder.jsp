@@ -1,5 +1,3 @@
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core" %>
-<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html" %>
 <%--
   Created by IntelliJ IDEA.
   User: Gianluca
@@ -7,6 +5,8 @@
   Time: 12:20
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core" %>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,9 +25,9 @@
   <h:form>
     <jsp:include page="header.jsp"/>
     <div class=container" align="center">
-    <h1>Congratulations, you have just created your order!</h1>
-    <h2>Hurry up to find your wanted products!</h2>
-    <h:commandLink value="All Products>" action="#{productController.listProducts}"/>
+      <h1>Congratulations, you have just created your order!</h1>
+      <h2>Hurry up to find your wanted products!</h2>
+      <h:commandButton styleClass="btn-primary btn" value="Products List" action="#{productController.listProducts}"/>
     </div>
   </h:form>
 </f:view>
