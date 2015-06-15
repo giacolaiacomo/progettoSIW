@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.criteria.Order;
+import java.util.List;
 
 @ManagedBean
 @SessionScoped
@@ -63,6 +64,16 @@ public class OrderController {
         this.orderLineFacade.deleteOrderLine(this.ordlId);
         this.ordersFacade.updateOrder(this.order);
         return "mybasket";
+    }
+
+    public void deleteOrder(){
+        if(this.order.getOrderLines() != null){
+            List<OrderLine> orderlines = order.getOrderLines();
+            for(OrderLine orderline: orderlines){
+                this.order.removeOrderLine(orderline);
+            }
+        }
+        ordersFacade.deleteOrder(this.order.getId());
     }
 
     public String myBasket(){

@@ -31,7 +31,8 @@ public class Orders {
     public Orders(Customer customer_id) {
         this.creationtime = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
         this.customer_id = customer_id;
-        this.orderLines = new ArrayList<OrderLine>();
+        this.closed = false;
+        this.orderLines = new ArrayList<>();
     }
 
     public OrderLine checkOrderLine(Product product) {
