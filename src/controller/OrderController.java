@@ -60,11 +60,11 @@ public class OrderController {
         }
     }
 
-    public String deleteOrderLine(){
-        OrderLine ordl = this.orderLineFacade.getOrderLine(this.ordlId);
+    public String deleteOrderLine(OrderLine ordl){
         this.order.removeOrderLine(ordl);
         this.orderLineFacade.deleteOrderLine(this.ordlId);
         this.ordersFacade.updateOrder(this.order);
+        this.customerFacade.updateCustomer(this.customer);
         return "mybasket";
     }
 

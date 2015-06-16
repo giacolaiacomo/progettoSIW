@@ -52,8 +52,8 @@
                 <td>${ordl.quantity}</td>
                 <td>${ordl.product.description}</td>
                 <td>
-                  <h:commandButton styleClass="btn btn-danger" value="Remove" action="#{orderController.deleteOrderLine}">
-                    <f:setPropertyActionListener value="#{ordl.id}" target="#{orderController.ordlId}"/>
+                  <h:commandButton styleClass="btn btn-danger" value="Remove" action="#{orderController.deleteOrderLine(ordl)}">
+                    <%---<f:setPropertyActionListener value="#{ordl.id}" target="#{orderController.ordlId}"/> ---%>
                   </h:commandButton>
                 </td>
               </tr>
@@ -65,6 +65,14 @@
           </div>
         </c:when>
         <c:when test="${orderController.order==null}">
+          <div align="center">
+            <h2> Your Basket is empty</h2>
+            <h3> Hurry up to fill it! </h3>
+            <br>
+            <h:commandButton styleClass="btn btn-default" value="Product List" action="#{productController.listProducts}"/>
+          </div>
+        </c:when>
+        <c:when test="${orderController.order.orderLines.size()==0}">
           <div align="center">
             <h2> Your Basket is empty</h2>
             <h3> Hurry up to fill it! </h3>
