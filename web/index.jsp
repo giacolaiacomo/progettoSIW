@@ -28,14 +28,17 @@
 	<jsp:include page="header.jsp" />
 	<h:form>
 
+		<header class="business-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+					</div>
+				</div>
+			</div>
+		</header>
 
 		<!-- Content Section -->
 		<section>
-			<div class="container">
-
-				<div class="row">
-
-				</div>
 
 				<hr>
 
@@ -43,7 +46,7 @@
 				<div class="row">
 					<div class="col-sm-6 col-md-4" align="center">
 						<div class="thumbnail">
-							<img src="..." alt="...">
+							<img src="bootstrap/css/joinus.jpg" width="200" height="242">
 							<div class="caption">
 								<h3>Enjoy our community!</h3>
 								<p>Registered or logged in to be able to buy the best products on the market!</p>
@@ -53,7 +56,7 @@
 					</div>
 					<div class="col-sm-6 col-md-4" align="center">
 						<div class="thumbnail">
-							<img src="..." alt="...">
+							<img src="bootstrap/css/product.jpg" width="200" height="242">
 							<div class="caption">
 								<h3>Please see our product catalog</h3>
 								<p>Click the button below to access the list of our products available for you!</p>
@@ -63,7 +66,7 @@
 					</div>
 					<div class="col-sm-6 col-md-4" align="center">
 						<div class="thumbnail">
-							<img src="..." alt="...">
+							<img src="bootstrap/css/provider.jpg" width="200" height="242">
 							<div class="caption">
 								<h3>Our Providers</h3>
 								<p>We offer only the best providers available in the market!</p>
