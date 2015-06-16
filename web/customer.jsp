@@ -23,7 +23,6 @@
 <body>
 <f:view>
   <jsp:include page="header.jsp" />
-  <c:choose></c:choose>
   <div align="center">
     <h1>${customerController.customer.firstname} ${customerController.customer.lastname}</h1>
     <h2>Customer's Info</h2>

@@ -80,8 +80,7 @@ public class OrderController {
 
     public void setClosedOrder(){
         this.order.setCompletedTime(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
-        this.order.setClosed();
-        ordersFacade.updateOrder(order);
+        this.ordersFacade.setClosed(this.order);
         customerFacade.updateCustomer(customer);
         this.order=null;
     }

@@ -32,6 +32,7 @@
             <td>
               <h:commandLink action="#{productController.findProduct}" value="#{ordl.product.name}">
                 <f:param name="id" value="#{ordl.product.id}" />
+                <f:setPropertyActionListener value="#{ordl.product}" target="#{productController.product}"/>
               </h:commandLink>
             </td>
             <td>${ordl.product.code}</td>

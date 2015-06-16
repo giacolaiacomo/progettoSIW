@@ -18,7 +18,6 @@ public class OrdersFacade {
 
     public Orders createOrder(Customer customer_id){
         Orders order = new Orders(customer_id);
-        em.persist(order);
         return order;
     }
 
@@ -53,6 +52,11 @@ public class OrdersFacade {
         Query q = em.createQuery("SELECT o FROM Orders o WHERE o.customer_id.Id=:id");
         q.setParameter("id", id);
         return q.getResultList();
+    }
+
+    public void setClosed(Orders orders){
+        orders.setClosed();
+        em.persist(orders);
     }
 
     private void deleteOrder(Orders order) {

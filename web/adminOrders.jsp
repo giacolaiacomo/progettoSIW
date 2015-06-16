@@ -44,9 +44,16 @@
                             </h:commandLink>
                         </td>
                         <td>
-                            <c:if test="${order.processed != true}">
-                                <h:commandButton styleClass="btn-primary btn" value="Process" action="#{orderController.setProcessedOrder}"/>
-                            </c:if>
+                            <c:choose>
+                                <c:when test="${order.processed != true}">
+                                    <h:commandButton styleClass="btn-primary btn" value="Process" action="#{orderController.setProcessedOrder}">
+                                        <f:setPropertyActionListener value="#{order}" target="#{orderController.order}"/>
+                                    </h:commandButton>
+                                </c:when>
+                                <c:when test="${order.processed == true}">
+                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                </c:when>
+                            </c:choose>
                         </td>
                     </tr>
                 </c:forEach>
