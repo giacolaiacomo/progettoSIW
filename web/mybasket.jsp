@@ -26,15 +26,16 @@
   <h:form>
     <div class="container form-signin">
       <h1>My Basket</h1>
-      <h3>Current order: ${orderController.order.id}</h3>
-      <div>Creation time:
-        <h:outputText value="#{orderController.order.creationtime.time}">
-          <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
-        </h:outputText>
-      </div>
-      <hr>
       <c:choose>
-        <c:when test="${orderController.order.orderLines.size() != 0}">
+        <c:when test="${orderController.order!=null}">
+          <h3>Current order: ${orderController.order.id}</h3>
+          <div>Creation time:
+            <h:outputText value="#{orderController.order.creationtime.time}">
+              <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
+            </h:outputText>
+          </div>
+          <hr>
+
           <table>
             <tr>
               <th>Name</th><th>Code</th><th>Price</th><th>Quantity</th><th>Description</th>
@@ -63,7 +64,7 @@
             <h:commandButton styleClass="btn btn-primary" value="Close Order" action="#"/>
           </div>
         </c:when>
-        <c:when test="${orderController.order.orderLines.size() == 0}">
+        <c:when test="${orderController.order==null}">
           <div align="center">
             <h1> Your Basket is empty</h1>
             <h2> Hurry up to fill it! </h2>

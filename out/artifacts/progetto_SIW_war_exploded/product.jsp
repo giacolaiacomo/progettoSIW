@@ -19,34 +19,37 @@
 <f:view>
     <jsp:include page="header.jsp" />
     <h:form>
-        <div align="center">
-            <h1>${productController.product.name}</h1>
-            <div>Code: ${productController.product.code}</div>
-            <div>Price: ${productController.product.price}</div>
-            <div>Quantity: ${productController.product.quantity}</div>
-            <div>Description: ${productController.product.description}</div>
+        <div class="container form-signin">
+            <div align="center">
+                <h1>${productController.product.name}</h1>
+                <div>Code: ${productController.product.code}</div>
+                <div>Price: ${productController.product.price}</div>
+                <div>Quantity: ${productController.product.quantity}</div>
+                <div>Description: ${productController.product.description}</div>
+            </div>
+            <c:if test="${customerController.customer!=null}">
+                <div align="center">
+                    <h:inputText value="#{orderController.quantity}"
+                                 required="true"
+                                 requiredMessage="Quantity is mandatory"
+                                 converterMessage="Quantity must be a number"
+                                 id="quantity">
+                    </h:inputText>
+                    <h:message for="quantity" styleClass="alert-danger"/>
+                    <h:commandButton styleClass="btn btn-default" value="Add to basket" action="#{orderController.addOrderLine}">
+                        <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
+                        <f:setPropertyActionListener value="#{productController.product}" target="#{orderController.product}"/>
+                    </h:commandButton>
+                </div>
+            </c:if>
+            <c:if test="${administratorController.administrator!=null}">
+                <div align="center">
+                    <h:commandButton styleClass="btn btn-default" value="Modify Product" action="#{administratorController.modifyProduct}">
+                        <f:setPropertyActionListener value="#{productController.product}" target="#{administratorController.product}"/>
+                    </h:commandButton>
+                </div>
+            </c:if>
         </div>
-        <c:if test="${customerController.customer!=null}">
-            <div align="center">
-                <h:inputText value="#{orderController.quantity}"
-                             required="true"
-                             requiredMessage="Quantity is mandatory"
-                             converterMessage="Quantity must be a number"
-                             id="quantity">
-                </h:inputText>
-                <h:message for="quantity" styleClass="alert-danger"/>
-                <h:commandButton styleClass="btn btn-default" value="Add to basket" action="#{orderController.addOrderLine}">
-                    <f:setPropertyActionListener value="#{productController.product}" target="#{orderController.product}"/>
-                </h:commandButton>
-            </div>
-        </c:if>
-        <c:if test="${administratorController.administrator!=null}">
-            <div align="center">
-                <h:commandButton styleClass="btn btn-default" value="Modify Product" action="#{administratorController.modifyProduct}">
-                    <f:setPropertyActionListener value="#{productController.product}" target="#{administratorController.product}"/>
-                </h:commandButton>
-            </div>
-        </c:if>
     </h:form>
 </f:view>
 </body>
