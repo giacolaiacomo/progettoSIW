@@ -25,18 +25,24 @@
         <h:form>
             <table>
                 <tr>
-                    <th>Name</th><th>Code</th><th>Price</th><th>Quantity</th><th>Description</th>
+                    <th>Id</th><th>Creation Time</th><th>Closed Time</th><th>Customer Email</th>
                 </tr>
                 <c:forEach var="order" items="#{administratorController.closedOrders}">
                     <tr>
                         <td>
-                            <h:commandLink action="#{productController.findProduct(product.id)}" value="#{product.name}">
+                            <h:commandLink action="#{orderController.findOrderById(order.id)}" value="#{order.id}">
                             </h:commandLink>
                         </td>
-                        <td>${product.code}</td>
-                        <td>${product.price}</td>
-                        <td>${product.quantity}</td>
-                        <td>${product.description}</td>
+                        <td><h:outputText value="#{order.creationtime.time}">
+                            <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
+                        </h:outputText></td>
+                        <td><h:outputText value="#{order.completedTime.time}">
+                            <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
+                        </h:outputText></td>
+                        <td>
+                            <h:commandLink action="#{customerController.findCustomer(order.customer_id.id)}" value="#{order.customer_id.email}">
+                            </h:commandLink>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

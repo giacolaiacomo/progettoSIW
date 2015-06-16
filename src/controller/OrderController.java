@@ -24,7 +24,6 @@ public class OrderController {
     private Long ordlId;
 
 
-
     @EJB(beanName = "ordfacade")
     private OrdersFacade ordersFacade;
     @EJB(beanName = "cfacade")
@@ -85,6 +84,16 @@ public class OrderController {
         ordersFacade.updateOrder(order);
         customerFacade.updateCustomer(customer);
         this.order=null;
+
+    }
+
+    public String findOrderById(){
+        this.order=this.ordersFacade.getOrder(this.id);
+        return "order";
+    }
+    public String findOrderById(Long id){
+        this.order=this.ordersFacade.getOrder(id);
+        return "order";
     }
 
     public String myBasket(){

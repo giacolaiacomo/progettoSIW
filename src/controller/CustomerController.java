@@ -2,6 +2,7 @@ package controller;
 
 import model.Customer;
 import model.CustomerFacade;
+import model.Orders;
 import model.OrdersFacade;
 
 import javax.ejb.EJB;
@@ -35,6 +36,8 @@ public class CustomerController {
 
     @EJB(beanName = "ordfacade")
     private OrdersFacade ordersFacade;
+
+    private List<Orders> orders;
 
     public String createCustomer(){
         this.customer=customerFacade.createCustomer(firstname, lastname, birthDate, email, password, phonenumber, street, city, state, zipcode);
@@ -77,6 +80,12 @@ public class CustomerController {
         this.customer=customerFacade.getCustomer(id);
         return "customer";
     }
+
+    public String findOrderCustomer(Long idCustomer){
+        this.orders=this.ordersFacade.getAllCloseOrderCustomer(idCustomer);
+        return "orders";
+    }
+
 
     /* Getter & Setter */
 

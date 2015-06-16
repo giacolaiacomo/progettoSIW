@@ -73,6 +73,9 @@
                                 <li><h:commandLink action="#{administratorController.logout}" value="Logout" /></li>
                             </ul>
                         </li>
+                        <li>
+                            <h:commandLink action="#{administratorController.allClosedOrders}" value="Closed Orders"/>
+                        </li>
                     </c:if>
                 </ul>
                 <c:if test="${customerController.customer!=null}">

@@ -170,3 +170,19 @@ and (max-device-width : 480px) {
     background: #5f85cc;
     border-color: #4e6198 #5f74a6 #5f74a6;
 }
+
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+footer {
+    margin: 50px 0;
+}

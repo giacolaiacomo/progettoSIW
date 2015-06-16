@@ -38,9 +38,14 @@ public class OrdersFacade {
     }
 
     public List<Orders> getAllClosedOrder() {
-        Query q = em.createQuery("SELECT o FROM Orders o WHERE o.closed=:true");
+        Query q = em.createQuery("SELECT o FROM Orders o WHERE o.closed=true");
         List<Orders> orders = q.getResultList();
         return orders;
+    }
+    public List<Orders> getAllCloseOrderCustomer(Long id){
+        Query q = em.createQuery("SELECT o FROM Orders o WHERE o.customer_id.Id=:id");
+        q.setParameter("id", id);
+        return q.getResultList();
     }
 
     private void deleteOrder(Orders order) {
