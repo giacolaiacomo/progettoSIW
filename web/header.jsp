@@ -54,28 +54,36 @@
                                             0
                                         </c:when>
                                         <c:when test="${orderController.order.orderLines.size()!=null}">
-                                                ${orderController.order.orderLines.size()}
+                                            ${orderController.order.orderLines.size()}
                                         </c:when>
                                     </c:choose>
                                 </span>
                             </h:commandLink>
                         </li>
                     </c:if>
-
                     <c:if test="${administratorController.administrator != null}">
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Control Panel &middot; Admin</a>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href='#'>Control Panel &middot; Admin</a>
                             <ul class="dropdown-menu">
                                 <li><a href='<c:url value="admin.jsp"/>'>Admin page</a></li>
-                                <li><a href='<c:url value="newProduct.jsp"/>'>New Product</a> </li>
-                                <li><a href='<c:url value="newProvider.jsp"/>'>New Provider</a> </li>
-                                <li><a href='<c:url value="newCustomer.jsp"/>'>New Customer</a> </li>
-                                <li><h:commandLink action="#{providerController.listProviders}" value="Providers List" /></li>
                                 <li><h:commandLink action="#{administratorController.logout}" value="Logout" /></li>
                             </ul>
                         </li>
-                        <li>
-                            <h:commandLink action="#{administratorController.allClosedOrders}" value="Closed Orders"/>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Create</a>
+                            <ul class="dropdown-menu">
+                                <li><a href='<c:url value="newProduct.jsp"/>'>New Product</a> </li>
+                                <li><a href='<c:url value="newProvider.jsp"/>'>New Provider</a> </li>
+                                <li><a href='<c:url value="newCustomer.jsp"/>'>New Customer</a> </li>
+                            </ul>
                         </li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Lists</a>
+                            <ul class="dropdown-menu">
+                                <li><h:commandLink action="#{providerController.listProviders}" value="Providers List" /></li>
+                                <li><h:commandLink action="#{customerController.listCustomers}" value="Customers List" /></li>
+                                <li><h:commandLink action="#{productController.listProducts}" value="Products List" /></li>
+                            </ul>
+                        </li>
+                                <li><h:commandLink action="#{administratorController.allClosedOrders}" value="Orders"/></li>
+
                     </c:if>
                 </ul>
                 <c:if test="${customerController.customer!=null}">

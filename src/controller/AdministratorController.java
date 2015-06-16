@@ -84,7 +84,7 @@ public class AdministratorController {
 
     public String allClosedOrders(){
         this.closedOrders = ordersFacade.getAllClosedOrder();
-        return "closedOrders";
+        return "adminOrders";
     }
 
     public String allProcessedOrders(){
