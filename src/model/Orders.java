@@ -15,11 +15,22 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Temporal(DATE)
+    @Column
+    @Temporal (TemporalType.TIMESTAMP)
     private Calendar creationtime;
 
+    @Column
+    @Temporal (TemporalType.TIMESTAMP)
+    private Calendar completedTime;
+
+    @Column
+    @Temporal (TemporalType.TIMESTAMP)
+    private Calendar processedTime;
+
+    @Column
     boolean closed;
 
+    @Column
     boolean processed;
 
     @ManyToOne
@@ -32,6 +43,7 @@ public class Orders {
         this.creationtime = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"));
         this.customer_id = customer_id;
         this.closed = false;
+        this.processed = false;
         this.orderLines = new ArrayList<>();
     }
 
@@ -45,6 +57,23 @@ public class Orders {
 
 
     /* Getter & Setter */
+
+    public Calendar getCompletedTime() {
+        return completedTime;
+    }
+
+    public void setCompletedTime(Calendar completedTime) {
+        this.completedTime = completedTime;
+    }
+
+    public Calendar getProcessedTime() {
+        return processedTime;
+    }
+
+    public void setProcessedTime(Calendar processedTime) {
+        this.processedTime = processedTime;
+    }
+
     public boolean isClosed(){
         return closed;
     }
@@ -53,12 +82,12 @@ public class Orders {
         return processed;
     }
 
-    public void setProcessed(boolean processed) {
-        this.processed = processed;
+    public void setProcessed() {
+        this.processed = true;
     }
 
-    public void setClosed(boolean closed) {
-        this.closed = closed;
+    public void setClosed() {
+        this.closed = true;
     }
 
     public void addOrderLine(OrderLine orderLine) {

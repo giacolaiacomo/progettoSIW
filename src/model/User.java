@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-@MappedSuperclass //da provare e vedere effetti
+@MappedSuperclass
 public class User {
 
     @Id
@@ -26,11 +26,11 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar registrationDate;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String email;
 
     @Column(nullable = false)
-    protected String password;  //da sistemare
+    protected String password;
 
     @OneToOne(cascade = {CascadeType.PERSIST})
     @Column(nullable = true)

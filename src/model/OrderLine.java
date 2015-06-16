@@ -11,8 +11,10 @@ public class OrderLine {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private Double unitprice;
 
+    @Column(nullable = false)
     private int quantity;
 
     @ManyToOne

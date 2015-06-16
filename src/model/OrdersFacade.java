@@ -37,6 +37,12 @@ public class OrdersFacade {
         return orders;
     }
 
+    public List<Orders> getAllClosedOrder() {
+        Query q = em.createQuery("SELECT o FROM Orders o WHERE o.closed=:true");
+        List<Orders> orders = q.getResultList();
+        return orders;
+    }
+
     private void deleteOrder(Orders order) {
         em.remove(order);
     }

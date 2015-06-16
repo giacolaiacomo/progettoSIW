@@ -61,7 +61,7 @@
           </table>
           <hr>
           <div align="center">
-            <h:commandButton styleClass="btn btn-primary" value="Close Order" action="#"/>
+            <h:commandButton styleClass="btn btn-primary" value="Close Order" action="#{orderController.setClosedOrder}"/>
           </div>
         </c:when>
         <c:when test="${orderController.order==null}">

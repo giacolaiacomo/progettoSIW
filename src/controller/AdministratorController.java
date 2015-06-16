@@ -26,6 +26,8 @@ public class AdministratorController {
     private String email;
     private String password;
 
+    private List<Orders> closedOrders;
+
     private List<Provider> providers;
 
     @EJB(beanName="adminfacade")
@@ -43,6 +45,9 @@ public class AdministratorController {
     @EJB(beanName = "provfacade")
     private ProviderFacade providerFacade;
     private Provider provider;
+
+    @EJB(beanName = "ordfacade")
+    private OrdersFacade ordersFacade;
 
     public String createAdministrator() {
         this.administrator = administratorFacade.createAdministrator(firstname, lastname, birthDate, email, password, street, city, state, zipcode);
@@ -76,8 +81,13 @@ public class AdministratorController {
     }
 
     public String allProviders(){
-        this.providers=providerFacade.getAllProvider();
+        this.providers = providerFacade.getAllProvider();
         return "providers";
+    }
+
+    public String allClosedOrders(){
+        this.closedOrders = ordersFacade.getAllClosedOrder();
+        return "closedOrders";
     }
 
     public String modifyProduct(){
@@ -85,6 +95,14 @@ public class AdministratorController {
     }
 
     /* Getter & Setter */
+
+    public List<Orders> getClosedOrders() {
+        return closedOrders;
+    }
+
+    public void setClosedOrders(List<Orders> closedOrders) {
+        this.closedOrders = closedOrders;
+    }
 
     public Administrator getAdministrator() {
         return administrator;

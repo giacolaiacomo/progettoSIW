@@ -78,6 +78,8 @@ public class CustomerController {
         return "customer";
     }
 
+    /* Getter & Setter */
+
     public String getFirstname() {
         return firstname;
     }

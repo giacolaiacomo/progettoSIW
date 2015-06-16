@@ -12,14 +12,17 @@ public class Address{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private String street;
 
+    @Column(nullable = false)
     private String city;
 
+    @Column(nullable = false)
     private  String state;
 
+    @Column(nullable = false)
     private Long zipcode;
-
 
     @OneToMany(mappedBy = "address")
     private List<Provider> providers;

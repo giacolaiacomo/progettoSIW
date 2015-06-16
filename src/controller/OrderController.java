@@ -8,18 +8,17 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.criteria.Order;
+import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 
 @ManagedBean
 @SessionScoped
 public class OrderController {
 
     private Long id;
-
     private Customer customer;
-
     private Orders order;
-
     private Product product;
     private int quantity=1;
     private Long ordlId;
@@ -80,9 +79,18 @@ public class OrderController {
         ordersFacade.deleteOrder(this.order.getId());
     }
 
+    public void setClosedOrder(){
+        this.order.setCompletedTime(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
+        this.order.setClosed();
+        ordersFacade.updateOrder(order);
+        customerFacade.updateCustomer(customer);
+    }
+
     public String myBasket(){
         return "mybasket";
     }
+
+    /* Getter & Setter */
 
     public Long getId() {
         return id;

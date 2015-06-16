@@ -25,11 +25,10 @@ public class Provider {
     private Long phoneNumber;
 
     @Column(nullable = false)
+    private String email;
+
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Address address;
-
-    @Column(nullable = false, unique = true)
-    private String email;
 
     @ManyToMany(mappedBy = "providers", fetch = FetchType.EAGER)
     private List<Product> product_id;
