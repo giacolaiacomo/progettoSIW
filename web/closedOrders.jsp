@@ -25,7 +25,7 @@
         <h:form>
             <table>
                 <tr>
-                    <th>Id</th><th>Creation Time</th><th>Closed Time</th><th>Customer Email</th>
+                    <th>Id</th><th>Creation Time</th><th>Closed Time</th><th>Customer Email</th><th>Processed</th>
                 </tr>
                 <c:forEach var="order" items="#{administratorController.closedOrders}">
                     <tr>
@@ -42,6 +42,11 @@
                         <td>
                             <h:commandLink action="#{customerController.findCustomer(order.customer_id.id)}" value="#{order.customer_id.email}">
                             </h:commandLink>
+                        </td>
+                        <td>
+                            <c:if test="${orderController.order.processed != true}">
+                                <h:commandButton styleClass="btn-primary btn" value="Process" action="#{orderController.setProcessedOrder}"/>
+                            </c:if>
                         </td>
                     </tr>
                 </c:forEach>

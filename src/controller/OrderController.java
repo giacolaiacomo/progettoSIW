@@ -84,7 +84,13 @@ public class OrderController {
         ordersFacade.updateOrder(order);
         customerFacade.updateCustomer(customer);
         this.order=null;
+    }
 
+    public void setProcessedOrder(){
+        this.order.setProcessedTime(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
+        this.order.setProcessed();
+        ordersFacade.updateOrder(order);
+        customerFacade.updateCustomer(customer);
     }
 
     public String findOrderById(){

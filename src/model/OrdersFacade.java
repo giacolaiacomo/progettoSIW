@@ -42,6 +42,13 @@ public class OrdersFacade {
         List<Orders> orders = q.getResultList();
         return orders;
     }
+
+    public List<Orders> getAllProcessedOrder() {
+        Query q = em.createQuery("SELECT o FROM Orders o WHERE o.processed=true");
+        List<Orders> orders = q.getResultList();
+        return orders;
+    }
+
     public List<Orders> getAllCloseOrderCustomer(Long id){
         Query q = em.createQuery("SELECT o FROM Orders o WHERE o.customer_id.Id=:id");
         q.setParameter("id", id);

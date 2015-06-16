@@ -28,6 +28,8 @@ public class AdministratorController {
 
     private List<Orders> closedOrders;
 
+    private List<Orders> processedOrders;
+
     private List<Provider> providers;
 
     @EJB(beanName="adminfacade")
@@ -80,14 +82,14 @@ public class AdministratorController {
         return "index";
     }
 
-    public String allProviders(){
-        this.providers = providerFacade.getAllProvider();
-        return "providers";
-    }
-
     public String allClosedOrders(){
         this.closedOrders = ordersFacade.getAllClosedOrder();
         return "closedOrders";
+    }
+
+    public String allProcessedOrders(){
+        this.processedOrders = ordersFacade.getAllProcessedOrder();
+        return "processedOrders";
     }
 
     public String modifyProduct(){
@@ -95,6 +97,22 @@ public class AdministratorController {
     }
 
     /* Getter & Setter */
+
+    public List<Orders> getProcessedOrders() {
+        return processedOrders;
+    }
+
+    public void setProcessedOrders(List<Orders> processedOrders) {
+        this.processedOrders = processedOrders;
+    }
+
+    public OrdersFacade getOrdersFacade() {
+        return ordersFacade;
+    }
+
+    public void setOrdersFacade(OrdersFacade ordersFacade) {
+        this.ordersFacade = ordersFacade;
+    }
 
     public List<Orders> getClosedOrders() {
         return closedOrders;
