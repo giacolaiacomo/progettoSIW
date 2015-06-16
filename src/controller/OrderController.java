@@ -42,6 +42,10 @@ public class OrderController {
     }
 
     public String addOrderLine(){
+        if(this.order==null) {
+            this.order = this.ordersFacade.createOrder(customer);
+            this.customer.addOrder(order);
+        }
         if(this.quantity<=0)
             return "Error! Quantity must be >0";
         else {

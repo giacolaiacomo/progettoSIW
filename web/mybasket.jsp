@@ -58,6 +58,10 @@
               </tr>
             </c:forEach>
           </table>
+          <hr>
+          <div align="center">
+            <h:commandButton styleClass="btn btn-primary" value="Close Order" action="#"/>
+          </div>
         </c:when>
         <c:when test="${orderController.order.orderLines.size() == 0}">
           <div align="center">

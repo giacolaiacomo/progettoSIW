@@ -40,26 +40,25 @@
                             <ul class="dropdown-menu">
                                 <li><a href='<c:url value="customer.jsp"/>'>Profile</a></li>
                                 <li><h:commandLink action="#{customerController.logoutCustomer}" value="Logout" >
-                                    </h:commandLink>
+                                </h:commandLink>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <c:choose>
-                                <c:when test="${orderController.order==null}">
-                                    <h:commandLink
-                                            action="#{orderController.createOrder}"
-                                            value="New Order">
-                                        <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
-                                    </h:commandLink>
-                                </c:when>
-                                <c:when test="${orderController.order!=null}">
-                                    <h:commandLink
-                                            action="#{orderController.myBasket}"
-                                            value="My Basket">
-                                    </h:commandLink>
-                                </c:when>
-                            </c:choose>
+                            <h:commandLink
+                                    action="#{orderController.myBasket}"
+                                    value="My Basket">
+                                <span class="badge">
+                                    <c:choose>
+                                        <c:when test="${orderController.order.orderLines.size()==null}">
+                                            0
+                                        </c:when>
+                                        <c:when test="${orderController.order.orderLines.size()!=null}">
+                                                ${orderController.order.orderLines.size()}
+                                        </c:when>
+                                    </c:choose>
+                                </span>
+                            </h:commandLink>
                         </li>
                     </c:if>
 
