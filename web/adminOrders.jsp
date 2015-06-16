@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
     <link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap/css/msc.css"/>
-    <title>All Orders</title>
+    <title>Closed Orders</title>
 </head>
 <body>
 <f:view>
@@ -25,7 +25,7 @@
         <h:form>
             <table>
                 <tr>
-                    <th>Id</th><th>Creation Time</th><th>Closed Time</th><th>Customer Email</th><th>Status</th>
+                    <th>Id</th><th>Creation Time</th><th>Closed Time</th><th>Customer Email</th><th>Processed</th>
                 </tr>
                 <c:forEach var="order" items="#{administratorController.closedOrders}">
                     <tr>
@@ -44,16 +44,9 @@
                             </h:commandLink>
                         </td>
                         <td>
-                            <c:choose>
-                                <c:when test="${order.processed != true}">
-                                    <h:commandButton styleClass="btn-primary btn" value="Process" action="#{orderController.setProcessedOrder}">
-                                        <f:setPropertyActionListener value="#{order}" target="#{orderController.order}"/>
-                                    </h:commandButton>
-                                </c:when>
-                                <c:when test="${order.processed == true}">
-                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"> Processed</span>
-                                </c:when>
-                            </c:choose>
+                            <c:if test="${order.processed != true}">
+                                <h:commandButton styleClass="btn-primary btn" value="Process" action="#{orderController.setProcessedOrder}"/>
+                            </c:if>
                         </td>
                     </tr>
                 </c:forEach>
