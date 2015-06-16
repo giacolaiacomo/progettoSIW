@@ -27,7 +27,7 @@
                 <div>Quantity: ${productController.product.quantity}</div>
                 <div>Description: ${productController.product.description}</div>
             </div>
-            <c:if test="${customerController.customer!=null}">
+            <c:if test="${customerController.customer!=null && orderController.order.closed != true}">
                 <div align="center">
                     <h:inputText value="#{orderController.quantity}"
                                  required="true"

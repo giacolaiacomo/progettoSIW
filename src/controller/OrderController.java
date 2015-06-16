@@ -84,6 +84,7 @@ public class OrderController {
         this.order.setClosed();
         ordersFacade.updateOrder(order);
         customerFacade.updateCustomer(customer);
+        this.order=null;
     }
 
     public String myBasket(){
