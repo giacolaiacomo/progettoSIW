@@ -33,13 +33,13 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String code, double price, String description, int quantity, List<Provider> providers) {
+    public Product(String name, String code, double price, String description, int quantity) {
         this.name = name;
         this.code = code;
         this.price = price;
         this.description = description;
         this.quantity = quantity;
-        this.providers=providers;
+        this.providers = new ArrayList<Provider>();
     }
 
     public void addProvider(Provider p) {

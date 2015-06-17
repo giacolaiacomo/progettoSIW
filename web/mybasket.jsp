@@ -63,7 +63,15 @@
           <h:commandButton styleClass="btn btn-danger" value="Clean Basket" onclick="return confirm('Are you sure?')" action="#{orderController.deleteOrder}"/>
         </div>
       </c:when>
-      <c:when test="${orderController.order==null || orderController.order.orderLines.size()==0}">
+      <c:when test="${orderController.order==null}">
+        <div align="center">
+          <h2> Your Basket is empty</h2>
+          <h3> Hurry up to fill it! </h3>
+          <br>
+          <h:commandButton styleClass="btn btn-default" value="Product List" action="#{productController.listProducts}"/>
+        </div>
+      </c:when>
+      <c:when test="${orderController.order.orderLines.size()==0}">
         <div align="center">
           <h2> Your Basket is empty</h2>
           <h3> Hurry up to fill it! </h3>

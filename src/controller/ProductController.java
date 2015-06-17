@@ -1,12 +1,8 @@
 package controller;
 
-import java.util.LinkedList;
 import java.util.List;
 import model.Product;
 import model.ProductFacade;
-import model.Provider;
-import model.ProviderFacade;
-
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -15,7 +11,7 @@ import javax.faces.context.FacesContext;
 @ManagedBean
 @SessionScoped
 public class ProductController {
-	
+
 
 	private Long id;
 	private String name;
@@ -24,42 +20,29 @@ public class ProductController {
 	private String code;
 	private int quantity;
 	private Product product;
-	private List<String> providernames;
-	private List<Provider> providers;
+	private String providername;
 
 	private List<Product> products;
 
-	@EJB(beanName = "provfacade")
-	private ProviderFacade providerFacade;
-
 	@EJB(beanName = "prodfacade")
 	private ProductFacade productFacade;
-	
+
 	public String createProduct() {
-		this.providers = new LinkedList<Provider>();
-		for(String a: this.providernames){
-			Provider p = this.providerFacade.getProviderByEmail(a);
-			this.providers.add(p);
-		}
-		this.product = productFacade.createProduct(name, code, price, description, quantity, providers);
-		for(Provider p: product.getProviders()){
-			p.addProduct(product);
-			this.providerFacade.updateProvider(p);
-		}
-        if (product != null)
-		    return "product";
-        else
-            return "errorProduct";
+		this.product = productFacade.createProduct(name, code, price, description, quantity, providername);
+		if (product != null)
+			return "product";
+		else
+			return "errorProduct";
 	}
 
 	public String updateProduct() {
 		productFacade.updateProduct(this.product);
 		return "product";
 	}
-	
+
 	public String listProducts() {
 		this.products = productFacade.getAllProducts();
-		return "products"; 
+		return "products";
 	}
 
 	public String findProduct() {
@@ -74,7 +57,7 @@ public class ProductController {
 		else
 			return "indexUser";
 	}
-	
+
 	public String findProduct(Long id) {
 		this.product = productFacade.getProduct(id);
 		return "product";
@@ -146,12 +129,12 @@ public class ProductController {
 		this.quantity = quantity;
 	}
 
-	public List<String> getProvidernames() {
-		return providernames;
+	public String getProvidername() {
+		return providername;
 	}
 
-	public void setProvidernames(List<String> providernames) {
-		this.providernames = providernames;
+	public void setProvidername(String providername) {
+		this.providername = providername;
 	}
 
 	public ProductFacade getProductFacade() {
@@ -160,22 +143,6 @@ public class ProductController {
 
 	public void setProductFacade(ProductFacade productFacade) {
 		this.productFacade = productFacade;
-	}
-
-	public List<Provider> getProviders() {
-		return providers;
-	}
-
-	public void setProviders(List<Provider> providers) {
-		this.providers = providers;
-	}
-
-	public ProviderFacade getProviderFacade() {
-		return providerFacade;
-	}
-
-	public void setProviderFacade(ProviderFacade providerFacade) {
-		this.providerFacade = providerFacade;
 	}
 }
 

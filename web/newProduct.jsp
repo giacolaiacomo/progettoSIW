@@ -52,10 +52,10 @@
                                                                           cols="20"
                                                                           rows="5" />
                     </div>
-                    <div class="form-group">Provider:
-                        <h:selectManyMenu styleClass="form-control" value="#{productController.providernames}" immediate="true" >
-                            <f:selectItems value="#{providerController.providerFacade.allProvider}" var="provider" itemValue="#{provider.name}" itemLabel="#{provider.name}" />
-                        </h:selectManyMenu>
+                    <div class="form-group">Provider: <h:inputText styleClass="form-control" value="#{productController.providername}"
+                                                               required="true"
+                                                               requiredMessage="Provider is mandatory"
+                                                               id="providername"/><h:message for="providername" styleClass="alert-danger"/>
                     </div>
                     <div class="form-group">
                         <h:commandButton value="Submit"  action="#{productController.createProduct}" styleClass="btn btn-primary"/>
