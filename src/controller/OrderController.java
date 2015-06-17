@@ -32,8 +32,8 @@ public class OrderController {
     private CustomerFacade customerFacade;
     @EJB(beanName = "ordlfacade")
     private OrderLineFacade orderLineFacade;
-
-
+    @EJB(beanName = "prodfacade")
+    private ProductFacade productFacade;
 
     public String createOrder(){
         this.order=this.ordersFacade.createOrder(customer);
@@ -95,6 +95,7 @@ public class OrderController {
     public void updateQuantity(){
         for (OrderLine ordl: this.order.getOrderLines()){
             ordl.getProduct().setQuantity(ordl.getProduct().getQuantity() - ordl.getQuantity());
+            productFacade.updateProduct(ordl.getProduct());
         }
 
     }

@@ -1,13 +1,6 @@
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Gianluca
-  Date: 10/06/15
-  Time: 16:17
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -61,7 +54,7 @@
           <hr>
           <div align="center">
             <h:commandButton styleClass="btn btn-primary" value="Close Order" onclick="return confirm('Are you sure?')" action="#{orderController.setClosedOrder}"/>
-            <h:commandButton styleClass="btn btn-danger" value="Clean Basket" action="#{orderController.deleteOrder}"/>
+            <h:commandButton styleClass="btn btn-danger" value="Clean Basket" onclick="return confirm('Are you sure?')" action="#{orderController.deleteOrder}"/>
           </div>
         </c:when>
         <c:when test="${orderController.order==null || orderController.order.orderLines.size()==0}">
