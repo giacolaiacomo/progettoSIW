@@ -85,11 +85,30 @@ public class OrderController {
     }
 
     public void setProcessedOrder(){
-        this.order.setProcessedTime(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
-        this.order.setProcessed();
-        ordersFacade.updateOrder(order);
-        updateQuantity();
-        customerFacade.updateCustomer(customer);
+        if(checkQuantityOrder(this.order)) {
+            this.order.setProcessedTime(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
+            this.order.setProcessed();
+            ordersFacade.updateOrder(order);
+            updateQuantity();
+            customerFacade.updateCustomer(customer);
+        } else
+            erroreQuantità();
+    }
+
+    public boolean checkQuantityOrder(Orders order){
+        int count=0;
+        for(OrderLine ordl: order.getOrderLines()){
+            if(ordl.getProduct().getQuantity() < ordl.getQuantity())
+                count++;
+        }
+        if (count==order.getOrderLines().size())
+            return true;
+        else
+            return false;
+    }
+
+    public String erroreQuantità(){
+        return "index";
     }
 
     public void updateQuantity(){
