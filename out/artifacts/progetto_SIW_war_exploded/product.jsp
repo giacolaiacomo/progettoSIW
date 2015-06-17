@@ -47,16 +47,7 @@
             <c:if test="${administratorController.administrator!=null}">
                 <div align="center">
                     <h:commandButton styleClass="btn btn-default" value="Modify Product" action="modifyProduct.jsp"/>
-                    <br>
-                    <div align="center">
-                        <h:inputText value="#{productController.providername}">
-                        </h:inputText>
-                        <h:message for="quantity" styleClass="alert-danger"/>
-                        <c:if test="${orderController.order.closed!=true}">
-                            <h:commandButton styleClass="btn btn-default" value="Add to basket" action="#{orderController.addOrderLine}">
-                            </h:commandButton>
-                        </c:if>
-                    </div>
+                    <a href='<c:url value="modifyProduct.jsp"/>'>Modify Product</a>
                 </div>
             </c:if>
         </div>

@@ -3,6 +3,9 @@ package controller;
 import java.util.List;
 import model.Product;
 import model.ProductFacade;
+import model.Provider;
+import model.ProviderFacade;
+
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -26,6 +29,9 @@ public class ProductController {
 
 	@EJB(beanName = "prodfacade")
 	private ProductFacade productFacade;
+
+    @EJB(beanName = "provfacade")
+    private ProviderFacade providerFacade;
 
 	public String createProduct() {
 		this.product = productFacade.createProduct(name, code, price, description, quantity, providername);
@@ -61,6 +67,17 @@ public class ProductController {
 	public String findProduct(Long id) {
 		this.product = productFacade.getProduct(id);
 		return "product";
+	}
+
+	public String addProvider(){
+        Provider provider = this.providerFacade.getProviderByName(this.providername);
+        if (provider != null) {
+            this.product.addProvider(provider);
+            productFacade.updateProduct(this.product);
+            providerFacade.updateProvider(provider);
+            return "okProvider";
+        } else
+            return "errorProvider";
 	}
 
 	/* Getter & Setter */

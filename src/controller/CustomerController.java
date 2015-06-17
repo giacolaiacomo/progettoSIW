@@ -42,7 +42,7 @@ public class CustomerController {
     public String createCustomer(){
         this.customer=customerFacade.createCustomer(firstname, lastname, birthDate, email, password, phonenumber, street, city, state, zipcode);
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("customerController");
-        return "index";
+        return "registrationComplete";
     }
 
     public String login(){
