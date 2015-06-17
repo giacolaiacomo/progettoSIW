@@ -24,6 +24,7 @@ public class OrderController {
     private int quantity=1;
     private Long ordlId;
     private OrderLine orderLine;
+    private String message=null;
 
 
     @EJB(beanName = "ordfacade")
@@ -52,11 +53,9 @@ public class OrderController {
             OrderLine ordl = this.order.checkOrderLine(this.product);
             if (ordl != null) {
                 ordl.setQuantity(ordl.getQuantity() + this.quantity);
-                //this.orderLineFacade.updateOrderLine(ordl);
             } else {
                 ordl = new OrderLine(this.product.getPrice(), this.quantity, this.order, this.product);
                 this.order.addOrderLine(ordl);
-                //this.ordersFacade.updateOrder(this.order);
             }
             return "mybasket";
         }
@@ -92,7 +91,7 @@ public class OrderController {
             updateQuantity();
             customerFacade.updateCustomer(customer);
         } else
-            erroreQuantità();
+            this.message="errore ordine non processato";
     }
 
     public boolean checkQuantityOrder(){
@@ -101,10 +100,6 @@ public class OrderController {
                 return false;
         }
         return true;
-    }
-
-    public String erroreQuantità(){
-        return "index";
     }
 
     public void updateQuantity(){
@@ -129,6 +124,30 @@ public class OrderController {
     }
 
     /* Getter & Setter */
+
+    public OrderLine getOrderLine() {
+        return orderLine;
+    }
+
+    public void setOrderLine(OrderLine orderLine) {
+        this.orderLine = orderLine;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public ProductFacade getProductFacade() {
+        return productFacade;
+    }
+
+    public void setProductFacade(ProductFacade productFacade) {
+        this.productFacade = productFacade;
+    }
 
     public Long getId() {
         return id;
