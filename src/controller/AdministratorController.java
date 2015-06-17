@@ -27,9 +27,7 @@ public class AdministratorController {
     private String password;
 
     private List<Orders> closedOrders;
-
     private List<Orders> processedOrders;
-
     private List<Provider> providers;
 
     @EJB(beanName="adminfacade")

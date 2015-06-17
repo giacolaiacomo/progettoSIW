@@ -62,10 +62,9 @@ public class OrderController {
         }
     }
 
-    public String deleteOrderLine() {
-        this.orderLineFacade.deleteOrderLine(ordlId);
-        this.order.removeOrderLine(this.orderLineFacade.getOrderLine(ordlId));
-        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("order", this.order);
+    public String deleteOrderLine(OrderLine ordl) {
+        this.order.removeOrderLine(ordl);
+        orderLineFacade.deleteOrderLine(ordl.getId());
         return "mybasket";
     }
 
@@ -73,7 +72,6 @@ public class OrderController {
         for(OrderLine o : this.order.getOrderLines())
             this.orderLineFacade.deleteOrderLine(o.getId());
         this.ordersFacade.deleteOrder(this.order.getId());
-        this.order=null;
     }
 
     public void setClosedOrder(){
@@ -88,7 +86,15 @@ public class OrderController {
         this.order.setProcessedTime(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
         this.order.setProcessed();
         ordersFacade.updateOrder(order);
+        updateQuantity();
         customerFacade.updateCustomer(customer);
+    }
+
+    public void updateQuantity(){
+        for (OrderLine ordl: this.order.getOrderLines()){
+            ordl.getProduct().setQuantity(ordl.getProduct().getQuantity() - ordl.getQuantity());
+        }
+
     }
 
     public String findOrderById(){
