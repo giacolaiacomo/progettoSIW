@@ -99,11 +99,6 @@ public class AdministratorController {
         productFacade.deleteProduct(this.prodId);
     }
 
-    public String modifyCustomer(){ return "modifyCustomer"; }
-
-    public String modifyProduct(){
-        return "modifyProduct";
-    }
 
     /* Getter & Setter */
 

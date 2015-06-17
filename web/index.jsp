@@ -76,18 +76,6 @@
 							</div>
 						</div>
 					</div>
-					<c:if test="${customerController.customer!=null}">
-					<div class="col-sm-6 col-md-4" align="center">
-						<div class="thumbnail">
-							<img src="bootstrap/css/joinus.jpg" width="200" height="242">
-							<div class="caption">
-								<h3>Enjoy our community!</h3>
-								<p>Registered or logged in to be able to buy the best products on the market!</p>
-								<a href="newCustomer.jsp" class="btn btn-primary" role="button">Sign Up</a> <a href="loginCustomer.jsp" class="btn btn-default" role="button">LogIn</a>
-							</div>
-						</div>
-					</div>
-					</c:if>
 				</div>
 
 			</div>
