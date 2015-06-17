@@ -5,7 +5,6 @@ import model.*;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.util.Date;
@@ -25,6 +24,8 @@ public class AdministratorController {
     private Long zipcode;
     private String email;
     private String password;
+
+    private String emailCust;
 
     private List<Orders> closedOrders;
     private List<Orders> processedOrders;
@@ -91,8 +92,10 @@ public class AdministratorController {
     }
 
     public void deleteCustomer() {
-        customerFacade.deleteCustomerByEmail(this.email);
+        customerFacade.deleteCustomerByEmail(this.emailCust);
     }
+
+    public String modifyCustomer(){ return "modifyCustomer"; }
 
     public String modifyProduct(){
         return "modifyProduct";
@@ -274,5 +277,13 @@ public class AdministratorController {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEmailCust() {
+        return emailCust;
+    }
+
+    public void setEmailCust(String emailCust) {
+        this.emailCust = emailCust;
     }
 }

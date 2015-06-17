@@ -41,7 +41,8 @@ public class CustomerController {
 
     public String createCustomer(){
         this.customer=customerFacade.createCustomer(firstname, lastname, birthDate, email, password, phonenumber, street, city, state, zipcode);
-        return "customer";
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("customerController");
+        return "index";
     }
 
     public String login(){
@@ -69,6 +70,11 @@ public class CustomerController {
 
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "index";
+    }
+
+    public String updateCustomer(){
+        this.customerFacade.updateCustomer(this.customer);
+        return "customers";
     }
 
     public String listCustomers(){

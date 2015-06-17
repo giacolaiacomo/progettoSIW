@@ -33,9 +33,13 @@
               </h:outputText>
             </td>
             <td>
-              <c:if test="${administratorController.administrator != null}">
+            <c:if test="${administratorController.administrator != null}">
+              <h:commandButton styleClass="btn-primary btn" value="Modify" action="#{administratorController.modifyCustomer}">
+              </h:commandButton>
+            </td>
+            <td>
                 <h:commandButton styleClass="btn-danger btn" value="Delete" action="#{administratorController.deleteCustomer}">
-                  <f:setPropertyActionListener value="#{customer.email}" target="#{administratorController.email}"/>
+                  <f:setPropertyActionListener value="#{customer.email}" target="#{administratorController.emailCust}"/>
                 </h:commandButton>
               </c:if>
             </td>
