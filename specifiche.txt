@@ -1,0 +1,143 @@
+Specifiche Progetto SIW 2015 - SC (Sola, Colaiacomo)
+
+Si vuole realizzare un sistema informativo su Web per la gestione degli ordini di una piccola azienda che effettua una attività di e-commerce dei propri prodotti
+Oltre agli utenti occasionali, due tipologie di attori interagiscono con il sistema: i clienti e l'amministrazione.
+Per ogni prodotto sono di interesse un nome, un codice, una descrizione, un costo, la quantità in magazzino.
+Ogni prodotto può essere fornito da uno o più fornitori, ogni fornitore può fornire uno o più prodotti.
+Ogni fornitore ha una partita iva e un indirizzo, telefono, indirizzo di posta elettronica.
+Ogni cliente ha nome, cognome, data di nascita, data di registrazione, indirizzo, indirizzo di posta elettronica.
+Un ordine si compone di più righe: ogni riga riporta un prodotto, il prezzo unitario del prodotto e la quantità ordinata (ad es. penne, 1€, 400).
+Per ogni ordine è necessario memorizzare:
+la data in cui l'ordine è stato aperto dal cliente 
+la data in cui l'ordine è stato chiuso dal cliente (da quel momento in poi l'ordine non verrà modificato e l'amministrazione può procedere ad evadere l'ordine).
+la data in cui l'ordine è stato evaso (cioè la data in cui i prodotti ordinati sono stati prelevati dal magazzino e spediti al cliente)
+I clienti che vogliono effettuare gli ordini devono essere registrati nella anagrafica dei clienti della azienda: solo i clienti identificati e autenticati possono effettuare ordini
+Il catalogo dei prodotti può essere consultato da clienti non autenticati.
+
+
+
+
+Casi d'uso:
+
+- UC1: Consulta listino
+		Attore primario: Utente non registrato
+		Scenario principale di successo:	
+			- L'utente seleziona l'operazione "Products List"
+			- L'utente consulta il catalogo dei prodotti
+			- L'utente sceglie un prodotto e ne richiede i dettagli 
+			- Il sistema mostra i dettagli del prodotto scelto
+			- L'utente ripete i passi precedenti un numero indefinito di volte
+
+- UC2: Consulta fornitori/brand
+		Attore primario: Utente non registrato
+		Scenario principale di successo:	
+			- L'utente seleziona l'operazione "Provider List"
+			- L'utente consulta l'elenco dei fornitori/brand
+			- Il sistema mostra i nomi dei fornitori/brand
+			- L'utente ripete i passi precedenti un numero indefinito di volte
+
+- UC3: Effettua ordine
+		- Attore primario: cliente (utente registrato)
+		- Scenario principale di successo: 
+			- Il cliente consulta il catalogo dei prodotti
+			- Il cliente sceglie un prodotto e inserendo la quantità desiderata lo aggiunge al carrello.
+			- Il sistema verifica se l'utente ha un ordine aperto: in caso negativo crea l'ordine.
+			- Il sistema registra la riga ordine.
+			- Il cliente ripete i passi precedenti finché necessario.
+			- Il cliente "chiude" l'ordine.
+			- Il sistema registra l'ordine.
+			Estensione 'a': 
+				- Il cliente decide di voler eliminare una riga ordine cliccando sul bottone "Remove".
+				- Il sistema elimina la riga ordine e aggiorna il basket.
+				Precondizioni: l'ordine non è stato ancora chiuso.
+			Estensione 'b': 
+				- Il cliente decide di svuotare il carrello per ricominciare gli acquisti da zero cliccando sul bottone "Clean Basket".
+				- Il sistema svuota il carrello.
+				- Il cliente è pronto ad affrontare nuovamente l'UC3
+				Precondizioni: il carrello contiene dei prodotti.
+			Precondizioni: il cliente è identificato e autenticato.
+
+- UC4: consulta i propri ordini chiusi
+		- Attore primario: cliente
+		- Scenario principale:
+			- Il cliente consulta l'elenco dei propri ordini cliccando sul link "All Closed Order"
+			- Il sistema mostra al cliente l'elenco dei suoi ordini
+			- Il cliente chiede il dettaglio di un ordine
+			- Il sistema mostra il dettaglio dell'ordine
+			- Il cliente ripete i due passi precedenti finché necessario
+			- Precondizioni: il cliente è identificato e autenticato
+
+- UC5: inserimento prodotti nel catalogo
+		- Attore primario: amministrazione
+		- Scenario principale:
+			- L'amministratore inserisce un nuovo prodotto nel catalogo specificandone i dettagli
+			- Il sistema registra il prodotto
+			- I punti precedenti vengono ripetuti fino a che necessario
+			- Precondizioni: l'amministratore è identificato e autenticato
+
+- UC6: inserimento fornitore nella lista
+		- Attore primario: amministrazione
+		- Scenario principale:
+			- L'amministratore inserisce un nuovo fornitore nella lista specificandone i dettagli
+			- Il sistema registra il fornitore
+			- I punti precedenti vengono ripetuti fino a che necessario
+			- Precondizioni: l'amministratore è identificato e autenticato
+
+- UC7: inserimento cliente nel database
+		- Attore primario: amministrazione
+		- Scenario principale:
+			- L'amministratore inserisce un nuovo cliente nel database specificandone i dettagli
+			- Il sistema registra il cliente
+			- I punti precedenti vengono ripetuti fino a che necessario
+			- Precondizioni: l'amministratore è identificato e autenticato
+
+- UC8: recupera indirizzo cliente
+		- Attore primario: amministrazione
+		- Scenario principale:
+			- L’amministratore fornisce l'id di un ordine 
+			- Il sistema mostra all’amministratore i dati del cliente che ha effettuato l’ordine
+		Precondizioni: l’amministratore è identificato e autenticato
+
+- UC9: evasione ordine
+		- Attore primario: amministrazione
+		- Scenario principale:
+			- Il sistema presenta all'amministratore gli ordini chiusi, ma non evasi
+			- L'amministratore clicca sul bottone "Process"
+			- Il sistema evade l'ordine: aggiorna l'ordine inserendo la data di spedizione e aggiorna la quantità dei prodotti in magazzino (sottraendo la quantità di prodotti usati per l'ordine)
+		Precondizioni:
+		l'amministratore è identificato e autenticato
+		Eccezioni:
+		alcuni prodotti potrebbero non essere presenti in magazzino nella quantità specificata dall'ordine. In questo caso l'ordine rimane in sospeso
+
+- UC10: modifica prodotto
+		- Attore primario: amministrazione
+		- Scenario principale: 
+			- L'amministratore selezione un prodotto dalla lista dei prodotti
+			- Il sistema presenta all'amministratore i dettagli del prodotto scelto
+			- L'amministratore clicca sul bottone "Modify Product"
+			- Il sistema presenta la form di modifica del prodotto
+			- L'amministratore inserisce i dati del nuovo prodotto da inserire nel database
+			- Il sistema registra il prodotto appena modificato
+		Precondizioni: l'amministratore è identificato e autenticato
+
+- UC11: aggiungi provider
+		- Attore primario: amministrazione
+		- Scenario principale: 
+			 - L'amministratore selezione un prodotto dalla lista dei prodotti
+			- Il sistema presenta all'amministratore i dettagli del prodotto scelto
+			- L'amministratore clicca sul bottone "Add Provider"
+			- Il sistema presenta la form di aggiunta del provider
+			- L'amministratore inserisce il nome del provider da collegare al prodotto
+			- Il sistema registra il prodotto e il provider.
+			Precondizioni: l'amministratore è identificato e autenticato
+
+
+- UC12: ricerca prodotto
+		- Attore primario: cliente
+		- Scenario principale: 
+			- Il cliente inserisce il nome di un prodotto nella barra superiore
+			- Il sistema cerca il prodotto corrispondente al nome 
+			- Il sistema se lo trova presenta la pagina di dettaglio del prodotto, altrimenti rimane nella index
+			- Il cliente ripete i passi precedenti un numero indefinito di volte
+			Precondizioni: il cliente è identificato e autenticato
+
