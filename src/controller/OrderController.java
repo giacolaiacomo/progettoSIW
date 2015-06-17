@@ -85,7 +85,7 @@ public class OrderController {
     }
 
     public void setProcessedOrder(){
-        if(checkQuantityOrder(this.order)) {
+        if(checkQuantityOrder()) {
             this.order.setProcessedTime(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
             this.order.setProcessed();
             ordersFacade.updateOrder(order);
@@ -95,16 +95,12 @@ public class OrderController {
             erroreQuantità();
     }
 
-    public boolean checkQuantityOrder(Orders order){
-        int count=0;
-        for(OrderLine ordl: order.getOrderLines()){
+    public boolean checkQuantityOrder(){
+        for(OrderLine ordl: this.order.getOrderLines()){
             if(ordl.getProduct().getQuantity() < ordl.getQuantity())
-                count++;
+                return false;
         }
-        if (count==order.getOrderLines().size())
-            return true;
-        else
-            return false;
+        return true;
     }
 
     public String erroreQuantità(){

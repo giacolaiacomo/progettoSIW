@@ -35,10 +35,10 @@
         <entry file="file://$PROJECT_DIR$/src/controller/OrderController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.3478261">
-              <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+              <caret line="88" column="61" selection-start-line="88" selection-start-column="61" selection-end-line="88" selection-end-column="61" />
               <folding>
-                <element signature="e#3613#3614#0" expanded="true" />
-                <element signature="e#3643#3644#0" expanded="true" />
+                <element signature="e#3488#3489#0" expanded="true" />
+                <element signature="e#3518#3519#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -808,13 +808,7 @@
       <workItem from="1434543218532" duration="1225000" />
       <workItem from="1434544626388" duration="620000" />
       <workItem from="1434545487698" duration="2537000" />
-      <workItem from="1434548402843" duration="794000" />
-    </task>
-    <task id="LOCAL-00024" summary="aggiunto toString a customer">
-      <created>1432458948017</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1432458948017</updated>
+      <workItem from="1434548402843" duration="1166000" />
     </task>
     <task id="LOCAL-00025" summary="modifiche">
       <created>1432459261259</created>
@@ -1104,11 +1098,17 @@
       <option name="project" value="LOCAL" />
       <updated>1434546936722</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="mod quantità">
+      <created>1434549395418</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1434549395418</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166227000" />
+    <option name="totallyTimeSpent" value="166599000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1193,7 +1193,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="aggiunto modulo di login" />
     <MESSAGE value="modificata form new Product" />
     <MESSAGE value="modificata tabella products" />
     <MESSAGE value="creato ProviderFacade, modificati customer provider e i loro facade" />
@@ -1218,7 +1217,8 @@
     <MESSAGE value="modifica new order" />
     <MESSAGE value="mod" />
     <MESSAGE value="modifiche generali" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifiche generali" />
+    <MESSAGE value="mod quantità" />
+    <option name="LAST_COMMIT_MESSAGE" value="mod quantità" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1646,10 +1646,10 @@
     <entry file="file://$PROJECT_DIR$/src/controller/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3478261">
-          <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+          <caret line="88" column="61" selection-start-line="88" selection-start-column="61" selection-end-line="88" selection-end-column="61" />
           <folding>
-            <element signature="e#3613#3614#0" expanded="true" />
-            <element signature="e#3643#3644#0" expanded="true" />
+            <element signature="e#3488#3489#0" expanded="true" />
+            <element signature="e#3518#3519#0" expanded="true" />
           </folding>
         </state>
       </provider>
