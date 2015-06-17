@@ -54,6 +54,8 @@ public class ProviderFacade {
         }
     }
 
+    public void updateProvider(Provider provider){ em.merge(provider);}
+
     public List<Provider> getAllProvider() {
         Query query= em.createQuery("SELECT p FROM Provider p");
         return query.getResultList();

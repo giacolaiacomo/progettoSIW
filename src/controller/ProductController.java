@@ -42,6 +42,10 @@ public class ProductController {
 			this.providers.add(p);
 		}
 		this.product = productFacade.createProduct(name, code, price, description, quantity, providers);
+		for(Provider p: product.getProviders()){
+			p.addProduct(product);
+			this.providerFacade.updateProvider(p);
+		}
         if (product != null)
 		    return "product";
         else
