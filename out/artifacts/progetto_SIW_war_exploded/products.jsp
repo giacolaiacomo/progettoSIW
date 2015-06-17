@@ -31,13 +31,13 @@
 						<td>${product.price}</td>
 						<td>${product.quantity}</td>
 						<td>${product.description}</td>
-						<td>
-							<c:if test="${administratorController.administrator != null}">
+						<c:if test="${administratorController.administrator != null}">
+							<td>
 								<h:commandButton styleClass="btn-danger btn" value="Delete" action="#{administratorController.deleteProduct}">
 									<f:setPropertyActionListener value="#{product.id}" target="#{administratorController.prodId}"/>
 								</h:commandButton>
-							</c:if>
-						</td>
+							</td>
+						</c:if>
 					</tr>
 				</c:forEach>
 			</table>

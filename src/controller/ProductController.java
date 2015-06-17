@@ -1,8 +1,12 @@
 package controller;
 
+import java.util.LinkedList;
 import java.util.List;
 import model.Product;
 import model.ProductFacade;
+import model.Provider;
+import model.ProviderFacade;
+
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -20,15 +24,24 @@ public class ProductController {
 	private String code;
 	private int quantity;
 	private Product product;
-	private String providername;
+	private List<String> providernames;
+	private List<Provider> providers;
 
 	private List<Product> products;
-	
+
+	@EJB(beanName = "provfacade")
+	private ProviderFacade providerFacade;
+
 	@EJB(beanName = "prodfacade")
 	private ProductFacade productFacade;
 	
 	public String createProduct() {
-		this.product = productFacade.createProduct(name, code, price, description, quantity, providername);
+		this.providers = new LinkedList<Provider>();
+		for(String a: this.providernames){
+			Provider p = this.providerFacade.getProviderByEmail(a);
+			this.providers.add(p);
+		}
+		this.product = productFacade.createProduct(name, code, price, description, quantity, providers);
         if (product != null)
 		    return "product";
         else
@@ -129,12 +142,12 @@ public class ProductController {
 		this.quantity = quantity;
 	}
 
-	public String getProvidername() {
-		return providername;
+	public List<String> getProvidernames() {
+		return providernames;
 	}
 
-	public void setProvidername(String providername) {
-		this.providername = providername;
+	public void setProvidernames(List<String> providernames) {
+		this.providernames = providernames;
 	}
 
 	public ProductFacade getProductFacade() {
@@ -143,6 +156,22 @@ public class ProductController {
 
 	public void setProductFacade(ProductFacade productFacade) {
 		this.productFacade = productFacade;
+	}
+
+	public List<Provider> getProviders() {
+		return providers;
+	}
+
+	public void setProviders(List<Provider> providers) {
+		this.providers = providers;
+	}
+
+	public ProviderFacade getProviderFacade() {
+		return providerFacade;
+	}
+
+	public void setProviderFacade(ProviderFacade providerFacade) {
+		this.providerFacade = providerFacade;
 	}
 }
 
