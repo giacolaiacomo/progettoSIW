@@ -21,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                    <a class="navbar-brand" href="/faces/index.jsp"><strong>Progetto SIW 2015 &middot; SC</strong></a>
+                <a class="navbar-brand" href="/faces/index.jsp"><strong>Progetto SIW 2015 &middot; SC</strong></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -79,7 +79,7 @@
                                 <li><h:commandLink action="#{productController.listProducts}" value="Products List" /></li>
                             </ul>
                         </li>
-                                <li><h:commandLink action="#{administratorController.allClosedOrders}" value="Orders"/></li>
+                        <li><h:commandLink action="#{administratorController.allClosedOrders}" value="Orders"/></li>
 
                     </c:if>
                 </ul>
@@ -102,6 +102,19 @@
                                 <div class="col-lg-5"> <h:inputText styleClass="form-control " value="#{customerController.email}" id="email"/></div>
                                 <div class="col-lg-5"> <h:inputSecret styleClass="form-control " value="#{customerController.password}" id="password"/></div>
                                 <div class="col-lg-2"> <h:commandButton styleClass="btn btn-default " value="Login" action="#{customerController.login}"/></div>
+                            </div>
+                        </li>
+                    </ul>
+                </c:if>
+                <c:if test="${administratorController.administrator != null}">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-form navbar-right">
+                            <div class="row">
+                                <div class="col-lg-5"> <h:inputText styleClass="form-control " value="#{orderController.id}" id="idOrder"/></div>
+                                <div class="col-lg-2">
+                                    <h:commandButton styleClass="btn btn-default " value="Search Customer by Order ID" action="#{orderController.getCustomerByOrderID}">
+                                    </h:commandButton>
+                                </div>
                             </div>
                         </li>
                     </ul>

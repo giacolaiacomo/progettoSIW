@@ -34,7 +34,7 @@
             </td>
             <td>
             <c:if test="${administratorController.administrator != null}">
-              <h:commandButton styleClass="btn-primary btn" value="Modify" action="#{administratorController.modifyCustomer}">
+              <h:commandButton styleClass="btn-primary btn" value="Modify" action="modifyCustomer.jsp">
               </h:commandButton>
             </td>
             <td>

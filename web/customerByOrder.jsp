@@ -24,21 +24,21 @@
 <f:view>
   <jsp:include page="header.jsp" />
   <div align="center" class="container form-signin">
-    <h1>${customerController.customer.firstname} ${customerController.customer.lastname}</h1>
+    <h1>${orderController.customerbyorder.firstname} ${orderController.customerbyorder.lastname}</h1>
     <h2>Customer's Info</h2>
-    <div>Date of birth: ${customerController.customer.birthDate}</div>
-    <div>Email: ${customerController.customer.email}</div>
-    <div>Phone Number: ${customerController.customer.phonenumber}</div>
+    <div>Date of birth: ${orderController.customerbyorder.birthDate}</div>
+    <div>Email: ${orderController.customerbyorder.email}</div>
+    <div>Phone Number: ${orderController.customerbyorder.phonenumber}</div>
     <h3>Address:</h3>
-    <div>Street: ${customerController.customer.address.street}</div>
-    <div>City: ${customerController.customer.address.city}</div>
-    <div>State: ${customerController.customer.address.state}</div>
-    <div>ZipCode: ${customerController.customer.address.zipcode}</div>
+    <div>Street: ${orderController.customerbyorder.address.street}</div>
+    <div>City: ${orderController.customerbyorder.address.city}</div>
+    <div>State: ${orderController.customerbyorder.address.state}</div>
+    <div>ZipCode: ${orderController.customerbyorder.address.zipcode}</div>
   </div>
   <div align="right">
     Registration Date:
     <h:outputText
-            value="#{customerController.customer.registrationDate.time}">
+            value="#{orderController.customerbyorder.registrationDate.time}">
       <f:convertDateTime dateStyle="medium" locale="it_IT" type="both"
                          timeZone="Europe/Rome" />
     </h:outputText>

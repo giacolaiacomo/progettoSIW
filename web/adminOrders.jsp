@@ -33,7 +33,9 @@
                             <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
                         </h:outputText></td>
                         <td>
-                            <h:outputText value="#{order.customer_id.email}"/>
+                            <h:commandLink action="#{orderController.getCustomerByOrderID}" value="#{order.customer_id.email}">
+                                <f:setPropertyActionListener value="#{order.id}" target="#{orderController.id}"/>
+                            </h:commandLink>
                         </td>
                         <td>
                             <c:choose>

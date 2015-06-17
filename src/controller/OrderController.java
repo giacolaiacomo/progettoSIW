@@ -9,6 +9,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.persistence.criteria.Order;
+import javax.servlet.http.HttpSession;
 import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
@@ -26,6 +27,7 @@ public class OrderController {
     private OrderLine orderLine;
     private String message=null;
 
+    private Customer customerbyorder;
 
     @EJB(beanName = "ordfacade")
     private OrdersFacade ordersFacade;
@@ -108,6 +110,11 @@ public class OrderController {
             productFacade.updateProduct(ordl.getProduct());
         }
 
+    }
+
+    public String getCustomerByOrderID(){
+        this.customerbyorder = this.ordersFacade.getOrder(this.id).getCustomer_id();
+        return "customerByOrder";
     }
 
     public String findOrderById(){
@@ -221,4 +228,11 @@ public class OrderController {
         this.orderLineFacade = orderLineFacade;
     }
 
+    public Customer getCustomerbyorder() {
+        return customerbyorder;
+    }
+
+    public void setCustomerbyorder(Customer customerbyorder) {
+        this.customerbyorder = customerbyorder;
+    }
 }
