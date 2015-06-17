@@ -62,16 +62,18 @@ public class OrderController {
         }
     }
 
-    public String deleteOrderLine(OrderLine ordl) {
+    public void deleteOrderLine(OrderLine ordl) {
         this.order.removeOrderLine(ordl);
         orderLineFacade.deleteOrderLine(ordl.getId());
-        return "mybasket";
+        if(this.order.getOrderLines().size()==0)
+            this.deleteOrder();
     }
 
     public void deleteOrder(){
         for(OrderLine o : this.order.getOrderLines())
             this.orderLineFacade.deleteOrderLine(o.getId());
         this.ordersFacade.deleteOrder(this.order.getId());
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("orderController");
     }
 
     public void setClosedOrder(){
@@ -79,7 +81,7 @@ public class OrderController {
         this.order.setClosed();
         ordersFacade.updateOrder(order);
         customerFacade.updateCustomer(customer);
-        this.order=null;
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().remove("orderController");
     }
 
     public void setProcessedOrder(){
