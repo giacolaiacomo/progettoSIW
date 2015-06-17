@@ -95,6 +95,11 @@ public class AdministratorController {
         customerFacade.deleteCustomerByEmail(this.emailCust);
     }
 
+    public String modifyCustomer(){ return "modifyCustomer"; }
+
+    public String modifyProduct(){
+        return "modifyProduct";
+    }
 
     /* Getter & Setter */
 
