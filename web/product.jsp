@@ -44,9 +44,8 @@
             </c:if>
             <c:if test="${administratorController.administrator!=null}">
                 <div align="center">
-                    <h:commandButton styleClass="btn btn-default" value="Modify Product" action="#{administratorController.modifyProduct}">
-                        <f:setPropertyActionListener value="#{productController.product}" target="#{administratorController.product}"/>
-                    </h:commandButton>
+                    <h:commandButton styleClass="btn btn-default" value="Modify Product" action="modifyProduct.jsp"/>
+                    <a href='<c:url value="modifyProduct.jsp"/>'>Modify Product</a>
                 </div>
             </c:if>
         </div>

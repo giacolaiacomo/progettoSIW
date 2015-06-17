@@ -25,37 +25,32 @@
     <fieldset>
       <form class="form-signin">
         <h:form>
-          <div class="form-group">Name: <h:inputText styleClass="form-control" value="#{productController.name}"
+          <div class="form-group">Name: <h:inputText styleClass="form-control" value="#{productController.product.name}"
                                                      required="true"
                                                      requiredMessage="Name is mandatory"
                                                      id="name"/><h:message for="name" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">Code: <h:inputText styleClass="form-control" value="#{productController.code}"
+          <div class="form-group">Code: <h:inputText styleClass="form-control" value="#{productController.product.code}"
                                                      required="true"
                                                      requiredMessage="Code is mandatory"
                                                      id="code"/> <h:message for="code" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">Price: <h:inputText styleClass="form-control" value="#{productController.price}"
+          <div class="form-group">Price: <h:inputText styleClass="form-control" value="#{productController.product.price}"
                                                       required="true"
                                                       requiredMessage="Price is mandatory"
                                                       converterMessage="Price must be a number"
                                                       id="price"/> <h:message for="price" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">Quantity: <h:inputText styleClass="form-control" value="#{productController.quantity}"
+          <div class="form-group">Quantity: <h:inputText styleClass="form-control" value="#{productController.product.quantity}"
                                                          required="true"
                                                          requiredMessage="Quantity is mandatory"
                                                          converterMessage="Quantity must be a number"
                                                          id="quantity"/> <h:message for="quantity" styleClass="alert-danger"/>
           </div>
-          <div class="form-group">Description: <h:inputTextarea styleClass="form-control" value="#{productController.description}"
+          <div class="form-group">Description: <h:inputTextarea styleClass="form-control" value="#{productController.product.description}"
                                                                 required="false"
                                                                 cols="20"
                                                                 rows="5" />
-          </div>
-          <div class="form-group">Provider: <h:inputText styleClass="form-control" value="#{productController.providername}"
-                                                         required="true"
-                                                         requiredMessage="Provider is mandatory"
-                                                         id="providername"/> <h:message for="providername" styleClass="alert-danger"/>
           </div>
           <div class="form-group">
             <h:commandButton value="Submit"  action="#{productController.updateProduct}" styleClass="btn btn-primary"/>
