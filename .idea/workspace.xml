@@ -7,9 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e87298-d782-4cbd-9320-8395fd08b21b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/AdministratorController.java" afterPath="$PROJECT_DIR$/src/controller/AdministratorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controller/OrderController.java" afterPath="$PROJECT_DIR$/src/controller/OrderController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/mybasket.jsp" afterPath="$PROJECT_DIR$/web/mybasket.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="progetto-SIW.iws" />
@@ -25,7 +22,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -822,13 +819,7 @@
       <workItem from="1434525936646" duration="5698000" />
       <workItem from="1434534843547" duration="524000" />
       <workItem from="1434535463175" duration="557000" />
-      <workItem from="1434536654632" duration="966000" />
-    </task>
-    <task id="LOCAL-00020" summary="modificata form new Product">
-      <created>1432396208050</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1432396208050</updated>
+      <workItem from="1434536654632" duration="979000" />
     </task>
     <task id="LOCAL-00021" summary="modificata tabella products">
       <created>1432398105455</created>
@@ -1118,11 +1109,17 @@
       <option name="project" value="LOCAL" />
       <updated>1434533561303</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="mod">
+      <created>1434537715304</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1434537715305</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159239000" />
+    <option name="totallyTimeSpent" value="159252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1222,7 +1219,6 @@
     <MESSAGE value="inserito Admin" />
     <MESSAGE value="cambio index" />
     <MESSAGE value="tasto search" />
-    <MESSAGE value="mod" />
     <MESSAGE value="aggiustato provider" />
     <MESSAGE value="sistemato search" />
     <MESSAGE value="sistemato mybasket" />
@@ -1232,7 +1228,8 @@
     <MESSAGE value="closed order" />
     <MESSAGE value="modifica new order" />
     <MESSAGE value="modifiche generali" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifiche generali" />
+    <MESSAGE value="mod" />
+    <option name="LAST_COMMIT_MESSAGE" value="mod" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
