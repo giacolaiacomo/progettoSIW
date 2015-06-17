@@ -59,6 +59,9 @@ public class ProviderController {
         this.providers=providerFacade.getAllProvider();
         return "providers";
     }
+    public List<Provider> getAllProviders(){
+        return this.providerFacade.getAllProvider();
+    }
 
     /* Getter & Setter */
 

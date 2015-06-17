@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">Provider:
                         <h:selectManyMenu styleClass="form-control" value="#{productController.providernames}" immediate="true" >
-                            <f:selectItems value="#{providerController.providers}" var="provider" itemValue="#{provider.name}" itemLabel="#{provider.name}" />
+                            <f:selectItems value="#{providerController.providerFacade.allProvider}" var="provider" itemValue="#{provider.name}" itemLabel="#{provider.name}" />
                         </h:selectManyMenu>
                     </div>
                     <div class="form-group">
