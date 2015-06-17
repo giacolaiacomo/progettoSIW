@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
   <link href="/bootstrap/css/business-frontpage.css" rel="stylesheet">
   <link rel="stylesheet" href="bootstrap/css/msc.css"/>
-  <title>Products</title>
+  <title>Customers</title>
 </head>
 <body>
 <f:view>
@@ -31,6 +31,13 @@
               <h:outputText value="#{customer.registrationDate.time}">
               <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
               </h:outputText>
+            </td>
+            <td>
+              <c:if test="${administratorController.administrator != null}">
+                <h:commandButton styleClass="btn-danger btn" value="Delete" action="#{administratorController.deleteCustomer}">
+                  <f:setPropertyActionListener value="#{customer.email}" target="#{administratorController.email}"/>
+                </h:commandButton>
+              </c:if>
             </td>
           </tr>
         </c:forEach>

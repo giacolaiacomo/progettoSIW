@@ -90,6 +90,10 @@ public class AdministratorController {
         return "processedOrders";
     }
 
+    public void deleteCustomer() {
+        customerFacade.deleteCustomerByEmail(this.email);
+    }
+
     public String modifyProduct(){
         return "modifyProduct";
     }
