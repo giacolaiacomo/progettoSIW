@@ -52,11 +52,11 @@ public class OrderController {
             OrderLine ordl = this.order.checkOrderLine(this.product);
             if (ordl != null) {
                 ordl.setQuantity(ordl.getQuantity() + this.quantity);
-                this.orderLineFacade.updateOrderLine(ordl);
+                //this.orderLineFacade.updateOrderLine(ordl);
             } else {
                 ordl = new OrderLine(this.product.getPrice(), this.quantity, this.order, this.product);
                 this.order.addOrderLine(ordl);
-                this.ordersFacade.updateOrder(this.order);
+                //this.ordersFacade.updateOrder(this.order);
             }
             return "mybasket";
         }
