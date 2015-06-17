@@ -64,6 +64,8 @@ public class OrderController {
 
     public String deleteOrderLine() {
         this.orderLineFacade.deleteOrderLine(ordlId);
+        this.order.removeOrderLine(this.orderLineFacade.getOrderLine(ordlId));
+        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("order", this.order);
         return "mybasket";
     }
 
