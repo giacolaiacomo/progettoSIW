@@ -20,7 +20,7 @@ public class OrderLine {
     @ManyToOne
     private Orders orders_id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private Product product;
 
     public OrderLine(Double unitprice, int quantity, Orders orders_id, Product product) {

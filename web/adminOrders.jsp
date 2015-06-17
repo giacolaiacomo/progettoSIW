@@ -1,13 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Fabio
-  Date: 16/06/15
-  Time: 14:53
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -40,8 +33,7 @@
                             <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
                         </h:outputText></td>
                         <td>
-                            <h:commandLink action="#{customerController.findCustomer(order.customer_id.id)}" value="#{order.customer_id.email}">
-                            </h:commandLink>
+                            <h:outputText value="#{order.customer_id.email}"/>
                         </td>
                         <td>
                             <c:choose>

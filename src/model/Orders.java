@@ -36,7 +36,7 @@ public class Orders {
     @ManyToOne
     private Customer customer_id;
 
-    @OneToMany(mappedBy = "orders_id", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @OneToMany(mappedBy = "orders_id", fetch=FetchType.EAGER, cascade=CascadeType.MERGE)
     private List<OrderLine> orderLines;
 
     public Orders(Customer customer_id) {
@@ -55,6 +55,14 @@ public class Orders {
         return null;
     }
 
+    public OrderLine getOrderLineById(Long Id) {
+        OrderLine orderLine = null;
+        for(OrderLine line : this.orderLines){
+            if(line.getId().equals(Id))
+                orderLine = line;
+        }
+        return orderLine;
+    }
 
     /* Getter & Setter */
 

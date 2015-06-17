@@ -21,15 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <c:if test="${customerController.customer != null}">
-                    <a class="navbar-brand" href="/faces/indexUser.jsp"><strong>Progetto SIW 2015 &middot; SC</strong></a>
-                </c:if>
-                <c:if test="${administratorController.administrator != null}">
-                    <a class="navbar-brand" href="/faces/indexAdmin.jsp"><strong>Progetto SIW 2015 &middot; SC</strong></a>
-                </c:if>
-                <c:if test="${customerController.customer == null && administratorController.administrator == null}">
                     <a class="navbar-brand" href="/faces/index.jsp"><strong>Progetto SIW 2015 &middot; SC</strong></a>
-                </c:if>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -58,6 +50,11 @@
                                         </c:when>
                                     </c:choose>
                                 </span>
+                            </h:commandLink>
+                        </li>
+                        <li>
+                            <h:commandLink action="#{customerController.findOrderCustomer}" value="All Closed Orders">
+                                <f:setPropertyActionListener value="#{customerController.customer.id}" target="#{customerController.id}"/>
                             </h:commandLink>
                         </li>
                     </c:if>

@@ -18,6 +18,7 @@ public class OrdersFacade {
 
     public Orders createOrder(Customer customer_id){
         Orders order = new Orders(customer_id);
+        em.persist(order);
         return order;
     }
 
@@ -48,15 +49,11 @@ public class OrdersFacade {
         return orders;
     }
 
-    public List<Orders> getAllCloseOrderCustomer(Long id){
-        Query q = em.createQuery("SELECT o FROM Orders o WHERE o.customer_id.Id=:id");
+    public List<Orders> getAllOrderCustomer(Long id){
+        Query q = em.createQuery("SELECT o FROM Orders o WHERE o.customer_id.Id=:id and o.closed=true");
         q.setParameter("id", id);
-        return q.getResultList();
-    }
-
-    public void setClosed(Orders orders){
-        orders.setClosed();
-        em.persist(orders);
+        List<Orders> orders=q.getResultList();
+        return orders;
     }
 
     private void deleteOrder(Orders order) {

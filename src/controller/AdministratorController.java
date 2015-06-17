@@ -62,7 +62,7 @@ public class AdministratorController {
             Administrator administrator = administratorFacade.getAdministratorByEmail(email);
             if (administrator.checkPassword(this.password)) {
                 setAdministrator(administrator);
-                return "admin";
+                return "index";
             }
             else{
                 // Password Errata

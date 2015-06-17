@@ -3,6 +3,7 @@ package controller;
 import model.*;
 
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -22,6 +23,7 @@ public class OrderController {
     private Product product;
     private int quantity=1;
     private Long ordlId;
+    private OrderLine orderLine;
 
 
     @EJB(beanName = "ordfacade")
@@ -60,27 +62,22 @@ public class OrderController {
         }
     }
 
-    public String deleteOrderLine(OrderLine ordl){
-        this.order.removeOrderLine(ordl);
-        this.orderLineFacade.deleteOrderLine(this.ordlId);
-        this.ordersFacade.updateOrder(this.order);
-        this.customerFacade.updateCustomer(this.customer);
+    public String deleteOrderLine() {
+        this.orderLineFacade.deleteOrderLine(ordlId);
         return "mybasket";
     }
 
     public void deleteOrder(){
-        if(this.order.getOrderLines() != null){
-            List<OrderLine> orderlines = order.getOrderLines();
-            for(OrderLine orderline: orderlines){
-                this.order.removeOrderLine(orderline);
-            }
-        }
-        ordersFacade.deleteOrder(this.order.getId());
+        for(OrderLine o : this.order.getOrderLines())
+            this.orderLineFacade.deleteOrderLine(o.getId());
+        this.ordersFacade.deleteOrder(this.order.getId());
+        this.order=null;
     }
 
     public void setClosedOrder(){
         this.order.setCompletedTime(Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome")));
-        this.ordersFacade.setClosed(this.order);
+        this.order.setClosed();
+        ordersFacade.updateOrder(order);
         customerFacade.updateCustomer(customer);
         this.order=null;
     }

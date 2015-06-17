@@ -28,6 +28,12 @@
       <h1>My Basket</h1>
       <c:choose>
         <c:when test="${orderController.order!=null}">
+          <h3>Current order: ${orderController.order.id}</h3>
+          <div>Creation time:
+            <h:outputText value="#{orderController.order.creationtime.time}">
+              <f:convertDateTime dateStyle="medium" locale="it_IT" type="both" timeZone="Europe/Rome" />
+            </h:outputText>
+          </div>
           <hr>
           <table>
             <tr>
@@ -45,8 +51,8 @@
                 <td>${ordl.quantity}</td>
                 <td>${ordl.product.description}</td>
                 <td>
-                  <h:commandButton styleClass="btn btn-danger" value="Remove" action="#{orderController.deleteOrderLine(ordl)}">
-                    <%---<f:setPropertyActionListener value="#{ordl.id}" target="#{orderController.ordlId}"/> ---%>
+                  <h:commandButton styleClass="btn btn-danger" value="Remove" action="#{orderController.deleteOrderLine}">
+                    <f:setPropertyActionListener value="#{ordl.id}" target="#{orderController.ordlId}"/>
                   </h:commandButton>
                 </td>
               </tr>
@@ -54,7 +60,8 @@
           </table>
           <hr>
           <div align="center">
-            <h:commandButton styleClass="btn btn-primary" value="Close Order" action="#{orderController.setClosedOrder}"/>
+            <h:commandButton styleClass="btn btn-primary" value="Close Order" onclick="return confirm('Are you sure?')" action="#{orderController.setClosedOrder}"/>
+            <h:commandButton styleClass="btn btn-danger" value="Clean Basket" action="#{orderController.deleteOrder}"/>
           </div>
         </c:when>
         <c:when test="${orderController.order==null || orderController.order.orderLines.size()==0}">

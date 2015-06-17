@@ -50,7 +50,7 @@ public class CustomerController {
             Customer customer = customerFacade.getCustomerByEmail(email);
             if (customer.checkPassword(this.password)) {
                 setCustomer(customer);
-                return "indexUser";
+                return "index";
             }
             else{
                 // Password Errata
@@ -76,18 +76,42 @@ public class CustomerController {
         return "customers";
     }
 
-    public String findCustomer(Long id){
-        this.customer=customerFacade.getCustomer(id);
+    public String findCustomer(){
+        this.customer=customerFacade.getCustomer(this.id);
         return "customer";
     }
 
-    public String findOrderCustomer(Long idCustomer){
-        this.orders=this.ordersFacade.getAllCloseOrderCustomer(idCustomer);
+    public String findOrderCustomer(){
+        this.orders=this.ordersFacade.getAllOrderCustomer(id);
         return "orders";
     }
 
 
     /* Getter & Setter */
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public OrdersFacade getOrdersFacade() {
+        return ordersFacade;
+    }
+
+    public void setOrdersFacade(OrdersFacade ordersFacade) {
+        this.ordersFacade = ordersFacade;
+    }
+
+    public List<Orders> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Orders> orders) {
+        this.orders = orders;
+    }
 
     public String getFirstname() {
         return firstname;
