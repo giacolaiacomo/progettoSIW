@@ -24,7 +24,7 @@ public class AdministratorController {
     private Long zipcode;
     private String email;
     private String password;
-
+    private Long prodId;
     private String emailCust;
 
     private List<Orders> closedOrders;
@@ -95,6 +95,10 @@ public class AdministratorController {
         customerFacade.deleteCustomerByEmail(this.emailCust);
     }
 
+    public void deleteProduct() {
+        productFacade.deleteProduct(this.prodId);
+    }
+
     public String modifyCustomer(){ return "modifyCustomer"; }
 
     public String modifyProduct(){
@@ -102,6 +106,14 @@ public class AdministratorController {
     }
 
     /* Getter & Setter */
+
+    public Long getProdId() {
+        return prodId;
+    }
+
+    public void setProdId(Long prodId) {
+        this.prodId = prodId;
+    }
 
     public List<Orders> getProcessedOrders() {
         return processedOrders;
