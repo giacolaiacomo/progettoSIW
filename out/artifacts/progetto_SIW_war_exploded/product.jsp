@@ -36,10 +36,12 @@
                                  id="quantity">
                     </h:inputText>
                     <h:message for="quantity" styleClass="alert-danger"/>
-                    <h:commandButton styleClass="btn btn-default" value="Add to basket" action="#{orderController.addOrderLine}">
-                        <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
-                        <f:setPropertyActionListener value="#{productController.product}" target="#{orderController.product}"/>
-                    </h:commandButton>
+                    <c:if test="${orderController.order.closed!=true}">
+                        <h:commandButton styleClass="btn btn-default" value="Add to basket" action="#{orderController.addOrderLine}">
+                            <f:setPropertyActionListener value="#{customerController.customer}" target="#{orderController.customer}"/>
+                            <f:setPropertyActionListener value="#{productController.product}" target="#{orderController.product}"/>
+                        </h:commandButton>
+                    </c:if>
                 </div>
             </c:if>
             <c:if test="${administratorController.administrator!=null}">

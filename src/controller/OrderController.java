@@ -39,7 +39,7 @@ public class OrderController {
     public String createOrder(){
         this.order=this.ordersFacade.createOrder(customer);
         this.customer.addOrder(order);
-        return "newOrder";
+        return "mybasket";
     }
 
     public String addOrderLine(){
