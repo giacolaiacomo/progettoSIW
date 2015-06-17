@@ -29,12 +29,7 @@
         </tr>
         <c:forEach var="ordl" items="#{orderController.order.orderLines}">
           <tr>
-            <td>
-              <h:commandLink action="#{productController.findProduct}" value="#{ordl.product.name}">
-                <f:param name="id" value="#{ordl.product.id}" />
-                <f:setPropertyActionListener value="#{ordl.product}" target="#{productController.product}"/>
-              </h:commandLink>
-            </td>
+            <td>${ordl.product.name}</td>
             <td>${ordl.product.code}</td>
             <td>${ordl.unitprice}</td>
             <td>${ordl.quantity}</td>

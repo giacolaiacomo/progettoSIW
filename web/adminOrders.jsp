@@ -40,7 +40,6 @@
                                 <c:when test="${order.processed != true}">
                                     <c:if test="${orderController.message != null}">
                                         <span class="error alert alert-info">${orderController.message}</span>
-                                        <br>
                                     </c:if>
                                     <h:commandButton styleClass="btn-primary btn" value="Process" action="#{orderController.setProcessedOrder}">
                                         <f:setPropertyActionListener value="#{order}" target="#{orderController.order}"/>
